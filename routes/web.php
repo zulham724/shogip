@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resources([
+'users'=>'UserController',
+'biodatas'=>'BiodataController',
+'states'=>'StateController',
+'cities'=>'CityController',
+'districts'=>'DistrictController',
+'umkmcategories'=>'UmkmCategoriController',
+'umkms'=>'UmkmController',
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
