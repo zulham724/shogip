@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
 use App\ProductImage;
 
@@ -38,14 +39,15 @@ class ProductImageController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $productimage = new ProductImage();
         $productimage->fill($request->all());
          if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('productimage');
+            $path = $request->file('image')->store('product');
             $productimage->image = $path;    
         }
         $productimage->save();
-
+             // dd($productimage);
         return redirect('productimages');
     }
 
@@ -68,7 +70,10 @@ class ProductImageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['productimages'] = ProductImage::find($id);
+        $data['products'] = Product::get();
+
+        return view('productimage.edit',$data);
     }
 
     /**
@@ -80,7 +85,17 @@ class ProductImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        $productimage = ProductImage::find($id);
+        $productimage->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('product');
+            $file = Storage::delete($productimage->image);
+            $productimage->image = $path;    
+        }
+        $productimage->update();
+             // dd($productimage);
+        return redirect('productimages');
     }
 
     /**

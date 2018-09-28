@@ -18,32 +18,32 @@
 				</div>
 				<div class="card-body"> 
 					
-					<form action="{{ route('productimages.store') }}" enctype="multipart/form-data" files="true" method="post">
-					@csrf
-					@method('post')
+					<form action="{{ route('productimages.update',$productimages->id) }}" enctype="multipart/form-data" files="true" method="post">
+						@method('put')
+						@csrf
 						<div class="form-group">
 						<label>UMKM</label>
 							<select class="form-control select2" name="product_id">
-								@foreach ($products as $um => $product)
-								<option value="{{ $product->id }}">{{ $product->name }}</option>
+								@foreach ($products as $p => $products)
+								<option value="{{ $products->id }}">{{ $products->name }}</option>
 								@endforeach
 							</select>
 						</div>
 						<div class="form-group">
-							<!-- <img src="{{ asset('storage/uploads/avatars/default.png') }}" class="rounded mx-auto d-block" width="150"> -->
+							<img src="{{ asset('storage/'.$productimages->image) }}" class="rounded mx-auto d-block" width="50">
 							<input type="file" name="image" class="form-control">
 						</div>
 						<div class="form-group">
 							<label>Name</label>
-							<input type="text" class="form-control" name="name" placeholder="type something" required> 
+							<input type="text" class="form-control" name="name"  value="{{ $productimages->name }}"  required> 
 						</div>
 						<div class="form-group">
 							<label>Description</label>
-							<textarea type="text" class="form-control" name="description" placeholder="type something" > </textarea>
+							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $productimages->description}}" > </textarea>
 						</div> 
-					 
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
-					</form>
+						 
+						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
+					</form> 
 					
 				</div>
 			</div>

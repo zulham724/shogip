@@ -29,7 +29,7 @@
 								<option value="{{ $user->id }}">{{ $user->name }}</option>
 								@endforeach
 							</select>
-						</div>
+					</div>
 					<div class="form-group">
 						<label>First name</label>
 						<input type="text" class="form-control" name="first_name" placeholder="type something" required>

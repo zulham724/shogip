@@ -67,6 +67,7 @@ class UserController extends Controller
     public function edit($id)
     {
        $data["users"] = User::find($id);
+       $data['roles'] = Role::get();
        return view('user.edit', $data);
     }
 

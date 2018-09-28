@@ -22,6 +22,14 @@
 				<div class="card-body">
 					<form action="{{ route('users.store') }}" method="post">
 					{{ csrf_field()}} 
+					<div class="form-group">
+						<label>Role ID</label>
+							<select class="form-control select2" name="role_id">
+								@foreach ($roles as $r => $role)
+								<option value="{{ $role->id }}">{{ $role->name }}</option>
+								@endforeach
+							</select>
+					</div>
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 						<label>Name</label>
 						<input id-"name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="type something" required> 
@@ -52,10 +60,6 @@
                                     </span>
                         @endif
 					</div> 
-					<div class="form-group">
-						
-						<input type="text" class="form-control" name="role_id" value="1" placeholder="type something"  hidden="true">
-					</div>
 					<div class="form-group">
 						<label>Confirm Password</label>
 						<input id="pasword-confirm" type="password" class="form-control" name="pasword-confirm" placeholder="type something" required>
