@@ -14,7 +14,7 @@ class Umkm extends Model
         return $this->belongsTo('App\User');
     }
 
-	public function umkmcategori(){
+	public function umkm_category(){
         return $this->belongsTo('App\UmkmCategori');
     }
 

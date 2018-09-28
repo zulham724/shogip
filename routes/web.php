@@ -23,6 +23,11 @@ Route::resources([
 'districts'=>'DistrictController',
 'umkmcategories'=>'UmkmCategoriController',
 'umkms'=>'UmkmController',
+'umkmbiodatas'=>'UmkmBiodataController',
+'achievements'=>'UmkmAchievementController',
+'trainings'=>'UmkmTrainingController',
+'products'=>'ProductController',
+'productimages'=>'ProductImageController',
 ]);
 
 Auth::routes();

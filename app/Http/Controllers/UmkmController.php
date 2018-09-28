@@ -20,7 +20,7 @@ class UmkmController extends Controller
     public function index()
     {
         $data['umkm'] = Umkm::
-        with('umkmcategori','state','city','district')->get();
+        with('umkm_category','state','city','district')->get();
         return view('umkm.index',$data);
     }
 
@@ -75,7 +75,12 @@ class UmkmController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['umkm'] = Umkm::find($id);
+        $data['umkm_categories'] = UmkmCategori::get();
+        $data['states'] = State::get();
+        $data['cities'] = City::get();
+        $data['districts'] = District::get();
+        return view('umkm.edit',$data);
     }
 
     /**
@@ -87,7 +92,11 @@ class UmkmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $umkm = Umkm::find($id);
+        $umkm->fill($request->all());
+        $umkm->update();
+
+        return redirect()->route('umkms.index');
     }
 
     /**
@@ -98,6 +107,7 @@ class UmkmController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Umkm::find($id)->delete();
+        return response()->json($data);
     }
 }

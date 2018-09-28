@@ -16,11 +16,11 @@ class CreateUmkmBiodatasTable extends Migration
         Schema::create('umkm_biodatas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('umkm_id')->unsigned();
-            $table->string('date_of_birth');
+            $table->date('date_of_birth');
             $table->string('founder');
             $table->string('total_employes');
             $table->string('monthly_finance');
-            $table->date('is_has_hki');
+            $table->string('is_has_hki');
             $table->string('is_funded');
             $table->timestamps();
 

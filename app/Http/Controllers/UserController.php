@@ -27,8 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        
-        return view('user.create');
+        $data['roles'] = Role::get();
+        return view('user.create',$data);
     }
 
     /**
@@ -44,7 +44,7 @@ class UserController extends Controller
         // $user->user_id = Auth::user()->id;
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index',$user->user_id);
     }
 
     /**

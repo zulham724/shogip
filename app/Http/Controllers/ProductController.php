@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\State;
-use App\City;
+use App\Umkm;
+use App\Product;
 
-class CityController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        $data['cities'] = City::with('state')->get();
-        return view('city.index', $data);
+        $data['products'] = Product::get();
+        return view('product.index',$data);
     }
 
     /**
@@ -26,8 +26,8 @@ class CityController extends Controller
      */
     public function create()
     {
-        $data['states'] = State::get();
-        return view('city.create',$data);
+        $data['umkm'] = Umkm::get();
+        return view('product.create',$data);
     }
 
     /**
@@ -38,12 +38,11 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-
-        $city = new City;
-        $city->fill($request->all());
-        $city->save();
+        $product = new Product;
+        $product->fill($request->all());
+        $product->save();
         // dd($request);
-        return redirect()->route('cities.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -65,13 +64,10 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        $data['states'] = State::get();
-        $data['cities'] = City::find($id);
-        //  $data["city"] = City::find($id);
-        // // dd($data);
-        // $data["states"] = State::get();
-        // return view('city.edit',$data);
-        return view('city.edit',$data);
+        $data['products'] = Product::find($id);
+        $data['umkm'] = Umkm::get();
+
+        return view('product.edit',$data);
     }
 
     /**
@@ -83,11 +79,11 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $city = City::find($id);
-        $city->fill($request->all());
-        $city->update();
+        $product = Product::find($id);
+        $product->fill($request->all());
+        $product->update();
 
-        return redirect()->route('cities.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -98,7 +94,7 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        $data = City::find($id)->delete();
+        $data = Product::find($id)->delete();
         return response()->json($data);
     }
 }

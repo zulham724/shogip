@@ -26,8 +26,8 @@ class BiodataController extends Controller
      */
     public function create()
     {
-        
-       return view('biodata.create');
+        $data["users"] = User::get();
+       return view('biodata.create',$data);
     }
 
     /**
@@ -43,7 +43,7 @@ class BiodataController extends Controller
         // $biodata->user_id = Auth::user()->id;
         $biodata->save();
 
-        return redirect()->route('biodatas.index');
+        return redirect()->route('biodatas.index',$biodata->user_id);
     }
 
     /**

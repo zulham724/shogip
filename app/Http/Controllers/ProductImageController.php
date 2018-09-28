@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\State;
-use App\City;
+use App\Product;
+use App\ProductImage;
 
-class CityController extends Controller
+class ProductImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class CityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data['cities'] = City::with('state')->get();
-        return view('city.index', $data);
+    {   
+        $data['productimages'] = ProductImage::get();
+        return view('productimage.index',$data);
     }
 
     /**
@@ -26,8 +26,8 @@ class CityController extends Controller
      */
     public function create()
     {
-        $data['states'] = State::get();
-        return view('city.create',$data);
+        $data['products'] = Product::get();
+        return view('productimage.create',$data);
     }
 
     /**
@@ -38,12 +38,15 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
+        $productimage = new ProductImage();
+        $productimage->fill($request->all());
+         if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('productimage');
+            $productimage->image = $path;    
+        }
+        $productimage->save();
 
-        $city = new City;
-        $city->fill($request->all());
-        $city->save();
-        // dd($request);
-        return redirect()->route('cities.index');
+        return redirect('productimages');
     }
 
     /**
@@ -65,13 +68,7 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        $data['states'] = State::get();
-        $data['cities'] = City::find($id);
-        //  $data["city"] = City::find($id);
-        // // dd($data);
-        // $data["states"] = State::get();
-        // return view('city.edit',$data);
-        return view('city.edit',$data);
+        //
     }
 
     /**
@@ -83,11 +80,7 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $city = City::find($id);
-        $city->fill($request->all());
-        $city->update();
-
-        return redirect()->route('cities.index');
+        //
     }
 
     /**
@@ -98,7 +91,7 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        $data = City::find($id)->delete();
+        $data = ProductImage::find($id)->delete();
         return response()->json($data);
     }
 }

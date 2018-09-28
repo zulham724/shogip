@@ -23,8 +23,13 @@
 					<form action="{{ route('biodatas.store') }}" method="post">
 					{{ csrf_field()}} 
 					<div class="form-group">
-						<input type="text" class="form-control" name="user_id" value="1" placeholder="type something"  hidden="true">
-					</div>  
+						<label>User</label>
+							<select class="form-control select2" name="user_id">
+								@foreach ($users as $u => $user)
+								<option value="{{ $user->id }}">{{ $user->name }}</option>
+								@endforeach
+							</select>
+						</div>
 					<div class="form-group">
 						<label>First name</label>
 						<input type="text" class="form-control" name="first_name" placeholder="type something" required>

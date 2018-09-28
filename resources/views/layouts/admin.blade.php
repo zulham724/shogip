@@ -99,7 +99,20 @@
             <li><a href="#umkmdropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>UMKM</a>
               <ul id="umkmdropdown" class="collapse list-unstyled">
                 <li><a href="{{ url('umkmcategories') }}"><i class="fa fa-caret-right"></i>UMKM Category</a></li>
-                <li><a href="{{ url('umkms') }}"><i class="fa fa-caret-right"></i>UMKM</a></li>
+                <li><a href="#datadropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>UMKM Biodata</a>
+                    <ul id="datadropdown" class="collapse list-unstyled">
+                      <li><a href="{{ url('umkms') }}"><i class="fa fa-caret-right"></i>Data UMKM</a></li>
+                      <li><a href="{{ url('umkmbiodatas') }}"><i class="fa fa-caret-right"></i>Biodata</a></li>
+                      <li><a href="{{ url('achievements') }}"><i class="fa fa-caret-right"></i>Achievement</a></li>
+                      <li><a href="{{ url('trainings') }}"><i class="fa fa-caret-right"></i>Training</a></li>
+                      <li><a href="#productdropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>Product</a>
+                        <ul id="productdropdown" class="collapse list-unstyled">
+                          <li><a href="{{ url('products') }}"><i class="fa fa-caret-right"></i>Data Product</a></li>
+                          <li><a href="{{ url('productimages') }}"><i class="fa fa-caret-right"></i>Product Images</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                </li>
                 
               </ul>
             </li>
