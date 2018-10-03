@@ -28,8 +28,8 @@ class CreateUmkmTable extends Migration
             $table->string('facebook');
             $table->string('twitter');
             $table->string('instagram');
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

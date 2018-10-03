@@ -33,8 +33,8 @@
                             <td>Facebook</td>
                             <td>Twiiter</td>
                             <td>Instagram</td>
-                            <!-- <td>Latitude</td>
-                            <td>Longitude</td> -->
+                            <td>Latitude</td>
+                            <td>Longitude</td>
                             <td>Action</td>
                         </tr>
                     </thead>
@@ -54,8 +54,8 @@
                             <td>{{ $umkms->facebook }}</td>
                             <td>{{ $umkms->twitter }}</td>
                             <td>{{ $umkms->instagram }}</td>
-                            <!-- <td>{{ $umkms->latitude }}</td>
-                            <td>{{ $umkms->longitude }}</td> -->
+                            <td>{{ $umkms->latitude }}</td>
+                            <td>{{ $umkms->longitude }}</td>
                               <td>
                                  <center>
                                     <a href="{{ route('umkms.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>

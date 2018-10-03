@@ -110,4 +110,11 @@ class UmkmController extends Controller
         $data = Umkm::find($id)->delete();
         return response()->json($data);
     }
+
+    public function peta($id)
+    {
+         $data['umkm'] = Umkm::with('umkm_category','state','city','district')
+         ->where('city_id',$id)->get();
+        return view('umkm.peta',$data);
+    }
 }

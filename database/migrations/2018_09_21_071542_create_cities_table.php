@@ -19,6 +19,8 @@ class CreateCitiesTable extends Migration
             $table->integer('state_id')->unsigned();
             $table->string('name');
             $table->string('description')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('lng')->nullable();
             $table->timestamps();
 
             $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade')->onUpdate('cascade');

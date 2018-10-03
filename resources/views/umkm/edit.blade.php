@@ -85,14 +85,14 @@
 							<label>Instagram</label>
 							<input type="text" class="form-control" name="instagram"  value="{{ $umkm->instagram }}"  required> 
 						</div> 
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>Latitude</label>
 							<input type="text" class="form-control" name="latitude"  value="{{ $umkm->latitude }}"  required> 
 						</div> 
 						<div class="form-group">
 							<label>Longitude</label>
 							<input type="text" class="form-control" name="longitude"  value="{{ $umkm->longitude }}"  required> 
-						</div> 
+						</div>  -->
 						<!--  -->
 						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
 					</form> 

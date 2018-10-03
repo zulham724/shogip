@@ -93,14 +93,14 @@
 							<label>Instagram</label>
 							<input type="text" class="form-control" name="instagram" placeholder="type something" required> 
 						</div> 
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>Latitude</label>
 							<input type="text" class="form-control" name="latitude" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
 							<label>Longitude</label>
 							<input type="text" class="form-control" name="longitude" placeholder="type something" required> 
-						</div> 
+						</div>  -->
 						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>
 					

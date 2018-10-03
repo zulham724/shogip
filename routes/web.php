@@ -29,6 +29,7 @@ Route::resources([
 'products'=>'ProductController',
 'productimages'=>'ProductImageController',
 ]);
+Route::get('umkm/peta','UmkmController@peta')->name('umkm.peta');
 
 Auth::routes();
 
