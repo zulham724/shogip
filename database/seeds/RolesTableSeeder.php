@@ -12,10 +12,15 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        Role::insert([
-        	"id"=>1,
-        	"name"=>"admin",
-        	"description"=>"admin"
-        ]);
+
+        $data = [
+		    [
+		    	"id"=>1,
+        		"name"=>"admin",
+        		"description"=>"Superadmin"
+        	],
+		];
+
+        Role::insert($data);		
     }
 }
