@@ -22,6 +22,14 @@
                         @method('put')
                         @csrf
                         <div class="form-group">
+                        <label>State</label>
+                            <select class="form-control select2" name="city_id">
+                                @foreach ($cities as $ct => $city)
+                                <option value="{{ $city->id }}" {{$city->id==$districts->city_id ? 'selected':null}}> {{ $city->name }} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control" name="name" placeholder="type something" value="{{ $districts->name }}" required> 
                         </div>
@@ -29,7 +37,7 @@
                             <label>Description</label>
                             <input type="text" class="form-control" name="description" placeholder="type something" value="{{ $districts->description }}"> 
                         </div> 
-                        <button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
+                        <button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
                     </form>
             
                 </div>

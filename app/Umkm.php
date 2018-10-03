@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\UmkmCategori;
 
 class Umkm extends Model
 {
@@ -28,5 +29,9 @@ class Umkm extends Model
 
     public function district(){
         return $this->belongsTo('App\District');
+    }
+
+    public function umkmachievement(){
+        return $this->hasMany('App\UmkmAchievement');
     }
 }

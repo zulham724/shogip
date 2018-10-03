@@ -66,6 +66,7 @@ class DistrictController extends Controller
     public function edit($id)
     {
         $data['districts'] = District::find($id);
+        $data['cities'] = City::get();
         return view('district.edit', $data);
     }
 

@@ -28,7 +28,7 @@
 							<label>Description</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something"></textarea> 
 						</div> 
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
 
 					</form>
 					

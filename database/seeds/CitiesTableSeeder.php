@@ -25,7 +25,7 @@ class CitiesTableSeeder extends Seeder
         //     $city->save();
         // }
 
-        $file = fopen(database_path('csv/cities.csv'),"r");
+        $file = fopen(database_path('csv/city.csv'),"r");
 		$data = array();
 		while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
 		    $data[] = $row;
@@ -35,6 +35,8 @@ class CitiesTableSeeder extends Seeder
             $s->id = $d[0];
             $s->state_id = $d[1];
             $s->name = $d[2];
+            $s->lat = $d[3];
+            $s->lng = $d[4];
             $s->save();
         }
     }

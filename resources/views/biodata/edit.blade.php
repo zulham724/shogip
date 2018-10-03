@@ -39,7 +39,7 @@
 						<label>Identity Number</label>
 						<input type="text" class="form-control" value="{{ $biodatas->identify_number }}"  name="identify_number" placeholder="type something" required> 
 					</div> 
-					<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
+					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>
 		<div class="col-2">
 			

@@ -25,7 +25,7 @@
 						<label>State</label>
 							<select class="form-control select2" name="state_id">
 								@foreach ($states as $st => $state)
-								<option value="{{ $state->id }}">{{ $state->name }}</option>
+								<option value="{{ $state->id }}" {{$state->id==$cities->state_id ? 'selected':null}}> {{ $state->name }} </option>
 								@endforeach
 							</select>
 						</div>
@@ -36,8 +36,17 @@
 						<div class="form-group">
 							<label>Description</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $cities->description}}" > </textarea>
+						</div>
+						<div class="form-group">
+							<label>Latitude</label>
+							<input type="text" class="form-control" name="lat"  value="{{ $cities->lat }}"  required> 
+						</div>
+						<div class="form-group">
+							<label>Longitude</label>
+							<input type="text" class="form-control" name="lng"  value="{{ $cities->lng }}"  required> 
 						</div> 
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
+
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
 					</form> 
 					
 				</div>

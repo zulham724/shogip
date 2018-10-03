@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\umkm;
+use App\State;
+use App\Umkm;
 
 
 class City extends Model

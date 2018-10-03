@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\City;
 
 class District extends Model
 {
-    protected $table = "districts";
+    
     
     protected $guarded = ["id"];
 

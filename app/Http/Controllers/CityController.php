@@ -86,7 +86,7 @@ class CityController extends Controller
         $city = City::find($id);
         $city->fill($request->all());
         $city->update();
-
+        // dd($request);
         return redirect()->route('cities.index');
     }
 

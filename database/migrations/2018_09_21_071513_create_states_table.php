@@ -18,6 +18,8 @@ class CreateStatesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
+            $table->string('lat');
+            $table->string('lng');
             $table->timestamps();
         });
     }

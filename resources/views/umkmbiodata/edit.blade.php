@@ -25,7 +25,7 @@
 						<label>State</label>
 							<select class="form-control select2" name="umkm_id">
 								@foreach ($umkm as $um => $umkms)
-								<option value="{{ $umkms->id }}">{{ $umkms->name }}</option>
+								<option value="{{ $umkms->id }}" {{$umkms->id==$umkm_biodatas->umkm_id ? 'selected':null}}>{{ $umkms->name }}</option>
 								@endforeach
 							</select>
 						</div>
@@ -54,7 +54,7 @@
 							<input type="text" class="form-control" name="is_funded"  value="{{ $umkm_biodatas->is_funded }}"  required> 
 						</div>
 						 
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
 					</form> 
 					
 				</div>

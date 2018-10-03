@@ -45,7 +45,7 @@
 						<label>Password</label>
 						<input type="password" class="form-control" value="{{ $users->password }}"  name="password" placeholder="type something" required> 
 					</div> 
-					<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
+					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 		<div class="col-2">
 			
 		</div>

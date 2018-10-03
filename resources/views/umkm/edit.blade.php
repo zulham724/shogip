@@ -21,11 +21,12 @@
 					<form action="{{ route('umkms.update',$umkm->id) }}" method="post">
 						@method('put')
 						@csrf
+						
 						<div class="form-group">
 						<label>UMKM Category</label>
 							<select class="form-control select2" name="umkm_category_id">
 								@foreach ($umkm_categories as $uc => $umkmcategory)
-								<option value="{{ $umkmcategory->id }}">{{ $umkmcategory->name }}</option>
+								<option value="{{ $umkmcategory->id }}" {{$umkmcategory->id==$umkm->umkm_category_id ? 'selected':null}}> {{ $umkmcategory->name }} </option>
 								@endforeach
 							</select>
 						</div>
@@ -33,7 +34,7 @@
 						<label>State</label>
 							<select class="form-control select2" name="state_id">
 								@foreach ($states as $st => $state)
-								<option value="{{ $state->id }}">{{ $state->name }}</option>
+								<option value="{{ $state->id }}" {{$state->id==$umkm->state_id ? 'selected':null}}>{{ $state->name }}</option>
 								@endforeach
 							</select>
 						</div>
@@ -41,7 +42,7 @@
 						<label>City</label>
 							<select class="form-control select2" name="city_id">
 								@foreach ($cities as $c => $city)
-								<option value="{{ $city->id }}">{{ $city->name }}</option>
+								<option value="{{ $city->id }}" {{$city->id==$umkm->city_id ? 'selected':null}}>{{ $city->name }}</option>
 								@endforeach
 							</select>
 						</div>
@@ -49,7 +50,7 @@
 						<label>District</label>
 							<select class="form-control select2" name="district_id">
 								@foreach ($districts as $d => $district)
-								<option value="{{ $district->id }}">{{ $district->name }}</option>
+								<option value="{{ $district->id }}" {{$district->id==$umkm->district_id ? 'selected':null}}>{{ $district->name }}</option>
 								@endforeach
 							</select>
 						</div>
@@ -94,7 +95,7 @@
 							<input type="text" class="form-control" name="longitude"  value="{{ $umkm->longitude }}"  required> 
 						</div>  -->
 						<!--  -->
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
 					</form> 
 					
 				</div>

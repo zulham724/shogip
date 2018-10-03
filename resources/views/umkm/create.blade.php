@@ -101,7 +101,7 @@
 							<label>Longitude</label>
 							<input type="text" class="form-control" name="longitude" placeholder="type something" required> 
 						</div>  -->
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>
 					
 				</div>

@@ -27,8 +27,16 @@
 						<div class="form-group">
 							<label>Description</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something"></textarea> 
-						</div> 
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button>
+						</div>
+						<div class="form-group">
+							<label>Latitude</label>
+							<input type="text" class="form-control" name="lat" placeholder="type something" required> 
+						</div>
+						<div class="form-group">
+							<label>Longitude</label>
+							<input type="text" class="form-control" name="lng" placeholder="type something" required> 
+						</div>  
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
 
 					</form>
 					

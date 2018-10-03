@@ -42,7 +42,7 @@
 							<input type="date" class="form-control" name="date" placeholder="type something" required> 
 						</div>
 					 
-						<button type="submit" class="btn btn-dark pull-right"><i class="fa fa-check"></i> Submit</button> 
+						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
 					</form>
 					
 				</div>
