@@ -213,22 +213,27 @@
         });
 
         var marker = new google.maps.Marker({
-            position: {
-                lat: -7.3892445, lng: 109.9644581,
-                map: map
-            }
+            position: 
+                { 
+                    lat: -6.9904038, lng: 110.4229455 
+                },
+            map: map
         });
 
-        // var infowindow = new google.maps.InfoWindow;
+        var infowindow = new google.maps.InfoWindow;
         /* marker.addListener('mouseover', function() {
             infowindow.open(map, marker);
          });*/
-        //  google.maps.event.addListener(marker,'mouseover', (function(marker,contentString,infowindow){ 
-        //     return function() {
-        //         infowindow.setContent(contentString);
-        //         infowindow.open(map,marker);
-        //     };
-        // })(marker,contentString,infowindow));
+
+        var contentString = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">Hai</h1>'+ '<div id="bodyContent">'+
+                        '<p>Halo</p>' + '<p><center><span data-toggle="modal" data-target="#modalUmkm"><a type="button" class="btn btn-secondary">Detail</a></span></center></p>';
+         google.maps.event.addListener(marker,'mouseover', (function(marker,contentString,infowindow){ 
+            return function() {
+                infowindow.setContent(contentString);
+                infowindow.open(map,marker);
+            };
+        })(marker,contentString,infowindow));
 
   }
 </script>
