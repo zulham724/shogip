@@ -4,10 +4,15 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+import $ from 'jquery';
+import 'datatables.net';
+import 'select2';
+import 'jquery-bar-rating';
+window.swal = require('sweetalert2');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,6 +21,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('map-component',require('./components/MapComponent.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -23,7 +23,7 @@ class CreateUmkmTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('address')->nullable();
-            $table->integer('cp');
+            $table->bigInteger('cp');
             $table->string('web');
             $table->string('facebook');
             $table->string('twitter');
