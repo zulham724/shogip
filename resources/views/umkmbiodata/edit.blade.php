@@ -22,7 +22,7 @@
 						@method('put')
 						@csrf
 						<div class="form-group">
-						<label>State</label>
+						<label>UMKM</label>
 							<select class="form-control select2" name="umkm_id">
 								@foreach ($umkm as $um => $umkms)
 								<option value="{{ $umkms->id }}" {{$umkms->id==$umkm_biodatas->umkm_id ? 'selected':null}}>{{ $umkms->name }}</option>
