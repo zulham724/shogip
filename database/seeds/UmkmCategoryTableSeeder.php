@@ -17,7 +17,7 @@ class UmkmCategoryTableSeeder extends Seeder
 		    [
 		    	"id"=>1,
         		"name"=>"Food",
-        		"description"=>"Makanan"
+        		"description"=>"Kuliner"
         	],
 
         	[
