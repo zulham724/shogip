@@ -14,8 +14,17 @@ class DatabaseSeeder extends Seeder
     	$this->call([
             RolesTableSeeder::class,
             UsersTableSeeder::class,
+            BiodatasTableSeeder::class,
+            UmkmCategoryTableSeeder::class,
             StatesTableSeeder::class,
             CitiesTableSeeder::class,
+            DistrictTableSeeder::class,
+            UmkmTableSeeder::class,
+            UmkmBiodataTableSeeder::class,
+            UmkmAchievementTableSeeder::class,
+            UmkmTrainingTableSeeder::class,
+            ProductTableSeeder::class,
+            ProductImageTableSeeder::class,
         // $this->call(UsersTableSeeder::class);
                 ]);
     }
