@@ -20,7 +20,7 @@ class UmkmController extends Controller
      */
     public function index()
     {
-        $umkms = Umkm::with('umkm_category','state','city','district')->get();
+        $umkms = Umkm::get();
         return response()->json($umkms);
     }
 
@@ -79,4 +79,20 @@ class UmkmController extends Controller
         $umkm = Umkm::find($id)->delete();
         return response()->json($umkm);
     }
+
+    public function states(){
+        $states = State::withCount('cities')->withCount('umkm')->get();
+        return response()->json($states);
+    }
+
+    public function cities($state_id){
+        $cities = City::where('state_id',$state_id)->withCount('umkm')->get();
+        return response()->json($cities);
+    }
+
+    public function getByCity($city_id){
+        $umkms = Umkm::where('city_id',$city_id)->get();
+        return response()->json($umkms);
+    }
+
 }

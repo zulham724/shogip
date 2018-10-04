@@ -35,6 +35,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+
                         <div id="map"></div>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
                                 <td>Instagram</td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="umkm_content">
                    
                         </tbody>
                     </table>
@@ -82,6 +83,7 @@
             
         </div> 
     </div>
+
 </section>
 @endsection
 @section('script')
@@ -93,9 +95,8 @@
     });
 </script>
 <script>
-      function initMap() {
 
-        var style = [
+    var style = [
              {
                     "featureType": "administrative.province",
                     "elementType": "all",
@@ -206,36 +207,178 @@
                 }
             ];
 
+    var states = [{}];
+
+    var cities = [{}];
+
+    var center = {lat: -7.150975, lng: 110.1402594};
+
+    var zoom = 5;
+
+    function initMap() {
+
+        this.map_states();
+
+
+    }
+
+    function map_states(){
+
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -7.3892445, lng: 109.9644581},
-          zoom: 9,
+          center: center,
+          zoom: zoom,
+          styles: style
+        });
+        axios.get("{{ url('api/umkm/states') }}").then(res=>{
+            states = res.data;
+            // console.log(states);
+
+            $.each(states,(index,s)=>{
+                
+                var marker = new google.maps.Marker({
+                    position: 
+                        { 
+                            lat: parseInt(s.lat), lng: parseInt(s.lng) 
+                        },
+                    map: map
+                });
+
+                var infowindow = new google.maps.InfoWindow;
+
+                var contentString = 
+                "<div id='content'>\
+                     <div class='card'>\
+                        <div class='card-header'>\
+                            <i class='fa fa-pencil'></i> Data UMKM Di "+s.name+"\
+                            <a href=' class='pull-right'>Tampilkan Data UMKM Di "+s.name+"</a>\
+                        </div>\
+                        <div class='card-body'>\
+                            <table class='table table-striped'>\
+                                <tr>\
+                                    <td colspan='2'><i class='fa fa-home'></i>"+ s.cities_count +" Kota Di Daerah "+ s.name +"</td>\
+                                </tr>\
+                                <tr>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/cities/default.jpg')}}'></td>\
+                                    <td>\
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+                                    <a href=' class='pull-right'>Edit</a>\
+                                    </td>\
+                                </tr>\
+                                <tr>\
+                                    <td colspan='2'>\
+                                        <button type='button' class='btn btn-info' onclick='map_cities("+s.lat+","+s.lng+","+s.id+")'><i class='fa fa-search'></i> Masuk </button>\
+                                    </td>\
+                                </tr>\
+                            </table>\
+                        </div>\
+                    </div>\
+                </div>\
+                ";
+                 google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
+                    return function() {
+                        infowindow.setContent(contentString);
+                        infowindow.open(map,marker);
+                    };
+                })(marker,contentString,infowindow));
+                 
+
+            });
+
+        });
+    }
+
+    function map_cities(lat,lng,state_id){
+        
+        center = {lat:lat,lng:lng};
+        zoom+=1;
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: center,
+          zoom: zoom,
           styles: style
         });
 
-        var marker = new google.maps.Marker({
-            position: 
-                { 
-                    lat: -6.9904038, lng: 110.4229455 
-                },
-            map: map
+        //
+        axios.get("{{ url('api/umkm/cities') }}/"+state_id).then(res=>{
+            cities = res.data;
+            // console.log(cities);
+
+            $.each(cities,(index,c)=>{
+
+                var marker = new google.maps.Marker({
+                    position: 
+                        { 
+                            lat: parseInt(c.lat), lng: parseInt(c.lng) 
+                        },
+                    map: map
+                });
+
+                var infowindow = new google.maps.InfoWindow;
+
+                var contentString = 
+                "<div id='content'>\
+                     <div class='card'>\
+                        <div class='card-header'>\
+                            <i class='fa fa-pencil'></i> Data UMKM Di "+c.name+"\
+                            <a href=' class='pull-right'>Tampilkan Data "+c.name+"</a>\
+                        </div>\
+                        <div class='card-body'>\
+                            <table class='table table-striped'>\
+                                <tr>\
+                                    <td colspan='2'><i class='fa fa-home'></i> "+c.umkm_count+" UMKM Di "+c.name+"</td>\
+                                </tr>\
+                                <tr>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/cities/default.jpg')}}'></td>\
+                                    <td>\
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
+                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
+                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
+                                    <a href=' class='pull-right'>Edit</a>\
+                                    </td>\
+                                </tr>\
+                                <tr>\
+                                    <td colspan='2'>\
+                                        <span>\
+                                        <button type='button' class='btn btn-info' onclick='load_umkm("+c.id+")'><i class='fa fa-search'></i> Masuk</button>\
+                                        </span>\
+                                    </td>\
+                                </tr>\
+                            </table>\
+                        </div>\
+                    </div>\
+                </div>\
+                ";
+                 google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 
+                    return function() {
+                        infowindow.setContent(contentString);
+                        infowindow.open(map,marker);
+                    };
+                })(marker,contentString,infowindow));
+
+            });
+
         });
 
-        var infowindow = new google.maps.InfoWindow;
-        /* marker.addListener('mouseover', function() {
-            infowindow.open(map, marker);
-         });*/
+        ///
+    }
 
-        var contentString = '<div id="content">' + '<div id="siteNotice">'+ '</div>'+
-                        '<h1 id="firstHeading" class="firstHeading">Hai</h1>'+ '<div id="bodyContent">'+
-                        '<p>Halo</p>' + '<p><center><span data-toggle="modal" data-target="#modalUmkm"><a type="button" class="btn btn-secondary">Detail</a></span></center></p>';
-         google.maps.event.addListener(marker,'mouseover', (function(marker,contentString,infowindow){ 
-            return function() {
-                infowindow.setContent(contentString);
-                infowindow.open(map,marker);
-            };
-        })(marker,contentString,infowindow));
-
-  }
+    function load_umkm(city_id){
+        // alert('load umkm '+city_id)
+        console.log(city_id);
+        axios.get("{{ url('api/umkms/getByCity') }}/"+city_id).then(res=>{
+            console.log(res)
+            
+            $("#modalUmkm").modal();
+        });
+    }
 </script>
 @endsection
 

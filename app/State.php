@@ -13,4 +13,8 @@ class State extends Model
     public function cities(){
         return $this->hasMany('App\City');
     }
+
+    public function umkm(){
+    	return $this->hasManyThrough('App\Umkm','App\City');
+    }
 }

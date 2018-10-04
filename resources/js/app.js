@@ -22,6 +22,7 @@ window.swal = require('sweetalert2');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('map-component',require('./components/MapComponent.vue'));
+Vue.component('pin-component',require('./components/PinComponent.vue'));
 
 const app = new Vue({
     el: '#app'
