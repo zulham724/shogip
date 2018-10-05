@@ -25,7 +25,7 @@
 						<label>UMKM</label>
 							<select class="form-control select2" name="umkm_id">
 								@foreach ($umkm as $um => $umkms)
-								<option value="{{ $umkms->id }}">{{ $umkms->name }}</option>
+								<option value="{{ $umkms->id }}" {{$umkms->id==$products->umkm_id ? 'selected':null}}> {{ $umkms->name }} </option>
 								@endforeach
 							</select>
 						</div>

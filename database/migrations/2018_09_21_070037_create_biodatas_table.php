@@ -18,7 +18,7 @@ class CreateBiodatasTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('birth_of_date');
+            $table->date('birth_of_date');
             $table->string('province_id');
             $table->string('city_id');
             $table->string('district_id');

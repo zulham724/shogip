@@ -38,9 +38,9 @@ class BiodatasTableSeeder extends Seeder
         		"city_id"=>"Semarang",
         		"district_id"=>"Gunung Pati",
         		"identify_number"=>"45252"
-        	],
-		];
+		],
 
+        	];
         Biodata::insert($data);		
     }
 }

@@ -16,6 +16,7 @@
 		<div class="col-8">
 			<div class="card">
 				<div class="card-header">
+					<a href="{{ url('users') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
 					<h5 class="pull-right">Form Edit User</h5>
 				</div>
 				<div class="card-body">

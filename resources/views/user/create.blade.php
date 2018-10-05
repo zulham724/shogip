@@ -17,6 +17,7 @@
 		<div class="col-8">
 			<div class="card">
 				<div class="card-header">
+					<a href="{{ url('users') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
 					<h5 class="pull-right">Form User</h5>
 				</div>
 				<div class="card-body">
@@ -32,7 +33,7 @@
 					</div>
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 						<label>Name</label>
-						<input id-"name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="type something" required> 
+						<input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="type something" required> 
 
 						@if ($errors->has('name'))
                                     <span class="help-block">

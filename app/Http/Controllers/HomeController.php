@@ -30,4 +30,11 @@ class HomeController extends Controller
         // dd($data);
         return view('home',$data);
     }
+
+    public function biodata()
+    {
+        
+        // dd($data);
+        return view('biodata');
+    }
 }

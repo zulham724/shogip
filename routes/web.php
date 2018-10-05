@@ -34,3 +34,4 @@ Route::get('umkm/peta','UmkmController@peta')->name('umkm.peta');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/biodata', 'HomeController@biodata')->name('biodata');

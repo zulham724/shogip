@@ -18,8 +18,8 @@ class CreateUmkmBiodatasTable extends Migration
             $table->integer('umkm_id')->unsigned();
             $table->date('date_of_birth');
             $table->string('founder');
-            $table->string('total_employes');
-            $table->string('monthly_finance');
+            $table->integer('total_employes');
+            $table->bigInteger('monthly_finance');
             $table->string('is_has_hki');
             $table->string('is_funded');
             $table->timestamps();
