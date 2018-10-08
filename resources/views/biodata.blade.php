@@ -93,8 +93,79 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                      <div role="tabpanel" class="tab-pane fade in active" id="profile">asaaaa</div>
-                      <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
+                      <div role="tabpanel" class="tab-pane fade in active" id="profile">
+                          <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    
+                    <h5 class="pull-right">Achievement</h5>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        @method('put')
+                        @csrf
+                    <div class="form-group">
+                        <label>UMKM ID</label>
+                        <input type="text" class="form-control" value=""  name="first_name" placeholder="type something" required> 
+                    </div> 
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" value=""  name="last_name" placeholder="type something" required> 
+                    </div>
+                    <div class="form-group">
+                        <label>Dekripsi</label>
+                        <input type="text" class="form-control" value=""  name="province_id" placeholder="type something" required> 
+                    </div> 
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input type="text" class="form-control" value=""  name="identify_number" placeholder="type something" required> 
+                    </div> 
+                   
+                    </form>
+        
+                </div>
+            </div>
+        </div>
+        <!-- -->
+    </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="buzz">
+                          <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    
+                    <h5 class="pull-right">Training</h5>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        @method('put')
+                        @csrf
+                    <div class="form-group">
+                        <label>UMKM ID</label>
+                        <input type="text" class="form-control" value=""  name="first_name" placeholder="type something" required> 
+                    </div> 
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" value=""  name="last_name" placeholder="type something" required> 
+                    </div>
+                    <div class="form-group">
+                        <label>Dekripsi</label>
+                        <input type="text" class="form-control" value=""  name="province_id" placeholder="type something" required> 
+                    </div> 
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input type="text" class="form-control" value=""  name="identify_number" placeholder="type something" required> 
+                    </div> 
+                   
+                    </form>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+                      </div>
                       
                     </div>
                 </div>

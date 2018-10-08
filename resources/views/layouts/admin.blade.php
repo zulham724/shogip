@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin Shogip</title>
+    <title>Admin Shogit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -65,7 +65,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="{{ asset('distribution/img/avatar-1.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h3">Shogip</h1>
+              <h1 class="h3">Shogit</h1>
               <p>Web Designer</p>
             </div>
           </div>
