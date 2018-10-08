@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin Shogit</title>
+    <title>Admin Shogip</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="{{ asset('distribution/css/style.default.css') }}" id="theme-stylesheet">
-    <!-- -->
-    
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{ asset('distribution/css/custom.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -65,7 +63,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="{{ asset('distribution/img/avatar-1.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h3">Shogit</h1>
+              <h1 class="h3">Shogip</h1>
               <p>Web Designer</p>
             </div>
           </div>

@@ -51,7 +51,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $requests
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -59,7 +59,13 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->fill($request->all());
+        if($request->hasFile('avatar')){
+            $path = $request->file('avatar')->store('uploads/avatars');
+            $file = Storage::delete($user->avatar);
+            $user->avatar = $path;
+        }
         $user->update();
+        dd($user);
 
         return response()->json($user);
     }

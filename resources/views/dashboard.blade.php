@@ -1,41 +1,24 @@
-
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('css')
-<style>
-  #map {
-    height:500px;
-    width: 100%;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+<style type="text/css">
+    #map {
+        height:500px;
+        width: 100%;
+      }
 </style>
 @endsection
 
 @section('content')
-<div class="page-header">
-  <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Dashboard</h2>
-  </div>
-</div>
 
-<section>
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header"><i class="fa fa-map"></i> Peta Sebaran UMKM <button class="btn btn-info pull-right" onclick="map_states()"> <i class="fa fa-arrow-left"></i></button> </div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
+                       
                         <div id="map"></div>
 
                     </div>
@@ -65,19 +48,9 @@
             
         </div> 
     </div>
-
-</section>
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(()=>{s
-        if({!! $login !!}){
-            swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
-        }
-    });
-</script>
-<script>
-
     var style = [
              {
                     "featureType": "administrative.province",
@@ -199,6 +172,8 @@
 
     var zoom = 5;
 
+
+
     $(()=>{
         
     });
@@ -206,7 +181,7 @@
     function initMap() {
 
         this.map_states();
-
+        console.log('woi');
 
     }
 
@@ -217,9 +192,12 @@
           zoom:5,
           styles: style
         });
+        if(map){
+            console.log('map woi');
+        }
         axios.get("{{ url('api/umkm/states') }}").then(res=>{
             states = res.data;
-            // console.log(states);
+            console.log(states);
 
             $.each(states,(index,s)=>{
                 
@@ -358,6 +336,7 @@
         
     }
 
+    
     function load_umkm(city_id){
         // alert('load umkm '+city_id)
         console.log(city_id);
@@ -383,7 +362,7 @@
                     {data:'facebook',title:'Facebook'},
                     {data:'twitter',title:'Twiter'},
                     {data:'instagram',title:'Instagram'},
-                    {defaultContent:"<button type='button' class='btn btn-info' href='#' ><i class='fa fa-pencil'></i> Lihat Biodata</button>",title:'Aksi'}
+                   
                 ]
             });
 
@@ -394,6 +373,6 @@
             $("#modalUmkm").modal();
         });
     }
-</script>
+</script>   
 @endsection
 

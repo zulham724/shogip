@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use App\Role;
 use App\Biodata;
@@ -80,9 +81,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $user = User::find($id);
-       $user->fill($request->all());
-       $user->update();
+        // dd($request);
+        $user = User::find($id);
+        $user->fill($request->all());
+        if($request->hasFile('avatar')){
+            $path = $request->file('avatar')->store('uploads/avatars');
+            $file = Storage::delete($user->avatar);
+            $user->avatar = $path;
+            // dd("yey",$user);
+        }
+        // dd("stop",$user);
+        $user->update();
 
        return redirect()->route('users.index');
     }

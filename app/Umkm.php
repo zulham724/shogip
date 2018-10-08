@@ -30,7 +30,15 @@ class Umkm extends Model
         return $this->belongsTo('App\District');
     }
 
-    public function umkmachievement(){
+    public function umkmachievements(){
         return $this->hasMany('App\UmkmAchievement');
     }
+    public function umkmatrainings(){
+        return $this->hasMany('App\UmkmTraining');
+    }
+    public function umkm_biodata(){
+        return $this->hasOne('App\UmkmBiodata');
+    }
+
+
 }

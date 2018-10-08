@@ -9,6 +9,9 @@ use App\UmkmCategori;
 use App\State;
 use App\City;
 use App\District;
+use App\Biodata;
+use App\UmkmAchievement;
+use App\UmkmTraining;
 
 class UmkmController extends Controller
 {
@@ -65,7 +68,9 @@ class UmkmController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['umkm'] = Umkm::with('umkm_biodata','city','umkmachievements','umkmatrainings','user')->find($id);
+        // dd($data);
+        return view('biodata',$data);
     }
 
     /**

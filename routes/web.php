@@ -12,26 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::resources([
-'users'=>'UserController',
-'biodatas'=>'BiodataController',
-'states'=>'StateController',
-'cities'=>'CityController',
-'districts'=>'DistrictController',
-'umkmcategories'=>'UmkmCategoriController',
-'umkms'=>'UmkmController',
-'umkmbiodatas'=>'UmkmBiodataController',
-'achievements'=>'UmkmAchievementController',
-'trainings'=>'UmkmTrainingController',
-'products'=>'ProductController',
-'productimages'=>'ProductImageController',
+	'users'=>'UserController',
+	'biodatas'=>'BiodataController',
+	'states'=>'StateController',
+	'cities'=>'CityController',
+	'districts'=>'DistrictController',
+	'umkmcategories'=>'UmkmCategoriController',
+	'umkms'=>'UmkmController',
+	'umkmbiodatas'=>'UmkmBiodataController',
+	'achievements'=>'UmkmAchievementController',
+	'trainings'=>'UmkmTrainingController',
+	'products'=>'ProductController',
+	'productimages'=>'ProductImageController',
 ]);
 Route::get('umkm/peta','UmkmController@peta')->name('umkm.peta');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/biodata', 'HomeController@biodata')->name('biodata');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

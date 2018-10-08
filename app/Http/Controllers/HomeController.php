@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\City;
 use App\Umkm;
 use App\State;
+use App\Biodata;
+use App\UmkmAchievement;
+use App\UmkmTraining;
 
 class HomeController extends Controller
 {
@@ -31,9 +34,11 @@ class HomeController extends Controller
         return view('home',$data);
     }
 
-    public function biodata()
+    
+
+    public function biodata($umkm_id)
     {
-        
+        $data['biodatas'] = Biodata::where('umkm_id',$Umkm_id)->get();
         // dd($data);
         return view('biodata');
     }
