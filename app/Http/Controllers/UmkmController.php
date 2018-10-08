@@ -21,6 +21,7 @@ class UmkmController extends Controller
     {
         $data['umkm'] = Umkm::
         with('umkm_category','state','city','district')->get();
+        
         return view('umkm.index',$data);
     }
 

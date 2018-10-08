@@ -91,7 +91,7 @@ class UmkmController extends Controller
     }
 
     public function getByCity($city_id){
-        $umkms = Umkm::where('city_id',$city_id)->get();
+        $umkms = Umkm::where('city_id',$city_id)->with('umkm_category','state','city','district')->get();
         return response()->json($umkms);
     }
 

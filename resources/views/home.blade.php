@@ -27,7 +27,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header"><i class="fa fa-map"></i> Peta Sebaran UMKM <button class="btn btn-info pull-right" onclick="map_states()"> <i class="fa fa-arrow-left"></i></button> </div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -37,6 +37,7 @@
                         @endif
 
                         <div id="map"></div>
+
                     </div>
                 </div>
             </div>
@@ -55,27 +56,8 @@
                         <h2>Data UMKM</h2>
                     </div>
                     <div class="table-responsive">
-                    <table class="table table-striped datatable">
-                        <thead>
-                            <tr>
-                                <td>No</td>
-                                <td>UMKM Category</td>
-                                <td>State</td>
-                                <td>City</td>
-                                <td>District</td>
-                                <td>Name</td>
-                                <td>Description</td>
-                                <td>Address</td>
-                                <td>CP</td>
-                                <td>Web</td>
-                                <td>Facebook</td>
-                                <td>Twiiter</td>
-                                <td>Instagram</td>
-                            </tr>
-                        </thead>
-                        <tbody id="umkm_content">
-                   
-                        </tbody>
+                    <table class="table table-striped customdatatable">
+                       
                     </table>
                     </div>
                 </div>
@@ -88,7 +70,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(()=>{
+    $(()=>{s
         if({!! $login !!}){
             swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
         }
@@ -211,9 +193,55 @@
 
     var cities = [{}];
 
-    var center = {lat: -7.150975, lng: 110.1402594};
+    var umkms = [{
+        umkm_category:{
+            name:null
+        },
+        state:{
+            name:null
+        },
+        city:{
+            name:null
+        },
+        district:{
+            name:null
+        },
+        name:null,
+        description:null,
+        address:null,
+        cp:null,
+        web:null,
+        facebook:null,
+        twitter:null,
+        instagram:null
+    } ];
+
+    var center = {lat: -4.8234002, lng: 117.1941047};
 
     var zoom = 5;
+
+    var table = $(".customdatatable");
+
+    $(()=>{
+        $(".customdatatable").DataTable({   
+            data:umkms,
+            columns:[
+                {data:'umkm_category.name',title:'Kategori UMKM'},
+                {data:'state.name',title:'Provinsi'},
+                {data:'city.name',title:'Kota'},
+                {data:'district.name',title:'Wilayah'},
+                {data:'name',title:'Nama'},
+                {data:'description',title:'Deskripsi'},
+                {data:'address',title:'Alamat'},
+                {data:'cp',title:'No Telpon'},
+                {data:'web',title:'Web'},
+                {data:'facebook',title:'Facebook'},
+                {data:'twitter',title:'Twiter'},
+                {data:'instagram',title:'Instagram'},
+                {defaultContent:"<a type='button' class='btn btn-info' href='{{ url('umkms') }}'><i class='fa fa-pencil'></i> Lihat Biodata</a>",title:'Aksi'}
+            ]
+        });
+    });
 
     function initMap() {
 
@@ -225,8 +253,8 @@
     function map_states(){
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: center,
-          zoom: zoom,
+          center: {lat: -4.8234002, lng: 117.1941047},
+          zoom:5,
           styles: style
         });
         axios.get("{{ url('api/umkm/states') }}").then(res=>{
@@ -293,7 +321,7 @@
     }
 
     function map_cities(lat,lng,state_id){
-        
+
         center = {lat:lat,lng:lng};
         zoom+=1;
 
@@ -374,7 +402,8 @@
         // alert('load umkm '+city_id)
         console.log(city_id);
         axios.get("{{ url('api/umkms/getByCity') }}/"+city_id).then(res=>{
-            console.log(res)
+            console.log(res.data);
+            umkms = res.data;
             
             $("#modalUmkm").modal();
         });
