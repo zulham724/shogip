@@ -32,7 +32,7 @@
 							</select>
 					</div>
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-						<label>Name</label>
+						<label>Nama</label>
 						<input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="type something" required> 
 
 						@if ($errors->has('name'))

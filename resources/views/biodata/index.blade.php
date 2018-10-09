@@ -19,10 +19,10 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>First Name</td>
-                            <td>Last Name</td>
-                            <td>Provice</td>
-                            <td>Identity Number</td>
+                            <td>Nama Depan</td>
+                            <td>Nama Belakang</td>
+                            <td>Provinsi</td>
+                            <td>Nomor Identitas</td>
                             <td>Action</td>
     					</tr>
     				</thead>

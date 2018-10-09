@@ -22,7 +22,7 @@
 					@csrf
 					@method('post')
 						<div class="form-group">
-						<label>UMKM</label>
+						<label>Nama UMKM</label>
 							<select class="form-control select2" name="umkm_id">
 								@foreach ($umkm as $um => $umkms)
 								<option value="{{ $umkms->id }}">{{ $umkms->name }}</option>
@@ -30,15 +30,15 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Name</label>
+							<label>Nama</label>
 							<input type="text" class="form-control" name="name" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
-							<label>Description</label>
+							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" > </textarea>
 						</div> 
 						<div class="form-group">
-							<label>Date</label>
+							<label>Tanggal</label>
 							<input type="date" class="form-control" name="date" placeholder="type something" required> 
 						</div>
 					 

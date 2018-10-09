@@ -22,7 +22,7 @@
 						@method('put')
 						@csrf
 						<div class="form-group">
-						<label>UMKM</label>
+						<label>Nama UMKM</label>
 							<select class="form-control select2" name="umkm_id">
 								@foreach ($umkm as $um => $umkms)
 								<option value="{{ $umkms->id }}" {{$umkms->id==$umkm_trainings->umkm_id ? 'selected':null}}> {{ $umkms->name }} </option>
@@ -30,15 +30,15 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Name</label>
+							<label>Nama</label>
 							<input type="text" class="form-control" name="name"  value="{{ $umkm_trainings->name }}"  required> 
 						</div>
 						<div class="form-group">
-							<label>Description</label>
+							<label>Dekripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $umkm_trainings->description}}" > </textarea>
 						</div> 
 						<div class="form-group">
-							<label>Date</label>
+							<label>Tanggal</label>
 							<input type="date" class="form-control" name="date"  value="{{ $umkm_trainings->date }}"  required> 
 						</div>
 						 

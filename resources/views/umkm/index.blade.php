@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <i class="fa fa-flag"></i> UMKM List
+            <i class="fa fa-flag"></i> List UMKM
             <a href="{{ route('umkms.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
             
         </div>
@@ -21,14 +21,14 @@
                     <thead>
                         <tr>
                             <td>No</td>
-                            <td>UMKM Category</td>
-                            <td>State</td>
-                            <td>City</td>
-                            <td>District</td>
-                            <td>Name</td>
-                            <td>Description</td>
-                            <td>Address</td>
-                            <td>CP</td>
+                            <td>Nama UMKM</td>
+                            <td>Kategori UMKM</td>
+                            <td>Provinsi</td>
+                            <td>Kota</td>
+                            <td>Distrik/Daerah</td>
+                            <td>Deskripsi</td>
+                            <td>Alamat</td>
+                            <td>Kontak Telepon / WA</td>
                             <td>Web</td>
                             <td>Facebook</td>
                             <td>Twiiter</td>
@@ -42,11 +42,11 @@
                        @foreach ($umkm as $um => $umkms)
                         <tr>
                             <td>{{ $um+1 }}</td>
+                            <td>{{ $umkms->name }}</td>
                             <td>{{ $umkms->umkm_category->name }}</td>
                             <td>{{ $umkms->state->name }}</td>
                             <td>{{ $umkms->city->name }}</td>
                             <td>{{ $umkms->district->name }}</td>
-                            <td>{{ $umkms->name }}</td>
                             <td>{{ $umkms->description }}</td>
                             <td>{{ $umkms->address }}</td>
                             <td>{{ $umkms->cp }}</td>

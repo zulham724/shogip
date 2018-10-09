@@ -21,13 +21,13 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>UMKM</td>
-    						<td>Date</td>
-    						<td>Founder</td>
-                            <td>Total Employes</td>
-                            <td>Monthly Finance</td>
+                            <td>Nama UMKM</td>
+    						<td>Tanggal</td>
+    						<td>Pendiri</td>
+                            <td>Jumlah Anggota</td>
+                            <td>Keuangan Bulanan</td>
                             <td>Is Has Hki</td>
-                            <td>Is Funded</td>
+                            <td>Di Danai</td>
     						<td>Action</td>
     					</tr>
     				</thead>

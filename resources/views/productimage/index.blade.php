@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Product Image</h2>
+    <h2 class="h5 no-margin-bottom">Gambar Product</h2>
   </div>
 </div>
 
@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="card">
     	<div class="card-header">
-    		<i class="fa fa-flag"></i> Product Image List
+    		<i class="fa fa-flag"></i> List Gambar Product
     		<a href="{{ route('productimages.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
             
     	</div>
@@ -21,10 +21,10 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>Product</td>
-    						<td>Image</td>
-                            <td>Name</td>
-                            <td>Description</td>
+                            <td>Nama Product</td>
+    						<td>Gambar</td>
+                            <td>Nama</td>
+                            <td>Deskripsi</td>
     						<td>Action</td>
     					</tr>
     				</thead>

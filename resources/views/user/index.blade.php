@@ -20,7 +20,7 @@
     					<tr>
     						<td>No</td>
                             <td>Role</td>
-                            <td>Name</td>
+                            <td>Nama</td>
                             <td>Email</td>
     						<td>Action</td>
     					</tr>

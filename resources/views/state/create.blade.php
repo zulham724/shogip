@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">States</h2>
+    <h2 class="h5 no-margin-bottom">Provinsi</h2>
   </div>
 </div>
 
@@ -21,11 +21,11 @@
 					<form action="{{ route('states.store') }}" method="post">
 					{{ csrf_field()}} 
 						<div class="form-group">
-							<label>Name</label>
+							<label>Nama Provinsi</label>
 							<input type="text" class="form-control" name="name" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
-							<label>Description</label>
+							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something"></textarea> 
 						</div>
 						<div class="form-group">

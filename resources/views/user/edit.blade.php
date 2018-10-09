@@ -35,7 +35,7 @@
 							</select>
 					</div> 
 					<div class="form-group">
-						<label>Name</label>
+						<label>Nama</label>
 						<input type="text" class="form-control" value="{{ $users->name }}"  name="name" placeholder="type something" required> 
 					</div>
 					<div class="form-group">

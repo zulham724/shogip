@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Cities</h2>
+    <h2 class="h5 no-margin-bottom">Kota</h2>
   </div>
 </div>
 
@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="card">
     	<div class="card-header">
-    		<i class="fa fa-flag"></i> Cities List
+    		<i class="fa fa-flag"></i> List Kota
     		<a href="{{ route('cities.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
             
     	</div>
@@ -21,9 +21,9 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>State</td>
-    						<td>City</td>
-    						<td>Description</td>
+                            <td>Provinsi</td>
+    						<td>Kota</td>
+    						<td>Deskripsi</td>
     						<td>Action</td>
     					</tr>
     				</thead>

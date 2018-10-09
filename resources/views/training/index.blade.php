@@ -21,10 +21,10 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>UMKM</td>
-    						<td>Name</td>
-                            <td>Description</td>
-                            <td>Date</td>
+                            <td>Nama UMKM</td>
+    						<td>Nama</td>
+                            <td>Deskripsi</td>
+                            <td>Tanggal</td>
     						<td>Action</td>
     					</tr>
     				</thead>

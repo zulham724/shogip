@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Product Image</h2>
+    <h2 class="h5 no-margin-bottom">Gambar Product</h2>
   </div>
 </div>
 
@@ -22,7 +22,7 @@
 						@method('put')
 						@csrf
 						<div class="form-group">
-						<label>UMKM</label>
+						<label>Nama Product</label>
 							<select class="form-control select2" name="product_id">
 								@foreach ($products as $p => $products)
 								<option value="{{ $products->id }}" {{$products->id==$productimages->product_id ? 'selected':null}}> {{ $products->name }} </option>
@@ -30,15 +30,16 @@
 							</select>
 						</div>
 						<div class="form-group">
+							<label>Gambar</label>
 							<img src="{{ asset('storage/'.$productimages->image) }}" class="rounded mx-auto d-block" width="50">
 							<input type="file" name="image" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Name</label>
+							<label>Nama</label>
 							<input type="text" class="form-control" name="name"  value="{{ $productimages->name }}"  required> 
 						</div>
 						<div class="form-group">
-							<label>Description</label>
+							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $productimages->description}}" > </textarea>
 						</div> 
 						 

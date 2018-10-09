@@ -21,9 +21,9 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>UMKM</td>
-    						<td>Name</td>
-                            <td>Description</td>
+                            <td>Nama UMKM</td>
+    						<td>Nama Product</td>
+                            <td>Deskripsi</td>
     						<td>Action</td>
     					</tr>
     				</thead>

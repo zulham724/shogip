@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Biodata</h2>
+    <h2 class="h5 no-margin-bottom">Biodata UMKM</h2>
   </div>
 </div>
 
@@ -22,7 +22,7 @@
 					@csrf
 					@method('post')
 						<div class="form-group">
-						<label>UMKM</label>
+						<label>Nama UMKM</label>
 							<select class="form-control select2" name="umkm_id">
 								@foreach ($umkm as $um => $umkms)
 								<option value="{{ $umkms->id }}">{{ $umkms->name }}</option>
@@ -30,19 +30,19 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Date</label>
+							<label>Tanggal </label>
 							<input type="date" class="form-control" name="date_of_birth" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
-							<label>Founder</label>
+							<label>Pendiri</label>
 							<input type="text" class="form-control" name="founder" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
-							<label>Total Employes</label>
+							<label>Jumlah Anggota</label>
 							<input type="text" class="form-control" name="total_employes" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
-							<label>monthly Finance</label>
+							<label>Keuangan Bulanan</label>
 							<input type="text" class="form-control" name="monthly_finance" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
@@ -50,7 +50,7 @@
 							<input type="text" class="form-control" name="is_has_hki" placeholder="type something" required> 
 						</div>
 						<div class="form-group">
-							<label>Is Funded</label>
+							<label>Didanai</label>
 							<input type="text" class="form-control" name="is_funded" placeholder="type something" required> 
 						</div>
 					 

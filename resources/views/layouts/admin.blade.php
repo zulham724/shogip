@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin Shogip</title>
+    <title>Admin Shogit</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -63,7 +63,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="{{ asset('distribution/img/avatar-1.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h3">Shogip</h1>
+              <h1 class="h3">Shogit</h1>
               <p>Web Designer</p>
             </div>
           </div>
@@ -84,15 +84,15 @@
 
             <li><a href="#areadropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>Wilayah</a>
               <ul id="areadropdown" class="collapse list-unstyled">
-                <li><a href="{{ url('states') }}"><i class="fa fa-caret-right"></i>State</a></li>
-                <li><a href="{{ url('cities') }}"><i class="fa fa-caret-right"></i>City</a></li>
-                <li><a href="{{ url('districts') }}"><i class="fa fa-caret-right"></i>Distirct</a></li>
+                <li><a href="{{ url('states') }}"><i class="fa fa-caret-right"></i>Provinsi</a></li>
+                <li><a href="{{ url('cities') }}"><i class="fa fa-caret-right"></i>Kota</a></li>
+                <li><a href="{{ url('districts') }}"><i class="fa fa-caret-right"></i>Distrik/Daerah</a></li>
               </ul>
             </li>
 
             <li><a href="#umkmdropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>UMKM</a>
               <ul id="umkmdropdown" class="collapse list-unstyled">
-                <li><a href="{{ url('umkmcategories') }}"><i class="fa fa-caret-right"></i>UMKM Category</a></li>
+                <li><a href="{{ url('umkmcategories') }}"><i class="fa fa-caret-right"></i>Kategori UMKM</a></li>
                 <li><a href="#datadropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>UMKM Biodata</a>
                     <ul id="datadropdown" class="collapse list-unstyled">
                       <li><a href="{{ url('umkms') }}"><i class="fa fa-caret-right"></i>Data UMKM</a></li>
@@ -102,7 +102,7 @@
                       <li><a href="#productdropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>Product</a>
                         <ul id="productdropdown" class="collapse list-unstyled">
                           <li><a href="{{ url('products') }}"><i class="fa fa-caret-right"></i>Data Product</a></li>
-                          <li><a href="{{ url('productimages') }}"><i class="fa fa-caret-right"></i>Product Images</a></li>
+                          <li><a href="{{ url('productimages') }}"><i class="fa fa-caret-right"></i>Gambar Product</a></li>
                         </ul>
                       </li>
                     </ul>

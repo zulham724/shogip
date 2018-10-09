@@ -23,7 +23,7 @@
 						@csrf
 						
 						<div class="form-group">
-						<label>UMKM Category</label>
+						<label>Kategori UMKM</label>
 							<select class="form-control select2" name="umkm_category_id">
 								@foreach ($umkm_categories as $uc => $umkmcategory)
 								<option value="{{ $umkmcategory->id }}" {{$umkmcategory->id==$umkm->umkm_category_id ? 'selected':null}}> {{ $umkmcategory->name }} </option>
@@ -31,7 +31,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-						<label>State</label>
+						<label>Provinsi</label>
 							<select class="form-control select2" name="state_id">
 								@foreach ($states as $st => $state)
 								<option value="{{ $state->id }}" {{$state->id==$umkm->state_id ? 'selected':null}}>{{ $state->name }}</option>
@@ -39,7 +39,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-						<label>City</label>
+						<label>Kota</label>
 							<select class="form-control select2" name="city_id">
 								@foreach ($cities as $c => $city)
 								<option value="{{ $city->id }}" {{$city->id==$umkm->city_id ? 'selected':null}}>{{ $city->name }}</option>
@@ -47,7 +47,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-						<label>District</label>
+						<label>Distrik/Daerah</label>
 							<select class="form-control select2" name="district_id">
 								@foreach ($districts as $d => $district)
 								<option value="{{ $district->id }}" {{$district->id==$umkm->district_id ? 'selected':null}}>{{ $district->name }}</option>
@@ -55,19 +55,19 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Name</label>
+							<label>Nama UMKM</label>
 							<input type="text" class="form-control" name="name"  value="{{ $umkm->name }}"  required> 
 						</div>
 						<div class="form-group">
-							<label>Description</label>
+							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $umkm->description}}" > </textarea>
 						</div> 
 						<div class="form-group">
-							<label>Address</label>
+							<label>Alamat</label>
 							<textarea type="text" class="form-control" name="address" placeholder="type something" value="{{ $umkm->address}}" > </textarea>
 						</div>
 						<div class="form-group">
-							<label>CP</label>
+							<label>Kontak Telepon / WA</label>
 							<input type="text" class="form-control" name="cp"  value="{{ $umkm->cp }}"  required> 
 						</div> 
 						<div class="form-group">

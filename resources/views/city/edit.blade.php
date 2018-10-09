@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">City</h2>
+    <h2 class="h5 no-margin-bottom">Kota</h2>
   </div>
 </div>
 
@@ -22,7 +22,7 @@
 						@method('put')
 						@csrf
 						<div class="form-group">
-						<label>State</label>
+						<label>Provinsi</label>
 							<select class="form-control select2" name="state_id">
 								@foreach ($states as $st => $state)
 								<option value="{{ $state->id }}" {{$state->id==$cities->state_id ? 'selected':null}}> {{ $state->name }} </option>
@@ -30,11 +30,11 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Name</label>
+							<label>Nama Kota</label>
 							<input type="text" class="form-control" name="name"  value="{{ $cities->name }}"  required> 
 						</div>
 						<div class="form-group">
-							<label>Description</label>
+							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $cities->description}}" > </textarea>
 						</div>
 						<div class="form-group">

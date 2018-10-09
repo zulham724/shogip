@@ -32,31 +32,31 @@
 							</select>
 					</div>
 					<div class="form-group">
-						<label>First name</label>
+						<label>Nama Depan</label>
 						<input type="text" class="form-control" name="first_name" placeholder="type something" required>
 					</div>
 					<div class="form-group">
-						<label>Last name</label>
+						<label>Nama Belakang</label>
 						<input type="text" class="form-control" name="last_name" placeholder="type something" required>
 					</div>			
 					<div class="form-group">
-						<label>Birth of date</label>
+						<label>Tanggal Lahir</label>
 						<input type="date" class="form-control" name="birth_of_date" placeholder="type something" required>
 					</div>
 					<div class="form-group">
-						<label>Province</label>
+						<label>Provinsi</label>
 						<input type="text" class="form-control" name="province_id" placeholder="type something" required>
 					</div>
 					<div class="form-group">
-						<label>City</label>
+						<label>Kota</label>
 						<input type="text" class="form-control" name="city_id" placeholder="type something" required> 
 					</div>
 					<div class="form-group">
-						<label>District</label>
+						<label>Distrik / Daerah</label>
 						<input type="text" class="form-control" name="district_id" placeholder="type something" required> 
 					</div> 
 					<div class="form-group">
-						<label>iIdentity Number</label>
+						<label>Nomor Identitas</label>
 						<input type="text" class="form-control" name="identify_number" placeholder="type something" required> 
 					</div>			
 					

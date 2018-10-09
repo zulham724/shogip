@@ -25,19 +25,19 @@
 						@csrf
 
 					<div class="form-group">
-						<label>First Name</label>
+						<label>Nama Depan</label>
 						<input type="text" class="form-control" value="{{ $biodatas->first_name }}"  name="first_name" placeholder="type something" required> 
 					</div> 
 					<div class="form-group">
-						<label>Last Name</label>
+						<label>Nama Belakang</label>
 						<input type="text" class="form-control" value="{{ $biodatas->last_name }}"  name="last_name" placeholder="type something" required> 
 					</div>
 					<div class="form-group">
-						<label>Province</label>
+						<label>Provinsi</label>
 						<input type="text" class="form-control" value="{{ $biodatas->province_id }}"  name="province_id" placeholder="type something" required> 
 					</div> 
 					<div class="form-group">
-						<label>Identity Number</label>
+						<label>Nomor Identitas</label>
 						<input type="text" class="form-control" value="{{ $biodatas->identify_number }}"  name="identify_number" placeholder="type something" required> 
 					</div> 
 					<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
