@@ -13,4 +13,7 @@ class Product extends Model
     public function umkm(){
         return $this->belongsTo('App\Umkm');
     }
+    public function product_images(){
+        return $this->hasMany('App\ProductImage');
+    }
 }

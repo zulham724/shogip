@@ -22,6 +22,36 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
+
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+    <style type="text/css">
+        a.fancybox img {
+            border: none;
+            box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+              -o-transform: scale(1,1);
+              -ms-transform: scale(1,1); 
+              -moz-transform: scale(1,1); 
+              -webkit-transform: scale(1,1); 
+            transform: scale(1,1); 
+              -o-transition: all 0.2s ease-in-out; 
+              -ms-transition: all 0.2s ease-in-out; 
+              -moz-transition: all 0.2s ease-in-out; 
+              -webkit-transition: all 0.2s ease-in-out;  
+            transition: all 0.2s ease-in-out;
+        } 
+        a.fancybox:hover img {
+            position: relative; 
+            z-index: 999; 
+              -o-transform: scale(1.03,1.03); 
+              -ms-transform: scale(1.03,1.03); 
+              -moz-transform: scale(1.03,1.03); 
+              -webkit-transform: scale(1.03,1.03); 
+            transform: scale(1.03,1.03);
+        }
+    </style>
+
     <style type="text/css">
       .select2 span { display:block }
     </style>
@@ -143,7 +173,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&callback=initMap"  async defer></script> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&callback=initMap"  async defer></script>
+
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="{{asset('fancybox-master/lib/jquery.mousewheel-3.0.6.pack.js')}}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+    <script type="text/javascript">
+        $(function($){
+            var addToAll = true;
+            var gallery = true;
+            var titlePosition = 'inside';
+            $(addToAll ? 'img' : 'img.fancybox').each(function(){
+                var $this = $(this);
+                var title = $this.attr('title');
+                var src = $this.attr('data-big') || $this.attr('src');
+                var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+                $this.wrap(a);
+            });
+            if (gallery)
+                $('a.fancybox').attr('rel', 'fancyboxgallery');
+            $('a.fancybox').fancybox({
+                titlePosition: titlePosition
+            });
+        });
+        $.noConflict();
+    </script>
+
+    
+
     @yield('script')
     <script type="text/javascript">
       $(document).ready(function(){

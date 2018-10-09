@@ -39,6 +39,10 @@ class Umkm extends Model
     public function umkm_biodata(){
         return $this->hasOne('App\UmkmBiodata');
     }
+    public function products(){
+        return $this->hasMany('App\Product');
+    }
+
 
 
 }

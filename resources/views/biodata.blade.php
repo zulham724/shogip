@@ -33,19 +33,19 @@
 
                         <div class="form-group">
                             <label>Nama Depan</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->first_name }}"  name="first_name" value="" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->first_name }}" readonly="true" name="first_name" value="" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
                             <label>Nama Belakang</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->last_name }}"  name="last_name" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->last_name }}" readonly="true" name="last_name" placeholder="type something" required> 
                         </div>
                         <div class="form-group">
                             <label>Provinsi</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->province_id }}"  name="province_id" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->province_id }}" readonly="true" name="province_id" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
                             <label>Nomer Identitas</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->identify_number }}"  name="identify_number" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->identify_number }}" readonly="true" name="identify_number" placeholder="type something" required> 
                         </div> 
 
                     </form>
@@ -66,19 +66,19 @@
 
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" class="form-control" value="{{ $umkm->name }}"  name="first_name" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->name }}" readonly="true" name="first_name" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
                             <label>Nomor Telepon</label>
-                            <input type="text" class="form-control" value="{{ $umkm->cp }}"  name="cp" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->cp }}" readonly="true" name="cp" placeholder="type something" required> 
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
-                            <input type="text" class="form-control" value="{{ $umkm->address }}"  name="address" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->address }}" readonly="true" name="address" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
                             <label>Kota</label>
-                            <input type="text" class="form-control" value="{{ $umkm->city->name }}"  name="city" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->city->name }}" readonly="true" name="city" placeholder="type something" required> 
                         </div> 
 
                     </form>
@@ -115,23 +115,28 @@
 
                                 <div class="card-body">
                                     <form action="" method="post">
+                                        @php
+                                        setlocale (LC_TIME, 'ID');
+                                        $date = strftime( "%d %B %Y", strtotime($umkmachievement->date));
+                                        @endphp
+
                                         @method('put')
                                         @csrf
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>UMKM ID</label>
                                             <input type="text" class="form-control" value="{{ $umkmachievement->umkm_id }}"  name="id" placeholder="type something" required> 
-                                        </div> 
+                                        </div> --}} 
                                         <div class="form-group">
                                             <label>Nama</label>
-                                            <input type="text" class="form-control" value="{{ $umkmachievement->name }}"  name="name" placeholder="type something" required> 
+                                            <input type="text" class="form-control" value="{{ $umkmachievement->name }}" readonly="true" name="name" placeholder="type something" required> 
                                         </div>
                                         <div class="form-group">
                                             <label>Dekripsi</label>
-                                            <input type="text" class="form-control" value="{{ $umkmachievement->description }}"  name="description" placeholder="type something" required> 
+                                            <input type="text" class="form-control" value="{{ $umkmachievement->description }}" readonly="true" name="description" placeholder="type something" required> 
                                         </div> 
                                         <div class="form-group">
                                             <label>Tanggal</label>
-                                            <input type="text" class="form-control" value="{{ $umkmachievement->date }}"  name="date" placeholder="type something" required> 
+                                            <input type="text" class="form-control" value="{{ $date }}" readonly="true" name="date" placeholder="type something" required> 
                                         </div> 
 
                                     </form>
@@ -157,23 +162,28 @@
 
                             <div class="card-body">
                                 <form action="" method="post">
+                                    @php
+                                    setlocale (LC_TIME, 'ID');
+                                    $date = strftime( "%d %B %Y", strtotime($umkmatraining->date));
+                                    @endphp
+
                                     @method('put')
                                     @csrf
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label>UMKM ID</label>
                                         <input type="text" class="form-control" value="{{ $umkmatraining->umkm_id }}"  name="id" placeholder="type something" required> 
-                                    </div> 
+                                    </div>  --}}
                                     <div class="form-group">
                                         <label>Nama</label>
-                                        <input type="text" class="form-control" value="{{ $umkmatraining->name }}"  name="name" placeholder="type something" required> 
+                                        <input type="text" class="form-control" value="{{ $umkmatraining->name }}" readonly="true" name="name" placeholder="type something" required> 
                                     </div>
                                     <div class="form-group">
                                         <label>Dekripsi</label>
-                                        <input type="text" class="form-control" value="{{ $umkmatraining->description }}"  name="description" placeholder="type something" required> 
+                                        <input type="text" class="form-control" value="{{ $umkmatraining->description }}" readonly="true" name="description" placeholder="type something" required> 
                                     </div> 
                                     <div class="form-group">
                                         <label>Tanggal</label>
-                                        <input type="text" class="form-control" value="{{ $umkmatraining->date }}"  name="date" placeholder="type something" required> 
+                                        <input type="text" class="form-control" value="{{ $date }}" readonly="true" name="date" placeholder="type something" required> 
                                     </div> 
 
                                 </form>
@@ -188,7 +198,7 @@
             <!--  -->
             <div role="tabpanel" class="tab-pane fade" id="product">
                       <div class="row">
-                        
+                        @foreach($umkm->products as $index => $product)
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-header">
@@ -200,21 +210,31 @@
                                     <form action="" method="post">
                                         @method('put')
                                         @csrf
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>UMKM ID</label>
                                             <input type="text" class="form-control" value=""  name="id" placeholder="type something" required> 
-                                        </div> 
+                                        </div>  --}}
                                         <div class="form-group">
                                             <label>Nama Product</label>
-                                            <input type="text" class="form-control" value=""  name="name" placeholder="type something" required> 
+                                            <input type="text" class="form-control" value="{{ $product->name }}" readonly="true" name="name" placeholder="type something" required> 
                                         </div>
+                                        <label>Gambar</label>
                                         <div class="form-group">
-                                            <label>Gambar</label>
-                                            <input type="text" class="form-control" value=""  name="description" placeholder="type something" required> 
-                                        </div> 
+                                            <div class="row">
+                                                @foreach($product->product_images as $index => $product_image)
+                                                    <div class="col-4">
+                                                        <a class="zoom" rel="group" href="{{asset('storage/'.$product_image->image)}}">
+                                                        <img src="{{asset('storage/'.$product_image->image)}}" width="100">
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            
+                                        </div>
+                                         
                                         <div class="form-group">
                                             <label>Deskripsi</label>
-                                            <input type="text" class="form-control" value=""  name="date" placeholder="type something" required> 
+                                            <input type="text" class="form-control" value="{{ $product->description }}" readonly="true" name="description" placeholder="type something" required> 
                                         </div> 
                                         
                                     </form>
@@ -223,7 +243,7 @@
                                 
                             </div>
                         </div>
-                        
+                        @endforeach 
                     </div>
                 </div>
                 <!--  -->
@@ -235,4 +255,11 @@
 </div>
 
 </section>
+@endsection
+@section('script')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".zoom").fancybox();
+    });
+</script>
 @endsection
