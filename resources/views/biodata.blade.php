@@ -197,7 +197,8 @@
             </div>
             <!--  -->
             <div role="tabpanel" class="tab-pane fade" id="product">
-                      <div class="row">
+              <div class="container">
+                <div class="row">
                         @foreach($umkm->products as $index => $product)
                         <div class="col-6">
                             <div class="card">
@@ -244,8 +245,10 @@
                             </div>
                         </div>
                         @endforeach 
-                    </div>
-                </div>
+                </div> 
+              </div>
+                      
+            </div>
                 <!--  -->
         </div>
     </div>

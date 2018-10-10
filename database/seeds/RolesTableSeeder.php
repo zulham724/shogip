@@ -19,6 +19,11 @@ class RolesTableSeeder extends Seeder
         		"name"=>"admin",
         		"description"=>"Superadmin"
         	],
+            [
+                "id"=>2,
+                "name"=>"UMKM",
+                "description"=>"umkm"
+            ],
 		];
 
         Role::insert($data);		

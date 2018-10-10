@@ -261,7 +261,7 @@
     function map_cities(lat,lng,state_id){
 
         center = {lat:lat,lng:lng};
-        zoom+=1;
+        zoom+=2;
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
