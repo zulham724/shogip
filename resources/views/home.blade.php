@@ -222,13 +222,15 @@
             // console.log(states);
 
             $.each(states,(index,s)=>{
-                
+
+                var iconBase = '{{ asset('storage/marker/tayo.png') }}';
                 var marker = new google.maps.Marker({
                     position: 
                         { 
                             lat: parseInt(s.lat), lng: parseInt(s.lng) 
                         },
-                    map: map
+                    map: map,
+                    icon: iconBase
                 });
 
                 var infowindow = new google.maps.InfoWindow;
@@ -298,12 +300,14 @@
 
             $.each(cities,(index,c)=>{
 
+                var iconBase = '{{ asset('storage/marker/tayo.png') }}';    
                 var marker = new google.maps.Marker({
                     position: 
                         { 
                             lat: parseInt(c.lat), lng: parseInt(c.lng) 
                         },
-                    map: map
+                    map: map,
+                    icon : iconBase
                 });
 
                 var infowindow = new google.maps.InfoWindow;
