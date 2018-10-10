@@ -23,7 +23,6 @@
     						<td>No</td>
                             <td>Nama Product</td>
     						<td>Gambar</td>
-                            <td>Nama</td>
                             <td>Deskripsi</td>
     						<td>Action</td>
     					</tr>
@@ -34,7 +33,6 @@
                             <td>{{ $p+1 }}</td>
                             <td>{{ $productimage->product->name }}</td>
                             <td><img src="{{ asset('storage/'.$productimage->image) }}" class="rounded mx-auto d-block" width="50"></td>
-                            <td>{{ $productimage->name }}</td>
                             <td>{{ $productimage->description }}</td>
                               <td>
                                 <center>
