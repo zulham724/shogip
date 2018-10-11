@@ -35,10 +35,6 @@
 							<input type="file" name="image" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Nama</label>
-							<input type="text" class="form-control" name="name"  value="{{ $productimages->name }}"  required> 
-						</div>
-						<div class="form-group">
 							<label>Deskripsi</label>
 							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $productimages->description}}" > </textarea>
 						</div> 

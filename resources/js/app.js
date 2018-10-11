@@ -23,6 +23,9 @@ window.swal = require('sweetalert2');
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('map-component',require('./components/MapComponent.vue'));
 Vue.component('pin-component',require('./components/PinComponent.vue'));
+Vue.component('product-component',require('./components/ProductComponent.vue'));
+Vue.component('achivement-component',require('./components/AchivementComponent.vue'));
+Vue.component('training-component',require('./components/TrainingComponent.vue'));
 
 const app = new Vue({
     el: '#app'

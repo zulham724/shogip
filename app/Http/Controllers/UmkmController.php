@@ -10,6 +10,7 @@ use App\State;
 use App\City;
 use App\District;
 use App\Biodata;
+use App\UmkmBiodata;
 use App\UmkmAchievement;
 use App\UmkmTraining;
 use App\Product;
@@ -55,8 +56,34 @@ class UmkmController extends Controller
     public function store(Request $request)
     {
         $umkm = new Umkm;
-        $umkm->fill($request->all());
+        $umkm->fill($request->except(['products','achivements','trainings','biodata']));
         $umkm->save();
+        // dd($umkm);
+        $umkm_biodata = new UmkmBiodata;
+        $umkm_biodata->fill($request['biodata']);
+        $umkm_biodata->umkm_id = $umkm->id;
+        $umkm_biodata->save();
+        // dd($umkm_biodata);
+        foreach ($request['products'] as $p => $product) {
+            $db = new Product;
+            $db->fill($product);
+            $db->umkm_id = $umkm->id;
+            $db->save();
+        }
+
+        foreach ($request['achivements'] as $a => $achivement) {
+            $data = new UmkmAchievement;
+            $data->fill($achivement);
+            $data->umkm_id = $umkm->id;
+            $data->save();
+        }
+
+        foreach ($request['trainings'] as $t => $training) {
+            $achievement = new UmkmTraining;
+            $achievement->fill($training);
+            $achievement->umkm_id = $umkm->id;
+            $achievement->save();
+        }
 
         return redirect()->route('umkms.index',$umkm->user_id);
     }
@@ -82,7 +109,7 @@ class UmkmController extends Controller
      */
     public function edit($id)
     {
-        $data['umkm'] = Umkm::find($id);
+        $data['umkm'] = Umkm::with('umkm_biodata','umkmachievements','umkmatrainings','products')->find($id);
         $data['umkm_categories'] = UmkmCategori::get();
         $data['states'] = State::get();
         $data['cities'] = City::get();
@@ -100,8 +127,40 @@ class UmkmController extends Controller
     public function update(Request $request, $id)
     {
         $umkm = Umkm::find($id);
-        $umkm->fill($request->all());
+        $umkm->fill($request->except(['products','achivements','trainings','biodata']));
         $umkm->update();
+
+        $umkm_biodata = UmkmBiodata::where('umkm_id',$umkm->id)->first();
+        $umkm_biodata->fill($request['biodata']);
+        $umkm_biodata->update();
+        // dd($umkm_biodata);
+
+        $umkm_products = Product::where('umkm_id',$umkm->id)->delete();
+        // dd($umkm_products);
+        foreach ($request['products'] as $p => $product) {
+            $db = new Product;
+            $db->fill($product);    
+            $db->umkm_id = $umkm->id;
+            $db->save();
+        }
+
+        $umkm_achivements = UmkmAchievement::where('umkm_id',$umkm->id)->delete();
+
+        foreach ($request['achivements'] as $a => $achivement) {
+            $data = new UmkmAchievement;
+            $data->fill($achivement);
+            $data->umkm_id = $umkm->id;
+            $data->save();
+        }
+
+        $umkm_trainings = UmkmTraining::where('umkm_id',$umkm->id)->delete();
+
+        foreach ($request['trainings'] as $t => $training) {
+            $achievement = new UmkmTraining;
+            $achievement->fill($training);
+            $achievement->umkm_id = $umkm->id;
+            $achievement->save();
+        }
 
         return redirect()->route('umkms.index');
     }

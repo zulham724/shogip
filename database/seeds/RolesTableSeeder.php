@@ -21,8 +21,13 @@ class RolesTableSeeder extends Seeder
         	],
             [
                 "id"=>2,
+<<<<<<< HEAD
                 "name"=>"UMKM",
                 "description"=>"umkm"
+=======
+                "name"=>"umkm",
+                "description"=>"UMKM"
+>>>>>>> 92cb2a064f4b7ffb88dd348e30a7079fe8e7297e
             ],
 		];
 
