@@ -71,7 +71,7 @@ class UmkmController extends Controller
     {
         $data['umkm'] = Umkm::with('umkm_biodata','city','umkmachievements','umkmatrainings','user','products.product_images')->find($id);
         // dd($data);
-        return view('biodata',$data);
+        return view('umkm.show',$data);
     }
 
     /**

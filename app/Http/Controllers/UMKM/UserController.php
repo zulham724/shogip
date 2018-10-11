@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\UMKM;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\User;
-use App\Role;
 use App\Biodata;
 
 class UserController extends Controller
@@ -17,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data["users"] = User::with('role')->get();
-        return view('user.index',$data);
+        $data['user'] = User::with('biodata')->find(Auth::user()->id);
+        return view('umkmuser.profil',$data);
     }
 
     /**
@@ -28,8 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $data['roles'] = Role::get();
-        return view('user.create',$data);
+        //
     }
 
     /**
@@ -40,12 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User;
-        $user->fill($request->all());
-        // $user->user_id = Auth::user()->id;
-        $user->save();
-
-        return redirect()->route('users.index',$user->user_id);
+        //
     }
 
     /**
@@ -67,9 +61,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-       $data["users"] = User::find($id);
-       $data['roles'] = Role::get();
-       return view('user.edit', $data);
+        //
     }
 
     /**
@@ -81,19 +73,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request);
-        $user = User::find($id);
-        $user->fill($request->all());
-        if($request->hasFile('avatar')){
-            $path = $request->file('avatar')->store('uploads/avatars');
-            $file = Storage::delete($user->avatar);
-            $user->avatar = $path;
-            // dd("yey",$user);
-        }
-        // dd("stop",$user);
-        $user->update();
+        // dd($request->except(['_method','_token']));
+        $biodata = Biodata::where('user_id',$id)->first();
+        $biodata->fill($request->all());
+        $biodata->update();
+        // dd($biodata);
+        return redirect()->route('user.index');
 
-       return redirect()->route('users.index');
     }
 
     /**
@@ -104,8 +90,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $data = User::find($id)->delete();
-        return response()->json($data);
+        //
     }
-
 }

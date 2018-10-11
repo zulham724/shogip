@@ -15,23 +15,38 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::resources([
-	'users'=>'UserController',
-	'biodatas'=>'BiodataController',
-	'states'=>'StateController',
-	'cities'=>'CityController',
-	'districts'=>'DistrictController',
-	'umkmcategories'=>'UmkmCategoriController',
-	'umkms'=>'UmkmController',
-	'umkmbiodatas'=>'UmkmBiodataController',
-	'achievements'=>'UmkmAchievementController',
-	'trainings'=>'UmkmTrainingController',
-	'products'=>'ProductController',
-	'productimages'=>'ProductImageController',
-]);
-Route::get('umkm/peta','UmkmController@peta')->name('umkm.peta');
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+
+
+Route::group(['middleware'=>'auth'],function(){
+
+	Route::group(['middleware'=>'role:1'],function(){
+
+		Route::get('/home', 'HomeController@index')->name('home');
+		Route::resources([
+			'users'=>'UserController',
+			'biodatas'=>'BiodataController',
+			'states'=>'StateController',
+			'cities'=>'CityController',
+			'districts'=>'DistrictController',
+			'umkmcategories'=>'UmkmCategoriController',
+			'umkms'=>'UmkmController',
+			'umkmbiodatas'=>'UmkmBiodataController',
+			'achievements'=>'UmkmAchievementController',
+			'trainings'=>'UmkmTrainingController',
+			'products'=>'ProductController',
+			'productimages'=>'ProductImageController',
+		]);
+
+	});
+
+	Route::group(['middleware'=>'role:2'],function(){
+		Route::resources([
+			'user'=>'UMKM\UserController',
+			'umkmuser'=>'UMKM\UmkmController'
+		]);
+	});
+
+});

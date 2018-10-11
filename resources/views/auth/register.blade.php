@@ -8,11 +8,11 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    <form method="POST" action="" aria-label="{{ __('Register') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nick Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -22,6 +22,62 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="first_name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="last_name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Birth of Date') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="date" class="form-control" name="birth_of_date" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="province_id" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="city_id" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('District') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="district_id" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Identify Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="identify_number" required>
                             </div>
                         </div>
 

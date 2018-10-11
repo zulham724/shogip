@@ -9,7 +9,7 @@
 <section>
 
     <div class="container">
-        <button class="btn btn-info" onclick="window.history.back()"><i class="fa fa-arrow-left"></i></button>
+        <button class="btn btn-info" style="margin-bottom: 20px" onclick="window.history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
         <div class="row">
 
             <div class="col-4">

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Biodata;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -63,11 +65,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'role_id'=>1,
+        $user =  User::create([
+            'role_id'=>2,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $biodata = new Biodata;
+        $biodata->user_id = $user->id;
+        $biodata->first_name = $data["first_name"];
+        $biodata->last_name = $data["last_name"];
+        $biodata->birth_of_date = $data["birth_of_date"];
+        $biodata->province_id = $data["province_id"];
+        $biodata->city_id = $data["city_id"];
+        $biodata->district_id = $data["district_id"];
+        $biodata->identify_number = $data["identify_number"];
+        $biodata->save();
+        // $biodata['biodata']->fill($biodata->except(['name','email','password','role_id']));
+        // dd($biodata);
+        return $user;
     }
 }
