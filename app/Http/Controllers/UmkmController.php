@@ -85,6 +85,8 @@ class UmkmController extends Controller
             $achievement->save();
         }
 
+        // dd($request);
+
         return redirect()->route('umkms.index',$umkm->user_id);
     }
 
