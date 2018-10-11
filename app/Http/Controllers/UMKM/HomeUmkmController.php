@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\UMKM;
 
-
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use App\User;
+use App\City;
+use App\Umkm;
+use App\State;
 use App\Biodata;
+use App\UmkmAchievement;
+use App\UmkmTraining;
 
-class UserController extends Controller
+class HomeUmkmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +20,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data['user'] = User::with('biodata')->find(Auth::user()->id);
-        return view('umkmuser.profil',$data);
+         $data["login"] = request()->login ?? "false";
+        // dd($data);
+        return view('umkmuser.home',$data);
     }
 
     /**
@@ -75,24 +77,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        // dd($request) ;
-        $user = User::find($id);
-        $user->fill($request['user']);
-        if($request['user']['avatar']){
-            $path = $request['user']['avatar']->store('uploads/avatars');
-            $file = Storage::delete($request['user']['avatar']);
-            $user->avatar = $path;
-            // dd("yey",$user);
-        }
-        $user->update();
-
-        $biodata = Biodata::where('user_id',$id)->first();
-        $biodata->fill($request['biodata']);
-        $biodata->update();
-        // dd($biodata,$user);
-        return redirect()->route('user.index');
-
+        //
     }
 
     /**

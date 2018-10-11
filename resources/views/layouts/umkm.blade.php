@@ -101,7 +101,7 @@
            <ul class="list-unstyled">
 
             <li {{ Request::is('home') ? 'class=active' : '' }}>
-              <a href="{{ route ('home') }}"> <i class="fa fa-home"></i>Home </a>
+              <a href="{{ route ('homeumkm') }}"> <i class="fa fa-home"></i>Home </a>
             </li>
 
             <li {{ Request::is('users') ? 'class=active' : '' }}>

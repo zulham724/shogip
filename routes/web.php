@@ -43,6 +43,7 @@ Route::group(['middleware'=>'auth'],function(){
 	});
 
 	Route::group(['middleware'=>'role:2'],function(){
+		Route::get('/homeumkm', 'UMKM\HomeUmkmController@index')->name('homeumkm');
 		Route::resources([
 			'user'=>'UMKM\UserController',
 			'umkmuser'=>'UMKM\UmkmController'
