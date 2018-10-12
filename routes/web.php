@@ -60,7 +60,8 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/homeumkm', 'UMKM\HomeUmkmController@index')->name('homeumkm');
 		Route::resources([
 			'user'=>'UMKM\UserController',
-			'umkmuser'=>'UMKM\UmkmController'
+			'umkmuser'=>'UMKM\UmkmController',
+			'productimageuser'=>'UMKM\ProductImageController',
 		]);
 	});
 

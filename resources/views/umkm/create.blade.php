@@ -7,7 +7,7 @@
 </div>
 
 <section>
-	
+	{{--  --}}
 	<div class="container">
 		<form action="{{ route('umkms.store') }}" method="post">
 			@csrf

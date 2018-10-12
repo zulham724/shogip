@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.umkm')
 @section('content')
 <div class="page-header">
 	<div class="container-fluid">
@@ -9,14 +9,14 @@
 <section>
 	
 	<div class="container">
-		<form action="{{ route('productimages.store') }}" enctype="multipart/form-data" files="true" method="post">
+		<form action="{{ route('productimageuser.store') }}" enctype="multipart/form-data" files="true" method="post">
 			@csrf
 			@method('post')
 			<div class="row">
 				<div class=" col-12">
 					<div class="card">
 						<div class="card-header">
-							<a href="{{ url('productimages') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
+							<a href="{{ url('productimageuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
 							<h5 class="pull-right"> Fill the Form</h5>
 						</div>
 						<productimage-component></productimage-component>

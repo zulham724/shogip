@@ -1,5 +1,5 @@
 
-/**
+/**x
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
@@ -26,7 +26,7 @@ Vue.component('pin-component',require('./components/PinComponent.vue'));
 Vue.component('product-component',require('./components/ProductComponent.vue'));
 Vue.component('achivement-component',require('./components/AchivementComponent.vue'));
 Vue.component('training-component',require('./components/TrainingComponent.vue'));
-
+Vue.component('productimage-component',require('./components/ProductImageComponent.vue'));
 const app = new Vue({
     el: '#app'
 });

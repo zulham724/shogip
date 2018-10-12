@@ -25,12 +25,11 @@
 						@csrf
 
 					<div class="form-group">
-						<!-- <label>Role</label>
-						<input type="text" class="form-control" value="{{ $users->role->name }}"  name="name" placeholder="type something" required>  -->
+						
 						<label>Role ID</label>
 							<select class="form-control select2" name="role_id">
 								@foreach ($roles as $r => $role)
-								<option value="{{ $role->id }}">{{ $role->name }}</option>
+								<option value="{{ $role->id }}" {{$role->id==$users->role_id ? 'selected':null}}>{{ $role->name }}</option>
 								@endforeach
 							</select>
 					</div> 
