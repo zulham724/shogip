@@ -100,16 +100,20 @@
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
            <ul class="list-unstyled">
 
-            <li {{ Request::is('home') ? 'class=active' : '' }}>
+            <li {{ Request::is('homeumkm') ? 'class=active' : '' }}>
               <a href="{{ route ('homeumkm') }}"> <i class="fa fa-home"></i>Home </a>
             </li>
 
-            <li {{ Request::is('users') ? 'class=active' : '' }}>
+            <li {{ Request::is('user') ? 'class=active' : '' }}>
               <a href="{{ url('user') }}"><i class="fa fa-users"></i>Profil</a>
             </li>
 
-            <li {{ Request::is('users') ? 'class=active' : '' }}>
+            <li {{ Request::is('umkmuser') ? 'class=active' : '' }}>
               <a href="{{ url('umkmuser') }}"><i class="fa fa-windows"></i>UMKM</a>
+            </li>
+
+            <li {{ Request::is('productimageuser') ? 'class=active' : '' }}>
+              <a href="{{ url('productimageuser') }}"><i class="fa fa-windows"></i>Product Image</a>
             </li>
             
                 

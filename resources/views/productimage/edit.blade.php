@@ -36,7 +36,7 @@
 						</div>
 						<div class="form-group">
 							<label>Deskripsi</label>
-							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $productimages->description}}" > </textarea>
+							<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $productimages->description}} </textarea>
 						</div> 
 						 
 						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>

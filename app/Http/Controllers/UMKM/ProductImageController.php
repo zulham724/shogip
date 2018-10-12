@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\UMKM;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Umkm;
 use App\Product;
 use App\ProductImage;
@@ -16,9 +18,10 @@ class ProductImageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $data['productimages'] = ProductImage::get();
-        return view('productimage.index',$data);
+    {
+        $data['umkm'] = Umkm::with('products.product_images')->where('user_id',Auth::user()->id)->first();
+        // dd($data);
+        return view('umkmuser/productimage.index',$data);
     }
 
     /**
@@ -29,7 +32,7 @@ class ProductImageController extends Controller
     public function create()
     {
         $data['products'] = Product::get();
-        return view('productimage.create',$data);
+        return view('umkmuser/productimage.create',$data);
     }
 
     /**
@@ -40,15 +43,6 @@ class ProductImageController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        // $productimage = new ProductImage();
-        // $productimage->fill($request->all());
-        //  if ($request->hasFile('image')) {
-        //     $path = $request->file('image')->store('product');
-        //     $productimage->image = $path;    
-        // }
-        // $productimage->save();
-             // dd($productimage);
         foreach ($request['productimages'] as $p => $product) {
             $db = new ProductImage;
             $db->fill($product);
@@ -58,19 +52,7 @@ class ProductImageController extends Controller
             }
             $db->save();
         }
-        return redirect('productimages');
-
-      //   foreach ($request["items"] as $i => $item) {
-      //   $new = new Item;
-      //   $new->fill($item);
-      //   $new->order_id = $order->id;
-      //   if(isset($item["image"])){
-      //     $path = $item['image']->store('order');
-      //     // dd($path);
-      //     $new->image = $path;
-      //   }
-      //   $new->save();
-      // }
+        return redirect('productimageuser');
     }
 
     /**
@@ -92,10 +74,7 @@ class ProductImageController extends Controller
      */
     public function edit($id)
     {
-        $data['productimages'] = ProductImage::find($id);
-        $data['products'] = Product::get();
-
-        return view('productimage.edit',$data);
+        //
     }
 
     /**
@@ -107,17 +86,7 @@ class ProductImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request);
-        $productimage = ProductImage::find($id);
-        $productimage->fill($request->all());
-         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('product');
-            $file = Storage::delete($productimage->image);
-            $productimage->image = $path;    
-        }
-        $productimage->update();
-             // dd($productimage);
-        return redirect('productimages');
+        //
     }
 
     /**
