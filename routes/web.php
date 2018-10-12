@@ -15,9 +15,23 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('check',function(){
+	switch (Auth::user()->role_id) {
+		case '1':
+			return redirect('/home?login=true');
+			break;
+		case '2':
+			return redirect('/homeumkm?login=true');
+			break;
+		
+		default:
+			# code...
+			break;
+	}
+});
+
 Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
 
 
 Route::group(['middleware'=>'auth'],function(){

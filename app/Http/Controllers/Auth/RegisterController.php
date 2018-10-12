@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'role_id'=>2,
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => $data['password'],
         ]);
         $biodata = new Biodata;
         $biodata->user_id = $user->id;
