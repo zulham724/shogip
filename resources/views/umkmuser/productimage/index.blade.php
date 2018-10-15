@@ -28,6 +28,7 @@
                       </tr>
                   </thead>
                   <tbody>
+                        @if($umkm != null)
                         @foreach ($umkm->products as  $product)
                             @foreach($product->product_images as $u => $product_image)
                                 <tr>
@@ -37,8 +38,6 @@
                                     <td><img src="{{ asset('storage/'.$product_image->image) }}" width="50"></td>
                                     <td>{{ $product_image->description }}</td>
 
-
-
                                     <td>
                                         <center>
                                             <button type="submit" class="btn btn-danger" onclick="destroy({{$product_image->id}})"><i class="fa fa-trash"></i> Delete</button>
@@ -47,9 +46,9 @@
                                 </tr>
                             @endforeach
                         @endforeach
+                        @endif    
             </tbody>
         </table>
-        {{-- <!-- <small>Have a New Data State ? <a href="{{ url('states') }}">click here</a></small> --> --}}
     </div>
 </div>
 </div>

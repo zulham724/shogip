@@ -70,7 +70,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(()=>{s
+    $(()=>{
         if({!! $login !!}){
             swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
         }
@@ -217,17 +217,16 @@
           zoom:5,
           styles: style
         });
+        if(map){
+            console.log('map woi');
+        }
         axios.get("{{ url('api/umkm/states') }}").then(res=>{
             states = res.data;
-            // console.log(states);
+            console.log(states);
 
             $.each(states,(index,s)=>{
 
-<<<<<<< HEAD
                 var iconBase = '{{ asset('storage/marker/ninja.png') }}';
-=======
-                var iconBase = '{{ asset('storage/marker/shop.png') }}';
->>>>>>> 4a2a0d31d0c307a1282c75a41498f0fae541987d
                 var marker = new google.maps.Marker({
                     position: 
                         { 
@@ -304,11 +303,7 @@
 
             $.each(cities,(index,c)=>{
 
-<<<<<<< HEAD
                 var iconBase = '{{ asset('storage/marker/ninja.png') }}';    
-=======
-                var iconBase = '{{ asset('storage/marker/shop.png') }}';    
->>>>>>> 4a2a0d31d0c307a1282c75a41498f0fae541987d
                 var marker = new google.maps.Marker({
                     position: 
                         { 

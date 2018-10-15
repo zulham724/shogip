@@ -84,7 +84,6 @@
 								<label>Instagram</label>
 								<input type="text" class="form-control" name="instagram"  value="{{ $umkm->instagram }}"  required> 
 							</div> 
-							<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>
 						</div>
 					</div>
 				</div>
@@ -98,31 +97,31 @@
 							<div class="form-group">
 								<label>Pendiri</label>
 								<input type="text" class="form-control" name="biodata[founder]" value="{{ $umkm->umkm_biodata->founder }}" placeholder="type something" required>
-								</div>
-								<div class="form-group">
+							</div>
+							<div class="form-group">
 								<label>Tanggal </label>
 								<input type="date" class="form-control" name="biodata[date_of_birth]" value="{{ $umkm->umkm_biodata->date_of_birth }}" placeholder="type something" required> 
-								</div>
-								<div class="form-group">
+							</div>
+							<div class="form-group">
 								<label>Jumlah Anggota</label>
 								<input type="text" class="form-control" name="biodata[total_employes]" value="{{ $umkm->umkm_biodata->total_employes }}" placeholder="type something" required> 
-								</div>
-								<div class="form-group">
+							</div>
+							<div class="form-group">
 								<label>Keuangan Bulanan</label>
 								<input type="text" class="form-control" name="biodata[monthly_finance]" value="{{ $umkm->umkm_biodata->monthly_finance }}" placeholder="type something" required> 
-								</div>
-								<div class="form-group">
+							</div>
+							<div class="form-group">
 								<label>Is Has Hki</label>
 								<input type="text" class="form-control" name="biodata[is_has_hki]" value="{{ $umkm->umkm_biodata->is_has_hki }}" placeholder="type something" required> 
-								</div>
-								<div class="form-group">
+							</div>
+							<div class="form-group">
 								<label>Didanai</label>
 								<input type="text" class="form-control" name="biodata[is_funded]" value="{{ $umkm->umkm_biodata->is_funded }}" placeholder="type something" required> 
-								</div>
-
 							</div>
+
 						</div>
 					</div>
+				</div>
 			</div>
 			<product-component v-bind:edit_products="{{ $umkm->products }}"></product-component>
 			<achivement-component v-bind:edit_achivements="{{ $umkm->umkmachievements }}"></achivement-component>

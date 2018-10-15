@@ -35,7 +35,7 @@
 						</div>
 						<div class="form-group">
 							<label>Dekripsi</label>
-							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $umkm_trainings->description}}" > </textarea>
+							<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $umkm_trainings->description}}</textarea>
 						</div> 
 						<div class="form-group">
 							<label>Tanggal</label>

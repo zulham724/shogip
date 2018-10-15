@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <label>Deskripsi</label>
-                            <input type="text" class="form-control" name="description" placeholder="type something" value="{{ $districts->description }}"> 
+                            <textarea type="text" class="form-control" name="description" placeholder="type something">{{ $districts->description }}</textarea>
                         </div> 
                         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button> 
                     </form>

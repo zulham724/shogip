@@ -202,7 +202,7 @@
 
             $.each(states,(index,s)=>{
                 
-                var iconBase = '{{ asset('storage/marker/shop.png') }}';
+                var iconBase = '{{ asset('storage/marker/ninja.png') }}';
                 var marker = new google.maps.Marker({
                     position: 
                         { 
@@ -279,7 +279,7 @@
 
             $.each(cities,(index,c)=>{
 
-                var iconBase = '{{ asset('storage/marker/shop.png') }}';
+                var iconBase = '{{ asset('storage/marker/ninja.png') }}';
                 var marker = new google.maps.Marker({
                     position: 
                         { 

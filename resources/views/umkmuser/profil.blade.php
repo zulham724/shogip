@@ -70,10 +70,6 @@
                                             <input type="text" class="form-control" value="{{$user->biodata->province_id}} "   name="biodata[province_id]" placeholder="type something" required> 
                                         </div> 
                                         <div class="form-group">
-                                            <label>Provinsi</label>
-                                            <input type="text" class="form-control" value="{{$user->biodata->province_id}} "   name="biodata[province_id]" placeholder="type something" required> 
-                                        </div> 
-                                        <div class="form-group">
                                             <label>Kota</label>
                                             <input type="text" class="form-control" value="{{$user->biodata->city_id}} "   name="biodata[city_id]" placeholder="type something" required> 
                                         </div> 

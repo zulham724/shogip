@@ -9,10 +9,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
+    <!-- Bootstrap  CSS-->
     <link rel="stylesheet" href="{{ asset('distribution/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="{{ asset('distribution/vendor/font-awesome/css/font-awesome.min.css') }}">
+    <!-- Custom Font Icons CSS-->
+    {{-- <link rel="stylesheet" href="{{ asset('css/font.css') }}"> --}}
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
@@ -22,6 +24,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
 
     
 
@@ -166,9 +170,11 @@
     </div>
     <!-- JavaScript files-->
     <script src="{{ asset('distribution/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('distribution/vendor/popper.js/umd/popper.min.js') }}"> </script>
-    {{-- <script src="{{ asset('distribution/vendor/bootstrap/js/bootstrap.min.js') }}"></script> --}}
-    <script src="{{ asset('distribution/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>
+    <script src="{{ asset('distribution/vendor/popper.js/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('distribution/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('distribution/vendor/jquery.cookie/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('distribution/vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('distribution/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
@@ -203,7 +209,8 @@
     </script>
 
     
-
+    <!-- Main File-->
+    <script src="{{ asset('distribution/js/front.js') }}"></script>
     @yield('script')
     <script type="text/javascript">
       $(document).ready(function(){

@@ -35,7 +35,7 @@
 						</div>
 						<div class="form-group">
 							<label>Deskripsi</label>
-							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $umkm_achievements->description}}" > </textarea>
+							<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $umkm_achievements->description}}</textarea>
 						</div> 
 						<div class="form-group">
 							<label>Tanggal</label>

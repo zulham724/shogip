@@ -22,7 +22,7 @@
 						<div class="card-body"> 
 
 							<div class="form-group">
-								<label>User</label>
+								<label>User Id / Nick Name</label>
 								<select class="form-control select2" name="user_id">
 									@foreach ($users as $u => $user)
 									<option value="{{ $user->id }}">{{ $user->name }}</option>

@@ -70,7 +70,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $(()=>{s
+    $(()=>{
         if({!! $login !!}){
             swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
         }
@@ -217,13 +217,16 @@
           zoom:5,
           styles: style
         });
+        if(map){
+            console.log('map woi');
+        }
         axios.get("{{ url('api/umkm/states') }}").then(res=>{
             states = res.data;
-            // console.log(states);
+            console.log(states);
 
             $.each(states,(index,s)=>{
 
-                var iconBase = '{{ asset('storage/marker/shop.png') }}';
+                var iconBase = '{{ asset('storage/marker/ninja.png') }}';
                 var marker = new google.maps.Marker({
                     position: 
                         { 
@@ -248,7 +251,7 @@
                                     <td colspan='2'><i class='fa fa-home'></i>"+ s.cities_count +" Kota Di Daerah "+ s.name +"</td>\
                                 </tr>\
                                 <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/cities/default.jpg')}}'></td>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/ninja.png')}}'></td>\
                                     <td>\
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
                                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
@@ -300,7 +303,7 @@
 
             $.each(cities,(index,c)=>{
 
-                var iconBase = '{{ asset('storage/marker/shop.png') }}';    
+                var iconBase = '{{ asset('storage/marker/ninja.png') }}';    
                 var marker = new google.maps.Marker({
                     position: 
                         { 
@@ -325,7 +328,7 @@
                                     <td colspan='2'><i class='fa fa-home'></i> "+c.umkm_count+" UMKM Di "+c.name+"</td>\
                                 </tr>\
                                 <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/cities/default.jpg')}}'></td>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/ninja.png')}}'></td>\
                                     <td>\
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
                                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
