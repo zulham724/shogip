@@ -17,7 +17,7 @@
 					<div class="card">
 						<div class="card-header">
 							<a href="{{ url('umkmuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
-							<h5 class="pull-right"> Fill the Form</h5>
+							<h5 class="pull-right"> Isi Form</h5>
 						</div>
 						<div class="card-body"> 
 
@@ -99,7 +99,7 @@
 				<div class="col-6">
 					<div class="card">
 						<div class="card-header">
-							Fill Biodata UMKM
+							Biodata UMKM
 						</div>
 						<div class="card-body">
 							<div class="form-group">
@@ -134,7 +134,7 @@
 			<product-component></product-component>
 			<achivement-component></achivement-component>
 			<training-component></training-component>
-			<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Submit</button> 
+			<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Simpan</button> 
 		</form>
 	</div>
 

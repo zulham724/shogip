@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-header">
             <i class="fa fa-flag"></i> List UMKM
-            <a href="{{ route('umkmuser.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
+            <a href="{{ route('umkmuser.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
             {{--  --}}
         </div>
         <div class="card-body">
@@ -57,7 +57,7 @@
                               <td>
                                  <center>
                                     <a href="{{ route('umkmuser.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
-                                <button type="submit" class="btn btn-danger" onclick="destroy({{$umkms->id}})"><i class="fa fa-trash"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="destroy({{$umkms->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 </center>
                             </td>
                         </tr>

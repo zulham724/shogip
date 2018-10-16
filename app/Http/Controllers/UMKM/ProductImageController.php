@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Umkm;
+use App\User;
 use App\Product;
 use App\ProductImage;
 
@@ -20,8 +21,9 @@ class ProductImageController extends Controller
     public function index()
     {
         $data['umkm'] = Umkm::with('products.product_images')->where('user_id',Auth::user()->id)->first();
+        $name['user'] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
-        return view('umkmuser/productimage.index',$data);
+        return view('umkmuser/productimage.index',$data,$name);
     }
 
     /**
@@ -32,7 +34,8 @@ class ProductImageController extends Controller
     public function create()
     {
         $data['products'] = Product::get();
-        return view('umkmuser/productimage.create',$data);
+        $name['user'] = User::with('biodata')->find(Auth::user()->id);
+        return view('umkmuser/productimage.create',$data,$name);
     }
 
     /**

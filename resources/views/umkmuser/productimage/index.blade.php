@@ -12,7 +12,7 @@
         <div class="card">
            <div class="card-header">
               <i class="fa fa-flag"></i> List Gambar Product
-              <a href="{{ route('productimageuser.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
+              <a href="{{ route('productimageuser.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
 
           </div>
           <div class="card-body">
@@ -21,7 +21,7 @@
                     <thead>
                        <tr>
                           <td>No</td>
-                          <td>Nama Product</td>
+                          <td>Nama Produk</td>
                           <td>Gambar</td>
                           <td>Deskripsi</td>
                           <td>Action</td>
@@ -40,7 +40,7 @@
 
                                     <td>
                                         <center>
-                                            <button type="submit" class="btn btn-danger" onclick="destroy({{$product_image->id}})"><i class="fa fa-trash"></i> Delete</button>
+                                            <button type="submit" class="btn btn-danger" onclick="destroy({{$product_image->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                         </center>
                                     </td>
                                 </tr>

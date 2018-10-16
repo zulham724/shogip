@@ -30,7 +30,7 @@
                                         </div> 
                                     
                                     <div class="form-group">
-                                        <label>Nick Name</label>
+                                        <label>Nama Panggilan</label>
                                         <input type="text" class="form-control" value="{{$user->name}}"   name="user[name]" value="" placeholder="type something" required> 
                                     </div> 
                                     <div class="form-group">

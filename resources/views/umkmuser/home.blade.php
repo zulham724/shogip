@@ -72,7 +72,7 @@
 <script type="text/javascript">
     $(()=>{
         if({!! $login !!}){
-            swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
+            swal("Selamat Datang :)","Anda login sebagai UMKM","success");
         }
     });
 </script>
@@ -282,7 +282,7 @@
     function map_cities(lat,lng,state_id){
 
         center = {lat:lat,lng:lng};
-        zoom+=1;
+        zoom+=2;
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
@@ -366,11 +366,11 @@
             var table = $(".customdatatable").DataTable({   
                 data:umkms,
                 columns:[
+                    {data:'name',title:'Nama'},
                     {data:'umkm_category.name',title:'Kategori UMKM'},
                     {data:'state.name',title:'Provinsi'},
                     {data:'city.name',title:'Kota'},
                     {data:'district.name',title:'Wilayah'},
-                    {data:'name',title:'Nama'},
                     {data:'description',title:'Deskripsi'},
                     {data:'address',title:'Alamat'},
                     {data:'cp',title:'No Telpon'},

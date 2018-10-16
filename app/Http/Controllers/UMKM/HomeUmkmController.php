@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\UMKM;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\City;
 use App\Umkm;
@@ -10,6 +11,7 @@ use App\State;
 use App\Biodata;
 use App\UmkmAchievement;
 use App\UmkmTraining;
+use App\User;
 
 class HomeUmkmController extends Controller
 {
@@ -21,8 +23,9 @@ class HomeUmkmController extends Controller
     public function index()
     {
          $data["login"] = request()->login ?? "false";
+         $name['user'] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
-        return view('umkmuser.home',$data);
+        return view('umkmuser.home',$data,$name);
     }
 
     /**

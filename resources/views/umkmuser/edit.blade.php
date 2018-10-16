@@ -16,8 +16,8 @@
 				<div class="col-6">
 					<div class="card">
 						<div class="card-header">
-							<a href="{{ url('umkmuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-							<h5 class="pull-right"> Fill Edit UMKM</h5>
+							<a href="{{ url('umkmuser') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+							<h5 class="pull-right"> Edit UMKM</h5>
 						</div>
 						<div class="card-body"> 
 							<div class="form-group">
@@ -92,7 +92,7 @@
 				<div class="col-6">
 					<div class="card">
 						<div class="card-header">
-							Fill Edit Biodata UMKM
+							Edit Biodata UMKM
 						</div>
 						<div class="card-body">
 							<div class="form-group">
@@ -127,7 +127,7 @@
 			<product-component v-bind:edit_products="{{ $umkm->products }}"></product-component>
 			<achivement-component v-bind:edit_achivements="{{ $umkm->umkmachievements }}"></achivement-component>
 			<training-component v-bind:edit_trainings="{{ $umkm->umkmatrainings }}"></training-component>
-			<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Submit</button>
+			<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Simpan</button>
 		</form>
 	</div>
 

@@ -28,8 +28,9 @@ class UmkmController extends Controller
     {
         $data['umkm'] = Umkm::
         with('umkm_category','state','city','district')->where('user_id',Auth::user()->id)->get();
+        $name['user'] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
-        return view('umkmuser.index',$data);
+        return view('umkmuser.index',$data,$name);
 
         // $data['user'] = User::with('biodata')->find(Auth::user()->id);
         // return view('umkmuser.profil',$data);
@@ -104,7 +105,9 @@ class UmkmController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['umkm'] = Umkm::with('umkm_biodata','city','umkmachievements','umkmatrainings','user','products.product_images')->find($id);
+        // dd($data);
+        return view('umkmuser.show',$data);
     }
 
     /**
@@ -120,7 +123,8 @@ class UmkmController extends Controller
         $data['states'] = State::get();
         $data['cities'] = City::get();
         $data['districts'] = District::get();
-        return view('umkmuser.edit',$data);
+        $name['user'] = User::with('biodata')->find(Auth::user()->id);
+        return view('umkmuser.edit',$data,$name);
     }
 
     /**

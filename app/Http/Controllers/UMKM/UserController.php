@@ -79,10 +79,14 @@ class UserController extends Controller
         // dd($request) ;
         $user = User::find($id);
         $user->fill($request['user']);
-        if($request['user']['avatar']){
-            $path = $request['user']['avatar']->store('uploads/avatars');
-            $file = Storage::delete($request['user']['avatar']);
-            $user->avatar = $path;
+        if(isset($request['user']['avatar'])){
+        $path = $request['user']['avatar']->store('user');
+        // dd($path);
+        $user->avatar = $path;
+        // if($request['user']['avatar']){
+        //     $path = $request['user']['avatar']->store('uploads/avatars');
+        //     $file = Storage::delete($request['user']['avatar']);
+        //     $user->avatar = $path;
             // dd("yey",$user);
         }
         $user->update();

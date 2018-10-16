@@ -95,10 +95,16 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="{{ asset('distribution/img/avatar-1.jpg') }}" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="avatar"><img src="{{ $user->avatar != null ?  asset('storage/'.$user->avatar) : asset('storage/uploads/avatars/default.png') }}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h3">Shogit</h1>
-              <p>Web Designer</p>
+              <?php
+              $kalimat = $user->name;
+              $kalimat_new = strtoupper($kalimat);
+              $role =$user->role->name;
+              $role_new = ucwords($role);
+              ?>
+              <h1 class="h3">{{$kalimat_new}}</h1>
+              <p>{{$role_new}}</p>
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
@@ -117,7 +123,7 @@
             </li>
 
             <li {{ Request::is('productimageuser') ? 'class=active' : '' }}>
-              <a href="{{ url('productimageuser') }}"><i class="fa fa-windows"></i>Product Image</a>
+              <a href="{{ url('productimageuser') }}"><i class="fa fa-windows"></i>Gambar Produk</a>
             </li>
             
                 

@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nick Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Panggilan') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Depan') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="first_name" required>
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Belakang') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="last_name" required>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Birth of Date') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Lahir') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="date" class="form-control" name="birth_of_date" required>
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="province_id" required>
@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Kota') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="city_id" required>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('District') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Wilayah') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="district_id" required>
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Identify Number') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Identitas') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="identify_number" required>
@@ -82,7 +82,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Konfirmasi Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
