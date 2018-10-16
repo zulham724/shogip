@@ -205,7 +205,7 @@
 
     function initMap() {
 
-        this.map_states();
+         this.map_cities(-7.701609,110.1275541,33);
 
 
     }
