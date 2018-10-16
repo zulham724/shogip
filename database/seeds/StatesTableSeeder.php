@@ -36,6 +36,7 @@ class StatesTableSeeder extends Seeder
             $s->name = $d[1];
             $s->lat = $d[2];
             $s->lng = $d[3];
+            $s->description = $d[4];
             $s->save();
         }
     }

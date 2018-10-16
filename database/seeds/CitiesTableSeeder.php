@@ -37,6 +37,7 @@ class CitiesTableSeeder extends Seeder
             $s->name = $d[2];
             $s->lat = $d[3];
             $s->lng = $d[4];
+            $s->description = $d[5];
             $s->save();
         }
     }

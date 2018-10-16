@@ -72,7 +72,7 @@
 <script type="text/javascript">
     $(()=>{
         if({!! $login !!}){
-            swal("Selamat Datang :)","You Have Login as Admin, Feel free to surf","success");
+            swal("Selamat Datang :)","Anda Login Sebagai Admin","success");
         }
     });
 </script>
@@ -251,7 +251,7 @@
                                     <td colspan='2'><i class='fa fa-home'></i>"+ s.cities_count +" Kota Di Daerah "+ s.name +"</td>\
                                 </tr>\
                                 <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/umkm.jpg')}}'></td>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/shop.jpg')}}'></td>\
                                     <td>"+s.description+"\
                                     <a href='' class='pull-right'>Edit</a>\
                                     </td>\
@@ -322,7 +322,7 @@
                                     <td colspan='2'><i class='fa fa-home'></i> "+c.umkm_count+" UMKM Di "+c.name+"</td>\
                                 </tr>\
                                 <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/umkm.jpg')}}'></td>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/shop.jpg')}}'></td>\
                                     <td>"+c.description+"\
                                     <a href=#' class='pull-right'>Edit</a>\
                                     </td>\
