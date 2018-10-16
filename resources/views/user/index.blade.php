@@ -10,8 +10,8 @@
 <div class="container-fluid">
     <div class="card">
     	<div class="card-header">
-    		<i class="fa fa-flag"></i> Users List
-    		<a href="{{ route('users.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
+    		<i class="fa fa-flag"></i> List Users 
+    		<a href="{{ route('users.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Data</a>
     	</div>
     	<div class="card-body">
     		<div class="table-responsive">
@@ -35,7 +35,7 @@
                             <td>
                                <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger" onclick="destroy({{$user->id}})"><i class="fa fa-trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-danger" onclick="destroy({{$user->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 <a href="{{ route('users.edit',$user->id) }}" type="button" class="btn btn-warning" ><i class="fa fa-gear"></i> Edit</a>
                                 </div>
                                 </center> 
@@ -59,13 +59,13 @@
 
     const destroy = (id)=>{
         swal({
-            title:"Are you sure?",
-            text:"You won't be able to revert this!",
+            title:"Apa Kamu Yakin?",
+            text:"Anda tidak akan dapat mengembalikan data ini!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Ya, hapus!'
         }).then(result=>{
             if(result.value){
                 let access = {
@@ -77,8 +77,8 @@
                 .done(res=>{
                     console.log(res);
                     swal({
-                        title:"Okay",
-                        text:"You deleted language",
+                        title:"Oke",
+                        text:"Anda menghapus Data",
                         type:"success",
                     }).then(result=>{
                         window.location = "{{ url('users') }}";

@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
 	<div class="container-fluid">
-		<h2 class="h5 no-margin-bottom">Gambar Product</h2>
+		<h2 class="h5 no-margin-bottom">Gambar Produk</h2>
 	</div>
 </div>
 
@@ -16,8 +16,8 @@
 				<div class=" col-12">
 					<div class="card">
 						<div class="card-header">
-							<a href="{{ url('productimages') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-							<h5 class="pull-right"> Fill the Form</h5>
+							<a href="{{ url('productimages') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+							<h5 class="pull-right"> Isi Form</h5>
 						</div>
 						<productimage-component></productimage-component>
 						<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Submit</button>

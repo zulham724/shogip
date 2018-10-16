@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Gambar Product</h2>
+    <h2 class="h5 no-margin-bottom">Gambar Produk</h2>
   </div>
 </div>
 
@@ -11,8 +11,8 @@
 <div class="container-fluid">
     <div class="card">
     	<div class="card-header">
-    		<i class="fa fa-flag"></i> List Gambar Product
-    		<a href="{{ route('productimages.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
+    		<i class="fa fa-flag"></i> List Gambar Produk
+    		<a href="{{ route('productimages.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
             
     	</div>
     	<div class="card-body">
@@ -21,10 +21,10 @@
     				<thead>
     					<tr>
     						<td>No</td>
-                            <td>Nama Product</td>
+                            <td>Nama Produk</td>
     						<td>Gambar</td>
                             <td>Deskripsi</td>
-    						<td>Action</td>
+    						<td>Aksi</td>
     					</tr>
     				</thead>
     				<tbody>
@@ -37,7 +37,7 @@
                               <td>
                                 <center>
                                     <a href="{{ route('productimages.edit',$productimage->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
-                                <button type="submit" class="btn btn-danger" onclick="destroy({{$productimage->id}})"><i class="fa fa-trash"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="destroy({{$productimage->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 </center>
                             </td>
                         </tr>

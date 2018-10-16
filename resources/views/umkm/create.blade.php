@@ -17,7 +17,7 @@
 					<div class="card">
 						<div class="card-header">
 							<a href="{{ url('umkms') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
-							<h5 class="pull-right"> Fill the Form</h5>
+							<h5 class="pull-right"> Isi Form</h5>
 						</div>
 						<div class="card-body"> 
 

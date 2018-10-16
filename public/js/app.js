@@ -73279,7 +73279,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "alert alert-info" }, [
-      _c("strong", [_vm._v("Tentukan Product Anda")]),
+      _c("strong", [_vm._v("Tentukan Produk Anda")]),
       _vm._v(" "),
       _c(
         "button",
@@ -73306,7 +73306,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Nama Product")]),
+                _c("label", [_vm._v("Nama Produk")]),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -73392,7 +73392,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v(" Product")])
+      _c("h5", [_vm._v(" Produk")])
     ])
   }
 ]
@@ -74111,7 +74111,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "alert alert-info" }, [
-      _c("strong", [_vm._v("Gambar Product")]),
+      _c("strong", [_vm._v("Gambar Produk")]),
       _vm._v(" "),
       _c(
         "button",
@@ -74146,7 +74146,7 @@ var render = function() {
                   },
                   [
                     _c("option", { attrs: { value: "" } }, [
-                      _vm._v("--Pilih Product--")
+                      _vm._v("--Pilih Produk--")
                     ]),
                     _vm._v(" "),
                     _vm._l(_vm.products, function(product, p) {
@@ -74241,7 +74241,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v(" Gambar Product")])
+      _c("h5", [_vm._v(" Gambar Produk")])
     ])
   }
 ]

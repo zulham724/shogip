@@ -72,7 +72,7 @@
 <script type="text/javascript">
     $(()=>{
         if({!! $login !!}){
-            swal("Hello :)","You Have Login as Admin, Feel free to surf","success");
+            swal("Selamat Datang :)","You Have Login as Admin, Feel free to surf","success");
         }
     });
 </script>

@@ -16,8 +16,8 @@
 				<div class="col-6">
 					<div class="card">
 						<div class="card-header">
-							<a href="{{ url('umkms') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-							<h5 class="pull-right"> Fill Edit UMKM</h5>
+							<a href="{{ url('umkms') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+							<h5 class="pull-right">  Edit UMKM</h5>
 						</div>
 						<div class="card-body"> 
 							<div class="form-group">

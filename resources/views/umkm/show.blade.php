@@ -97,7 +97,7 @@
                         <a class="nav-link" href="#buzz" data-toggle="tab">Training</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#product" data-toggle="tab">Product</a>
+                        <a class="nav-link" href="#product" data-toggle="tab">Produk</a>
                     </li>
                 </ul>
 

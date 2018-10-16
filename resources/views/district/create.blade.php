@@ -13,8 +13,8 @@
 		<div class="offset-3 col-6">
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('districts') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-					<h5 class="pull-right"> Fill the Form</h5>
+					<a href="{{ url('districts') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<h5 class="pull-right"> Isi Form</h5>
 				</div>
 				<div class="card-body"> 
 					
