@@ -12,7 +12,7 @@
     <div class="card">
     	<div class="card-header">
     		<i class="fa fa-flag"></i> List Distrik/Daerah
-    		<a href="{{ route('districts.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
+    		<a href="{{ route('districts.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Daerah</a>
             
     	</div>
     	<div class="card-body">
@@ -37,7 +37,7 @@
                               <td>
                                 <center>
                                     <a href="{{ route('districts.edit',$district->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
-                                <button type="submit" class="btn btn-danger" onclick="destroy({{$district->id}})"><i class="fa fa-trash"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="destroy({{$district->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 </center>
                             </td>
 						</tr>
@@ -58,11 +58,11 @@
     const destroy = (id)=>{
         swal({
             type:"warning",
-            title:"Are you sure?",
-            text:"You won't be able to revert this!",
+            title:"Apa Kamu Yakin?",
+            text:"Anda tidak akan dapat mengembalikan data ini!",
             showCancelButton:true,
             cancelButtonColor:"#d33",
-            confirmButtonText:"Yes, delete it!",
+            confirmButtonText:"Ya, hapus!",
             confirmButtonColor:"#3085d6"
         }).then(result=>{
             if(result.value){
@@ -75,8 +75,8 @@
                 $.post("{{ url('districts') }}/"+id,access)
                 .done(res=>{
                     swal({
-                        title:"Okay!",
-                        text:"You deleted product",
+                        title:"Oke!",
+                        text:"Anda menghapus Data Daerah",
                         type:"success"
                     }).then(result=>{
                         window.location = "{{ url('districts') }}";

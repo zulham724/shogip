@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Product</h2>
+    <h2 class="h5 no-margin-bottom">Produk</h2>
   </div>
 </div>
 
@@ -11,8 +11,8 @@
 <div class="container-fluid">
     <div class="card">
     	<div class="card-header">
-    		<i class="fa fa-flag"></i> Product List
-    		<a href="{{ route('products.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add</a>
+    		<i class="fa fa-flag"></i> List Produk
+    		<a href="{{ route('products.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah Produk</a>
             
     	</div>
     	<div class="card-body">
@@ -22,9 +22,9 @@
     					<tr>
     						<td>No</td>
                             <td>Nama UMKM</td>
-    						<td>Nama Product</td>
+    						<td>Nama Produk</td>
                             <td>Deskripsi</td>
-    						<td>Action</td>
+    						<td>Aksi</td>
     					</tr>
     				</thead>
     				<tbody>
@@ -37,7 +37,7 @@
                               <td>
                                 <center>
                                     <a href="{{ route('products.edit',$product->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
-                                <button type="submit" class="btn btn-danger" onclick="destroy({{$product->id}})"><i class="fa fa-trash"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="destroy({{$product->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 </center>
                             </td>
                         </tr>
@@ -58,11 +58,11 @@
     const destroy = (id)=>{
         swal({
             type:"warning",
-            title:"Are you sure?",
-            text:"You won't be able to revert this!",
+            title:"Apa Kamu Yakin?",
+            text:"Anda tidak akan dapat mengembalikan data ini!",
             showCancelButton:true,
             cancelButtonColor:"#d33",
-            confirmButtonText:"Yes, delete it!",
+           confirmButtonText:"Ya, hapus!",
             confirmButtonColor:"#3085d6"
         }).then(result=>{
             if(result.value){
@@ -75,8 +75,8 @@
                 $.post("{{ url('products') }}/"+id,access)
                 .done(res=>{
                     swal({
-                        title:"Okay!",
-                        text:"You deleted product",
+                        title:"Oke!",
+                        text:"Anda menghapus Data Produk",
                         type:"success"
                     }).then(result=>{
                         window.location = "{{ url('products') }}";

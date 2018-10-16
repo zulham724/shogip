@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="alert alert-info">
-            <strong>Tentukan Product Anda</strong>
+            <strong>Tentukan Produk Anda</strong>
             <button type="button" class="btn btn-primary pull-right" @click="add()"><i class="fa fa-plus"></i> Tambah</button>
         </div>
         <div class="row">
             <div class="col-4" v-for="(product,p) in products">
                 <div class="card">
                     <div class="card-header">
-                        <h5> Product</h5>
+                        <h5> Produk</h5>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Nama Product</label>
+                            <label>Nama Produk</label>
                             <input type="text" class="form-control" :name="'products['+p+'][name]'" v-model="product.name" placeholder="type something" required> 
                         </div>
                         <div class="form-group">

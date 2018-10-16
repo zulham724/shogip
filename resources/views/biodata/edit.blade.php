@@ -16,7 +16,7 @@
 		<div class="col-8">
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('biodatas') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
+					<a href="{{ url('biodatas') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
 					<h5 class="pull-right">Form Edit Biodata</h5>
 				</div>
 				<div class="card-body">

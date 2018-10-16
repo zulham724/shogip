@@ -1,19 +1,19 @@
 <template>
      <div>
         <div class="alert alert-info">
-            <strong>Gambar Product</strong>
+            <strong>Gambar Produk</strong>
             <button type="button" class="btn btn-primary pull-right" @click="add()"><i class="fa fa-plus"></i> Tambah</button>
         </div>
         <div class="row">
             <div class="col-4" v-for="(productimage,r) in productimages">
                 <div class="card">
                     <div class="card-header">
-                        <h5> Gambar Product</h5>
+                        <h5> Gambar Produk</h5>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
                                     <select class="form-control"   :name="'productimages['+r+'][product_id]'">
-                                        <option value="">--Pilih Product--</option>
+                                        <option value="">--Pilih Produk--</option>
                                         <option  v-for="(product,p) in products" :value="product.id">{{ product.name }}
                                         </option>  
                                     </select>

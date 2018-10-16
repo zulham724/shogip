@@ -13,12 +13,17 @@
 		<div class="offset-3 col-6">
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('trainings') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-					<h5 class="pull-right"> Fill the Form</h5>
+					<a href="{{ url('trainings') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<h5 class="pull-right"> Edit Form</h5>
 				</div>
 				<div class="card-body"> 
 					
 					<form action="{{ route('trainings.update',$umkm_trainings->id) }}" method="post">
+						 @php
+                                        setlocale (LC_TIME, 'ID');
+                                        $date = strftime( "%d %B %Y", strtotime($umkm_trainings->date));
+                                        @endphp
+
 						@method('put')
 						@csrf
 						<div class="form-group">
@@ -39,7 +44,7 @@
 						</div> 
 						<div class="form-group">
 							<label>Tanggal</label>
-							<input type="date" class="form-control" name="date"  value="{{ $umkm_trainings->date }}"  required> 
+							<input type="text" class="form-control" name="date"  value="{{ $date }}"  required> 
 						</div>
 						 
 						<button type="submit" class="btn btn-success pull-right"><i class="fa fa-check"></i> Submit</button>

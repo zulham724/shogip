@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
-    <h2 class="h5 no-margin-bottom">Gambar Product</h2>
+    <h2 class="h5 no-margin-bottom">Gambar Produk</h2>
   </div>
 </div>
 
@@ -13,8 +13,8 @@
 		<div class="offset-3 col-6">
 			<div class="card">
 				<div class="card-header">
-					<a href="{{ url('productimages') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Back</a>
-					<h5 class="pull-right"> Fill the Form</h5>
+					<a href="{{ url('productimages') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
+					<h5 class="pull-right"> Edit Form</h5>
 				</div>
 				<div class="card-body"> 
 					
@@ -22,7 +22,7 @@
 						@method('put')
 						@csrf
 						<div class="form-group">
-						<label>Nama Product</label>
+						<label>Nama Produk</label>
 							<select class="form-control select2" name="product_id">
 								@foreach ($products as $p => $products)
 								<option value="{{ $products->id }}" {{$products->id==$productimages->product_id ? 'selected':null}}> {{ $products->name }} </option>
