@@ -226,7 +226,7 @@
 
             $.each(states,(index,s)=>{
 
-                var iconBase = '{{ asset('storage/marker/ninja.png') }}';
+                var iconBase = '{{ asset('storage/marker/toko.png') }}';
                 var marker = new google.maps.Marker({
                     position: 
                         { 
@@ -251,15 +251,9 @@
                                     <td colspan='2'><i class='fa fa-home'></i>"+ s.cities_count +" Kota Di Daerah "+ s.name +"</td>\
                                 </tr>\
                                 <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/ninja.png')}}'></td>\
-                                    <td>\
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
-                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
-                                    <a href=' class='pull-right'>Edit</a>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/umkm.jpg')}}'></td>\
+                                    <td>"+s.description+"\
+                                    <a href='' class='pull-right'>Edit</a>\
                                     </td>\
                                 </tr>\
                                 <tr>\
@@ -288,7 +282,7 @@
     function map_cities(lat,lng,state_id){
 
         center = {lat:lat,lng:lng};
-        zoom+=1;
+        zoom+=3;
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
@@ -303,11 +297,11 @@
 
             $.each(cities,(index,c)=>{
 
-                var iconBase = '{{ asset('storage/marker/ninja.png') }}';    
+                var iconBase = '{{ asset('storage/marker/toko.png') }}';    
                 var marker = new google.maps.Marker({
                     position: 
                         { 
-                            lat: parseInt(c.lat), lng: parseInt(c.lng) 
+                            lat: parseFloat(c.lat), lng: parseFloat(c.lng) 
                         },
                     map: map,
                     icon : iconBase
@@ -320,7 +314,7 @@
                      <div class='card'>\
                         <div class='card-header'>\
                             <i class='fa fa-pencil'></i> Data UMKM Di "+c.name+"\
-                            <a href=' class='pull-right'>Tampilkan Data "+c.name+"</a>\
+                            <a href=#' class='pull-right'>Tampilkan Data "+c.name+"</a>\
                         </div>\
                         <div class='card-body'>\
                             <table class='table table-striped'>\
@@ -328,15 +322,9 @@
                                     <td colspan='2'><i class='fa fa-home'></i> "+c.umkm_count+" UMKM Di "+c.name+"</td>\
                                 </tr>\
                                 <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/ninja.png')}}'></td>\
-                                    <td>\
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
-                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
-                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\
-                                    <a href=' class='pull-right'>Edit</a>\
+                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/umkm.jpg')}}'></td>\
+                                    <td>"+c.description+"\
+                                    <a href=#' class='pull-right'>Edit</a>\
                                     </td>\
                                 </tr>\
                                 <tr>\
