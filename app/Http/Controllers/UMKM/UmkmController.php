@@ -16,6 +16,8 @@ use App\UmkmBiodata;
 use App\UmkmAchievement;
 use App\UmkmTraining;
 use App\Product;
+use App\LegalityList;
+use App\UmkmLegality;
 
 class UmkmController extends Controller
 {
@@ -44,11 +46,12 @@ class UmkmController extends Controller
     public function create()
     {
         $data["umkm"] = Umkm::get();
-        $data["users"] = User::get();
+        $data["user"] = User::find(Auth::user()->id);
         $data["umkm_categories"] = UmkmCategori::get();
-        $data["states"] = State::get();
+        $data["states"] = State::where('id',33)->get();
         $data["cities"] = City::get();
         $data["districts"] = District::get();
+        $data["legality_lists"] = LegalityList::get();
         
         return view('umkmuser.create',$data);
     }
@@ -61,11 +64,21 @@ class UmkmController extends Controller
      */
     public function store(Request $request)
     {
-        // $user = new User;
+        // dd($request);
         $umkm = new Umkm;
-        $umkm->fill($request->except(['products','achivements','trainings','biodata']));
-        // $umkm->user_id = $user->id;
+        $umkm->fill($request['umkm']);
         $umkm->save();
+
+        // dd($umkm);
+
+        foreach ($request['umkm_legalities'] as $ul => $umkm_legality) {
+            $db[$ul] = new UmkmLegality;
+            $db[$ul]->fill($umkm_legality);
+            $db[$ul]->umkm_id = $umkm->id;
+            $db[$ul]->save();
+        }
+
+        // dd($db);
         // dd($umkm);
         $umkm_biodata = new UmkmBiodata;
         $umkm_biodata->fill($request['biodata']);
@@ -107,7 +120,7 @@ class UmkmController extends Controller
     {
         $data['umkm'] = Umkm::with('umkm_biodata','city','umkmachievements','umkmatrainings','user','products.product_images')->find($id);
         // dd($data);
-        return view('umkmuser.show',$data);
+        return view('umkm.show',$data);
     }
 
     /**
@@ -123,6 +136,7 @@ class UmkmController extends Controller
         $data['states'] = State::get();
         $data['cities'] = City::get();
         $data['districts'] = District::get();
+        $data["legality_lists"] = LegalityList::get();
         $name['user'] = User::with('biodata')->find(Auth::user()->id);
         return view('umkmuser.edit',$data,$name);
     }
@@ -137,8 +151,16 @@ class UmkmController extends Controller
     public function update(Request $request, $id)
     {
         $umkm = Umkm::find($id);
-        $umkm->fill($request->except(['products','achivements','trainings','biodata']));
+        $umkm->fill($request["umkm"]);
         $umkm->update();
+
+        $umkm_legalities = UmkmLegality::where('umkm_id',$umkm->id)->delete();
+        foreach ($request['umkm_legalities'] as $ul => $umkm_legality) {
+            $db[$ul] = new UmkmLegality;
+            $db[$ul]->fill($umkm_legality);
+            $db[$ul]->umkm_id = $umkm->id;
+            $db[$ul]->save();
+        }
 
         $umkm_biodata = UmkmBiodata::where('umkm_id',$umkm->id)->first();
         $umkm_biodata->fill($request['biodata']);
@@ -149,7 +171,7 @@ class UmkmController extends Controller
         // dd($umkm_products);
         foreach ($request['products'] as $p => $product) {
             $db = new Product;
-            $db->fill($product);    
+            $db->fill($product);
             $db->umkm_id = $umkm->id;
             $db->save();
         }

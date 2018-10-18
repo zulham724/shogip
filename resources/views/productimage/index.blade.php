@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{ $p+1 }}</td>
                             <td>{{ $productimage->product->name }}</td>
-                            <td><img src="{{ asset('storage/'.$productimage->image) }}" class="rounded mx-auto d-block" width="50"></td>
+                            <td><img src="{{ $productimage->image != null ?  asset('storage/'.$productimage->image) : asset('storage/uploads/avatars/default.png') }}" class="rounded mx-auto d-block" width="50"></td>
                             <td>{{ $productimage->description }}</td>
                               <td>
                                 <center>

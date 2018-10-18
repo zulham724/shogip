@@ -91,9 +91,9 @@ class UserController extends Controller
         }
         $user->update();
 
-        $biodata = Biodata::where('user_id',$id)->first();
-        $biodata->fill($request['biodata']);
-        $biodata->update();
+        // $biodata = Biodata::where('user_id',$id)->first();
+        // $biodata->fill($request['biodata']);
+        // $biodata->update();
         // dd($biodata,$user);
         return redirect()->route('user.index');
 

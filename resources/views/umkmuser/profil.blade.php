@@ -16,7 +16,7 @@
                 @csrf
                 <div class="row">
                     
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
 
@@ -30,36 +30,41 @@
                                         </div> 
                                     
                                     <div class="form-group">
-                                        <label>Nama Panggilan</label>
+                                        <label>Nama</label>
                                         <input type="text" class="form-control" value="{{$user->name}}"   name="user[name]" value="" placeholder="type something" required> 
                                     </div> 
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input type="text" class="form-control" value= "{{$user->email}} "   name="user[email]" placeholder="type something" required> 
                                     </div>
-                                                                     
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-pencil"></i> Edit</button> 
+                                                        
+                                    </div>
+                                                                                 
 
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        {{-- <div class="col-6">
                             <div class="card">
                                 <div class="card-header">
 
                                     <h5 class="pull-right">Biodata</h5>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body"> --}}
                                                                                      
                                     
-                                        <div class="form-group">
+                                       {{--  <div class="form-group">
                                             <label>Nama Depan</label>
                                             <input type="text" class="form-control" value="{{$user->biodata->first_name}}"   name="biodata[first_name]" value="" placeholder="type something" required> 
                                         </div> 
                                         <div class="form-group">
                                             <label>Nama Belakang</label>
-                                            <input type="text" class="form-control" value= "{{$user->biodata->last_name}} "   name="biodata[last_name]" required> 
-                                        </div>
+                                            <input type="text" class="form-control" value= "{{$user->biodata->last_name}} "   name="biodata[last_name]" required>  --}}
+                                        {{-- </div>
                                         <div class="form-group">
                                             <label>Tanggal Lahir</label>
                                             <input type="date" name="biodata[birth_of_date]" class="form-control" value="{{$user->biodata->birth_of_date}}">
@@ -80,16 +85,13 @@
                                         <div class="form-group">
                                             <label>Nomor Identitas</label>
                                             <input type="text" class="form-control" value="{{$user->biodata->identify_number}} "   name="biodata[identify_number]" placeholder="type something" required> 
-                                        </div>
+                                        </div> --}}
                                     
-                                </div>
+                                {{-- </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                            <button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-pencil"></i> Edit</button> 
-                                            
-                    </div>
+                    </div> --}}
+                    
             </form>
         </div>
     </div>

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             UmkmTrainingTableSeeder::class,
             ProductTableSeeder::class,
             ProductImageTableSeeder::class,
+            LegalityTableSeeder::class,
         // $this->call(UsersTableSeeder::class);
                 ]);
     }

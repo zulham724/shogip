@@ -26,6 +26,10 @@ class Umkm extends Model
         return $this->belongsTo('App\City');
     }
 
+    public function legality_lists(){
+        return $this->hasMany('App\LegalityList');
+    }
+
     public function district(){
         return $this->belongsTo('App\District');
     }

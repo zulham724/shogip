@@ -11,7 +11,7 @@ class DistrictTableSeeder extends Seeder
      * @return void
      */
     public function run()
-   {
+    {
    		$data = [
 		    [
 		    	"id"=>1,

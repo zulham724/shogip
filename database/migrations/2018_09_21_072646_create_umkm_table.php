@@ -21,6 +21,8 @@ class CreateUmkmTable extends Migration
             $table->integer('city_id')->unsigned();
             $table->integer('district_id')->unsigned();
             $table->string('name');
+            $table->string('varian')->nullable();
+            $table->string('business_form')->nullable();
             $table->string('description')->nullable();
             $table->string('address')->nullable();
             $table->bigInteger('cp');

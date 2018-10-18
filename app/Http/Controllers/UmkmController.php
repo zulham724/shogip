@@ -15,6 +15,8 @@ use App\UmkmBiodata;
 use App\UmkmAchievement;
 use App\UmkmTraining;
 use App\Product;
+use App\LegalityList;
+use App\UmkmLegality;
 
 class UmkmController extends Controller
 {
@@ -44,6 +46,7 @@ class UmkmController extends Controller
         $data["states"] = State::get();
         $data["cities"] = City::get();
         $data["districts"] = District::get();
+        $data["legality_lists"] = LegalityList::get();
         
         return view('umkm.create',$data);
     }
@@ -56,10 +59,18 @@ class UmkmController extends Controller
      */
     public function store(Request $request)
     {
-        $umkm = new Umkm;
-        $umkm->fill($request->except(['products','achivements','trainings','biodata']));
+       $umkm = new Umkm;
+        $umkm->fill($request['umkm']);
         $umkm->save();
         // dd($umkm);
+
+        foreach ($request['umkm_legalities'] as $ul => $umkm_legality) {
+            $db[$ul] = new UmkmLegality;
+            $db[$ul]->fill($umkm_legality);
+            $db[$ul]->umkm_id = $umkm->id;
+            $db[$ul]->save();
+        }
+
         $umkm_biodata = new UmkmBiodata;
         $umkm_biodata->fill($request['biodata']);
         $umkm_biodata->umkm_id = $umkm->id;
@@ -117,6 +128,7 @@ class UmkmController extends Controller
         $data['states'] = State::get();
         $data['cities'] = City::get();
         $data['districts'] = District::get();
+        $data["legality_lists"] = LegalityList::get();
         return view('umkm.edit',$data);
     }
 

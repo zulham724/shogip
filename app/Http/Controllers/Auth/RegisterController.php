@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/homeumkm?login=true';
+    protected $redirectTo = '/umkmuser/create';
 
     /**
      * Create a new controller instance.
@@ -71,17 +71,17 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => $data['password'],
         ]);
-        $biodata = new Biodata;
-        $biodata->user_id = $user->id;
-        $biodata->first_name = $data["first_name"];
-        $biodata->last_name = $data["last_name"];
-        $biodata->birth_of_date = $data["birth_of_date"];
-        $biodata->province_id = $data["province_id"];
-        $biodata->city_id = $data["city_id"];
-        $biodata->district_id = $data["district_id"];
-        $biodata->identify_number = $data["identify_number"];
-        $biodata->save();
-        // $biodata['biodata']->fill($biodata->except(['name','email','password','role_id']));
+        // $biodata = new Biodata;
+        // $biodata->user_id = $user->id;
+        // // $biodata->first_name = $data["first_name"];
+        // // $biodata->last_name = $data["last_name"];
+        // $biodata->birth_of_date = $data["birth_of_date"];
+        // $biodata->province_id = $data["province_id"];
+        // $biodata->city_id = $data["city_id"];
+        // $biodata->district_id = $data["district_id"];
+        // $biodata->identify_number = $data["identify_number"];
+        // $biodata->save();
+        // $biodata['biodata']->fill($biodata->except(['name','first_name','last_name','email','password','role_id']));
         // dd($biodata);
         return $user;
     }

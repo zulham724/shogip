@@ -56,6 +56,7 @@
                             <td>{{ $umkms->instagram }}</td>
                               <td>
                                  <center>
+                                   {{--  <a href="{{ route('umkmuser.show',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-search"></i> Lihat</a> --}}
                                     <a href="{{ route('umkmuser.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
                                 <button type="submit" class="btn btn-danger" onclick="destroy({{$umkms->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 </center>

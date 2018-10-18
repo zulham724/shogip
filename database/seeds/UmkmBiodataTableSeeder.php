@@ -17,24 +17,23 @@ class UmkmBiodataTableSeeder extends Seeder
 		    [
 		    	"id"=>1,
         		"umkm_id"=>1,
-        		"date_of_birth"=>"2018-05-04",
+        		"year"=>"2018-05-04",
         		"founder"=>"Bagus",
         		"total_employes"=>"20",
         		"monthly_finance"=>"20000000",
         		"is_has_hki"=>"oke",
-        		"is_funded"=>"Kerajinan"
-
+        		
         	],
 
         	[
 		    	"id"=>2,
         		"umkm_id"=>2,
-        		"date_of_birth"=>"2018-05-04",
+        		"year"=>"2018-05-04",
         		"founder"=>"Asep",
         		"total_employes"=>"20",
         		"monthly_finance"=>"20000000",
         		"is_has_hki"=>"oke",
-        		"is_funded"=>"Kerajinan"
+        		
         	],
 		];
 

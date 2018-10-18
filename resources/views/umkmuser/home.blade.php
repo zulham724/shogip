@@ -27,7 +27,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><i class="fa fa-map"></i> Peta Sebaran UMKM <button class="btn btn-info pull-right" onclick="map_states()"> <i class="fa fa-arrow-left"></i></button> </div>
+                    <div class="card-header"><i class="fa fa-map"></i> Peta Sebaran UMKM {{-- <button class="btn btn-info pull-right" onclick="map_states()"> <i class="fa fa-arrow-left"></i></button> --}} </div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -243,7 +243,7 @@
                      <div class='card'>\
                         <div class='card-header'>\
                             <i class='fa fa-pencil'></i> Data UMKM Di "+s.name+"\
-                            <a href=' class='pull-right'>Tampilkan Data UMKM Di "+s.name+"</a>\
+                            \
                         </div>\
                         <div class='card-body'>\
                             <table class='table table-striped'>\
@@ -253,7 +253,7 @@
                                 <tr>\
                                     <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/shop.jpg')}}'></td>\
                                     <td>"+s.description+"\
-                                    <a href=' class='pull-right'>Edit</a>\
+                                    \
                                     </td>\
                                 </tr>\
                                 <tr>\
@@ -282,7 +282,7 @@
     function map_cities(lat,lng,state_id){
 
         center = {lat:lat,lng:lng};
-        zoom+=2;
+        zoom+=3;
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
@@ -314,7 +314,7 @@
                      <div class='card'>\
                         <div class='card-header'>\
                             <i class='fa fa-pencil'></i> Data UMKM Di "+c.name+"\
-                            <a href=' class='pull-right'>Tampilkan Data "+c.name+"</a>\
+                           \
                         </div>\
                         <div class='card-body'>\
                             <table class='table table-striped'>\
@@ -324,13 +324,13 @@
                                 <tr>\
                                     <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/shop.jpg')}}'></td>\
                                     <td>"+c.description+"\
-                                    <a href=' class='pull-right'>Edit</a>\
+                                    \
                                     </td>\
                                 </tr>\
                                 <tr>\
                                     <td colspan='2'>\
                                         <span>\
-                                        <button type='button' class='btn btn-info' onclick='load_umkm("+c.id+")'><i class='fa fa-search'></i> Masuk</button>\
+                                        <button type='button' class='btn btn-info' onclick='load_umkm("+c.id+")'><i class='fa fa-search'></i> Lihat Data UMKM</button>\
                                         </span>\
                                     </td>\
                                 </tr>\

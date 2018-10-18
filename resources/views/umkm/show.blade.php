@@ -33,21 +33,13 @@
 
                         <div class="form-group">
                             <label>Nama Depan</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->first_name }}" readonly="true" name="first_name" value="" placeholder="type something" required> 
+                            <input type="text" class="form-control" value="{{ $umkm->user->name }}" readonly="true" name="first_name" value="" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
-                            <label>Nama Belakang</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->last_name }}" readonly="true" name="last_name" placeholder="type something" required> 
+                            <label>Email</label>
+                            <input type="text" class="form-control" value="{{ $umkm->user->email }}" readonly="true" name="last_name" placeholder="type something" required> 
                         </div>
-                        <div class="form-group">
-                            <label>Provinsi</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->province_id }}" readonly="true" name="province_id" placeholder="type something" required> 
-                        </div> 
-                        <div class="form-group">
-                            <label>Nomer Identitas</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->identify_number }}" readonly="true" name="identify_number" placeholder="type something" required> 
-                        </div> 
-
+                        
                     </form>
 
                 </div>
