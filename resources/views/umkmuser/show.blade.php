@@ -19,35 +19,27 @@
                         <h5 class="pull-right">Biodata</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('users.update',$umkm->user->id) }}" enctype="multipart/form-data" files="true" method="post">
+                        {{-- <form action="{{ route('users.update',$umkm->user->id) }}" enctype="multipart/form-data" files="true" method="post">
                             @method('put')
-                            @csrf
+                            @csrf --}}
                             <div class="form-group">
                                 <img src="{{ $umkm->user->avatar != null ?  asset('storage/'.$umkm->user->avatar) : asset('storage/uploads/avatars/default.png') }}" class="rounded mx-auto d-block" width="100">
-                                <input type="file" name="avatar" class="form-control">     
+                                {{-- <input type="file" name="avatar" class="form-control"> --}}     
                             </div>
-                            <div class="form-group">
+                           {{--  <div class="form-group">
                                 <button class="btn btn-success"> Ubah Gambar</button>     
-                            </div>
-                        </form>
+                            </div> --}}
+                       {{--  </form> --}}
 
                         <div class="form-group">
-                            <label>Nama Depan</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->first_name }}" readonly="true" name="first_name" value="" placeholder="type something" required> 
+                            <label>Nama </label>
+                            <input type="text" class="form-control" value="{{ $umkm->user->name }}" readonly="true" name="first_name" value="" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
-                            <label>Nama Belakang</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->last_name }}" readonly="true" name="last_name" placeholder="type something" required> 
+                            <label>Email</label>
+                            <input type="text" class="form-control" value="{{ $umkm->user->email }}" readonly="true" name="last_name" placeholder="type something" required> 
                         </div>
-                        <div class="form-group">
-                            <label>Provinsi</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->province_id }}" readonly="true" name="province_id" placeholder="type something" required> 
-                        </div> 
-                        <div class="form-group">
-                            <label>Nomer Identitas</label>
-                            <input type="text" class="form-control" value="{{ $umkm->user->biodata->identify_number }}" readonly="true" name="identify_number" placeholder="type something" required> 
-                        </div> 
-
+                        
                     </form>
 
                 </div>
@@ -65,8 +57,17 @@
                         @csrf
 
                         <div class="form-group">
-                            <label>Nama</label>
+                            <label>Nama UMKM</label>
                             <input type="text" class="form-control" value="{{ $umkm->name }}" readonly="true" name="first_name" placeholder="type something" required> 
+                        </div> 
+
+                        <div class="form-group">
+                            <label>Nama Pendiri</label>
+                            <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->founder }}" readonly="true" name="first_name" placeholder="type something" required> 
+                        </div> 
+                        <div class="form-group">
+                            <label>Tahun Berdiri</label>
+                            <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->year }}" readonly="true" name="first_name" placeholder="type something" required> 
                         </div> 
                         <div class="form-group">
                             <label>Nomor Telepon</label>
@@ -97,7 +98,7 @@
                         <a class="nav-link" href="#buzz" data-toggle="tab">Training</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#product" data-toggle="tab">Product</a>
+                        <a class="nav-link" href="#product" data-toggle="tab">Produk</a>
                     </li>
                 </ul>
 
@@ -204,7 +205,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     
-                                    <h5 class="pull-right">Product</h5>
+                                    <h5 class="pull-right">Produk</h5>
                                 </div>
                                 
                                 <div class="card-body">
@@ -216,11 +217,12 @@
                                             <input type="text" class="form-control" value=""  name="id" placeholder="type something" required> 
                                         </div>  --}}
                                         <div class="form-group">
-                                            <label>Nama Product</label>
+                                            <label>Nama Produk</label>
                                             <input type="text" class="form-control" value="{{ $product->name }}" readonly="true" name="name" placeholder="type something" required> 
                                         </div>
                                         <label>Gambar</label>
                                         <div class="form-group">
+                                            
                                             <div class="row">
                                                 @foreach($product->product_images as $index => $product_image)
                                                     <div class="col-4">
@@ -230,6 +232,7 @@
                                                     </div>
                                                 @endforeach
                                             </div>
+                                        
                                             
                                         </div>
                                          

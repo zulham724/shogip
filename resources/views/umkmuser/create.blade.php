@@ -193,7 +193,7 @@
 								<input type="text" class="form-control" name="biodata[is_has_hki]" placeholder="type something" > 
 							</div>
 							<div class="form-group">
-								<label>Kapasitas Produ/Bulan</label>
+								<label>Kapasitas Produk/Bulan</label>
 								<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something"> 
 							</div>
 							<div class="col-12">

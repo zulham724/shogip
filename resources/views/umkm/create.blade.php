@@ -23,7 +23,7 @@
 
 							<div class="form-group">
 								<label>User</label>
-								<select class="form-control select2" name="user_id">
+								<select class="form-control select2" name="umkm[user_id]">
 									@foreach ($users as $u => $user)
 									<option value="{{ $user->id }}">{{ $user->name }}</option>
 									@endforeach
@@ -194,7 +194,7 @@
 								<input type="text" class="form-control" name="biodata[is_has_hki]" placeholder="type something" > 
 							</div>
 							<div class="form-group">
-								<label>Kapasitas Produ/Bulan</label>
+								<label>Kapasitas Produk/Bulan</label>
 								<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something"> 
 							</div>
 							<div class="col-12">

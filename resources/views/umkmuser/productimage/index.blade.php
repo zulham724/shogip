@@ -29,22 +29,24 @@
                   </thead>
                   <tbody>
                         @if($umkm != null)
-                        @foreach ($umkm->products as  $product)
-                            @foreach($product->product_images as $u => $product_image)
-                                <tr>
-                                    <td>{{ $u+1 }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    {{--  --}}
-                                    <td><img src="{{ asset('storage/'.$product_image->image) }}" width="50"></td>
-                                    <td>{{ $product_image->description }}</td>
+                        @foreach($umkm as $umkm)
+                          @foreach ($umkm->products as  $product)
+                              @foreach($product->product_images as $u => $product_image)
+                                  <tr>
+                                      <td>{{ $u+1 }}</td>
+                                      <td>{{ $product->name }}</td>
+                                      {{--  --}}
+                                      <td><img src="{{ asset('storage/'.$product_image->image) }}" width="50"></td>
+                                      <td>{{ $product_image->description }}</td>
 
-                                    <td>
-                                        <center>
-                                            <button type="submit" class="btn btn-danger" onclick="destroy({{$product_image->id}})"><i class="fa fa-trash"></i> Hapus</button>
-                                        </center>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                      <td>
+                                          <center>
+                                              <button type="submit" class="btn btn-danger" onclick="destroy({{$product_image->id}})"><i class="fa fa-trash"></i> Hapus</button>
+                                          </center>
+                                      </td>
+                                  </tr>
+                              @endforeach
+                          @endforeach
                         @endforeach
                         @endif    
             </tbody>

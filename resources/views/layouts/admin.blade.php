@@ -127,6 +127,7 @@
             <li><a href="#umkmdropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>UMKM</a>
               <ul id="umkmdropdown" class="collapse list-unstyled">
                 <li><a href="{{ url('umkmcategories') }}"><i class="fa fa-caret-right"></i>Kategori UMKM</a></li>
+                <li><a href="{{ url('umkmlegalities') }}"><i class="fa fa-caret-right"></i>Legalitas UMKM</a></li>
                 <li><a href="#datadropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>UMKM Biodata</a>
                   <ul id="datadropdown" class="collapse list-unstyled">
                     <li><a href="{{ url('umkms') }}"><i class="fa fa-caret-right"></i>Data UMKM</a></li>

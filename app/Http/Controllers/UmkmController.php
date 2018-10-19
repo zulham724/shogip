@@ -43,7 +43,7 @@ class UmkmController extends Controller
         $data["umkm"] = Umkm::get();
         $data["users"] = User::get();
         $data["umkm_categories"] = UmkmCategori::get();
-        $data["states"] = State::get();
+        $data["states"] = State::where('id',33)->get();
         $data["cities"] = City::get();
         $data["districts"] = District::get();
         $data["legality_lists"] = LegalityList::get();

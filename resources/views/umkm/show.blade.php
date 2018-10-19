@@ -196,7 +196,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     
-                                    <h5 class="pull-right">Product</h5>
+                                    <h5 class="pull-right">Produk</h5>
                                 </div>
                                 
                                 <div class="card-body">
@@ -208,7 +208,7 @@
                                             <input type="text" class="form-control" value=""  name="id" placeholder="type something" required> 
                                         </div>  --}}
                                         <div class="form-group">
-                                            <label>Nama Product</label>
+                                            <label>Nama Produk</label>
                                             <input type="text" class="form-control" value="{{ $product->name }}" readonly="true" name="name" placeholder="type something" required> 
                                         </div>
                                         <label>Gambar</label>

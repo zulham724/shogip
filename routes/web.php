@@ -52,6 +52,7 @@ Route::group(['middleware'=>'auth'],function(){
 			'trainings'=>'UmkmTrainingController',
 			'products'=>'ProductController',
 			'productimages'=>'ProductImageController',
+			'umkmlegalities'=>'LegalityListController',
 		]);
 
 	});

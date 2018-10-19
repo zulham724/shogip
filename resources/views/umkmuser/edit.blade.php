@@ -69,6 +69,7 @@
 							</div>
 							<div class="form-group">
 								<label>Bentuk Usaha</label><br>
+
 								<div class="row">
 									<div class="col-4">
 										<input type="radio" id="type" name="umkm[business_form]" value="cv" {{  $umkm->business_form == 'cv' ? 'checked' : '' }}> CV
@@ -83,7 +84,7 @@
 										<input type="radio" id="type" name="umkm[business_form]" value="perseorangan"  {{  $umkm->business_form == 'perseorangan' ? 'checked' : '' }}> Perseorangan
 									</div>
 									<div class="col-4">
-										<input type="radio" id="type" name="umkm[business_form]" value="lainnya" { {{  $umkm->business_form == 'lainnya' ? 'checked' : '' }}> Lainnya
+										<input type="radio" id="type" name="umkm[business_form]" value="lainnya" {{  $umkm->business_form == 'lainnya' ? 'checked' : '' }}> Lainnya
 									</div>										
 								</div>
 							</div>
@@ -193,7 +194,7 @@
 								<input type="text" class="form-control" name="biodata[is_has_hki]" value="{{ $umkm->umkm_biodata->is_has_hki }}" placeholder="type something" required> 
 								</div>
 								<div class="form-group">
-									<label>Kapasitas Produ/Bulan</label>
+									<label>Kapasitas Produk/Bulan</label>
 									<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something" 	value="{{ $umkm->umkm_biodata->product_capacity }}"> 
 								</div>
 									<div class="col-12">

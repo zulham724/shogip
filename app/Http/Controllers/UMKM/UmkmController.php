@@ -119,8 +119,9 @@ class UmkmController extends Controller
     public function show($id)
     {
         $data['umkm'] = Umkm::with('umkm_biodata','city','umkmachievements','umkmatrainings','user','products.product_images')->find($id);
+        $name['user'] = User::with('biodata')->find(Auth::user()->id);
         // dd($data);
-        return view('umkm.show',$data);
+        return view('umkmuser.show',$data,$name);
     }
 
     /**
