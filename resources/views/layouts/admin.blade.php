@@ -112,9 +112,9 @@
               <a href="{{ url('users') }}"><i class="fa fa-users"></i>User</a>
             </li>
 
-            <li {{ Request::is('biodatas') ? 'class=active' : '' }}>
+            {{-- <li {{ Request::is('biodatas') ? 'class=active' : '' }}>
               <a href="{{ url('biodatas') }}"><i class="fa fa-address-book"></i>Biodata</a>
-            </li>
+            </li> --}}
 
             <li><a href="#areadropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>Wilayah</a>
               <ul id="areadropdown" class="collapse list-unstyled">
