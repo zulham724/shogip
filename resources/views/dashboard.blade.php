@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.creative')
 
 @section('css')
 <style type="text/css">
     #map {
-        height:500px;
+        height:100vh;
         width: 100%;
       }
 </style>
@@ -11,22 +11,7 @@
 
 @section('content')
 
-<div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header"><i class="fa fa-map"></i> Peta Sebaran UMKM {{-- <button class="btn btn-info pull-right" onclick="map_states()"> <i class="fa fa-arrow-left"></i></button> --}} </div>
-
-                    <div class="card-body">
-                        
-                       
-                        <div id="map"></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="map"></div>
     <div id="modalUmkm" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
 
@@ -191,7 +176,8 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -4.8234002, lng: 117.1941047},
           zoom:5,
-          styles: style
+          styles: style,
+          mapTypeId: 'satellite'
         });
         if(map){
             console.log('map woi');
@@ -263,7 +249,8 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
           zoom: zoom,
-          styles: style
+          styles: style,
+          mapTypeId: 'satellite'
         });
 
         //

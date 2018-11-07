@@ -12,22 +12,18 @@ class DistrictTableSeeder extends Seeder
      */
     public function run()
     {
-   		$data = [
-		    [
-		    	"id"=>1,
-        		"city_id"=>3374,
-        		"name"=>"Semarang",
-        		"description"=>"Kerajinan"
-        	],
-
-        	[
-		    	"id"=>2,
-        		"city_id"=>3374,
-        		"name"=>"Gunung Pati",
-        		"description"=>"Kerajinan"
-        	],
-		];
-
-        District::insert($data);		
+   		$file = fopen(database_path('csv/districts.csv'),"r");
+            $data = array();
+            while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
+                $data[] = $row;
+            }
+            foreach ($data as $d) {
+                $s = new District();
+                $s->id = $d[0];
+                $s->city_id = $d[1]
+                $s->name = $d[3];
+                $s->save();
+            }
+        }		
     }
 }

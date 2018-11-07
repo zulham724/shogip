@@ -26,18 +26,18 @@ class StatesTableSeeder extends Seeder
   		// }
         //csv
         $file = fopen(database_path('csv/provinces.csv'),"r");
-		$data = array();
-		while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
-		    $data[] = $row;
-		}
-		foreach ($data as $d) {
-            $s = new State();
-            $s->id = $d[0];
-            $s->name = $d[1];
-            $s->lat = $d[2];
-            $s->lng = $d[3];
-            $s->description = $d[4];
-            $s->save();
+    		$data = array();
+    		while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
+    		    $data[] = $row;
+    		}
+    		foreach ($data as $d) {
+                $s = new State();
+                $s->id = $d[0];
+                $s->name = $d[1];
+                $s->lat = $d[2];
+                $s->lng = $d[3];
+                $s->description = $d[4];
+                $s->save();
+            }
         }
-    }
 }
