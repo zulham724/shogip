@@ -215,7 +215,8 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -4.8234002, lng: 117.1941047},
           zoom:5,
-          styles: style
+          styles: style,
+          mapTypeId: 'satellite'
         });
         if(map){
             console.log('map woi');
@@ -287,7 +288,8 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
           zoom: zoom,
-          styles: style
+          styles: style,
+          mapTypeId: 'satellite'
         });
 
         //

@@ -12,7 +12,6 @@ import $ from 'jquery';
 import 'datatables.net';
 import 'select2';
 import 'jquery-bar-rating';
-window.simpleLightbox = require('simplelightbox');
 window.swal = require('sweetalert2');
 
 /**
@@ -31,5 +30,3 @@ Vue.component('productimage-component',require('./components/ProductImageCompone
 const app = new Vue({
     el: '#app'
 });
-
-var lightbox = $('.popup-gallery a').simpleLightbox();
