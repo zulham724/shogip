@@ -59,43 +59,52 @@ class UmkmController extends Controller
      */
     public function store(Request $request)
     {
-       $umkm = new Umkm;
+        $umkm = new Umkm;
         $umkm->fill($request['umkm']);
         $umkm->save();
         // dd($umkm);
-
-        foreach ($request['umkm_legalities'] as $ul => $umkm_legality) {
-            $db[$ul] = new UmkmLegality;
-            $db[$ul]->fill($umkm_legality);
-            $db[$ul]->umkm_id = $umkm->id;
-            $db[$ul]->save();
-        }
-
         $umkm_biodata = new UmkmBiodata;
         $umkm_biodata->fill($request['biodata']);
         $umkm_biodata->umkm_id = $umkm->id;
         $umkm_biodata->save();
-        // dd($umkm_biodata);
-        foreach ($request['products'] as $p => $product) {
-            $db = new Product;
-            $db->fill($product);
-            $db->umkm_id = $umkm->id;
-            $db->save();
+
+        if (isset($request['umkm_legalities'])) {
+            # code...
+            foreach ($request['umkm_legalities'] as $ul => $umkm_legality) {
+                $db[$ul] = new UmkmLegality;
+                $db[$ul]->fill($umkm_legality);
+                $db[$ul]->umkm_id = $umkm->id;
+                $db[$ul]->save();
+            }
+        } elseif (isset($request['products'])) {
+            # code...
+            // dd($umkm_biodata);
+            foreach ($request['products'] as $p => $product) {
+                $db = new Product;
+                $db->fill($product);
+                $db->umkm_id = $umkm->id;
+                $db->save();
+            }
+        } elseif (isset($request['achivements'])) {
+            # code...
+            foreach ($request['achivements'] as $a => $achivement) {
+                $data = new UmkmAchievement;
+                $data->fill($achivement);
+                $data->umkm_id = $umkm->id;
+                $data->save();
+            }
+        } elseif ($request['trainings']) {
+            # code...
+            foreach ($request['trainings'] as $t => $training) {
+                $achievement = new UmkmTraining;
+                $achievement->fill($training);
+                $achievement->umkm_id = $umkm->id;
+                $achievement->save();
+            }
         }
 
-        foreach ($request['achivements'] as $a => $achivement) {
-            $data = new UmkmAchievement;
-            $data->fill($achivement);
-            $data->umkm_id = $umkm->id;
-            $data->save();
-        }
 
-        foreach ($request['trainings'] as $t => $training) {
-            $achievement = new UmkmTraining;
-            $achievement->fill($training);
-            $achievement->umkm_id = $umkm->id;
-            $achievement->save();
-        }
+
 
         // dd($request);
 
@@ -150,31 +159,33 @@ class UmkmController extends Controller
         $umkm_biodata->update();
         // dd($umkm_biodata);
 
-        $umkm_products = Product::where('umkm_id',$umkm->id)->delete();
-        // dd($umkm_products);
-        foreach ($request['products'] as $p => $product) {
-            $db = new Product;
-            $db->fill($product);    
-            $db->umkm_id = $umkm->id;
-            $db->save();
-        }
-
-        $umkm_achivements = UmkmAchievement::where('umkm_id',$umkm->id)->delete();
-
-        foreach ($request['achivements'] as $a => $achivement) {
-            $data = new UmkmAchievement;
-            $data->fill($achivement);
-            $data->umkm_id = $umkm->id;
-            $data->save();
-        }
-
-        $umkm_trainings = UmkmTraining::where('umkm_id',$umkm->id)->delete();
-
-        foreach ($request['trainings'] as $t => $training) {
-            $achievement = new UmkmTraining;
-            $achievement->fill($training);
-            $achievement->umkm_id = $umkm->id;
-            $achievement->save();
+        if (isset($request['products'])) {
+            # code...
+            $umkm_products = Product::where('umkm_id',$umkm->id)->delete();
+            foreach ($request['products'] as $p => $product) {
+                $db = new Product;
+                $db->fill($product);    
+                $db->umkm_id = $umkm->id;
+                $db->save();
+            }
+        } elseif (isset($request['achivements'])) {
+            # code...
+            $umkm_achivements = UmkmAchievement::where('umkm_id',$umkm->id)->delete();
+            foreach ($request['achivements'] as $a => $achivement) {
+                $data = new UmkmAchievement;
+                $data->fill($achivement);
+                $data->umkm_id = $umkm->id;
+                $data->save();
+            }
+        } elseif (isset($request['trainings'])) {
+            # code...
+            $umkm_trainings = UmkmTraining::where('umkm_id',$umkm->id)->delete();
+            foreach ($request['trainings'] as $t => $training) {
+                $achievement = new UmkmTraining;
+                $achievement->fill($training);
+                $achievement->umkm_id = $umkm->id;
+                $achievement->save();
+            }
         }
 
         return redirect()->route('umkms.index');
