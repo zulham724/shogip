@@ -20,7 +20,7 @@ class DistrictTableSeeder extends Seeder
             foreach ($data as $d) {
                 $s = new District();
                 $s->id = $d[0];
-                $s->city_id = $d[1]
+                $s->city_id = $d[1];
                 $s->name = $d[3];
                 $s->save();
             }
