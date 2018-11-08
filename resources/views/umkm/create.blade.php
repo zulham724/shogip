@@ -58,7 +58,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label>Distrik/Daerah</label>
+								<label>Kecamatan/Daerah</label>
 								<select class="form-control select2" name="umkm[district_id]">
 									@foreach ($districts as $ds => $district)
 									<option value="{{ $district->id }}">{{ $district->name }}</option>

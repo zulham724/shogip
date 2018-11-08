@@ -12,28 +12,7 @@
 @section('content')
 
     <div id="map"></div>
-    <div id="modalUmkm" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Data UMKM</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times</button>
-                </div>
-                <div class="modal-body">
-                    <div id="text-center">
-                        <h2>Data UMKM</h2>
-                    </div>
-                    <div class="table-responsive">
-                    <table class="table table-striped customdatatable">
-                       
-                    </table>
-                    </div>
-                </div>
-            </div>
-            
-        </div> 
-    </div>
+    
 @endsection
 @section('script')
 <script type="text/javascript">
@@ -162,13 +141,17 @@
 
 
     $(()=>{
-        
+        // $("#modalUmkm").modal("show");
     });
 
     function initMap() {
 
-        this.map_cities(-7.701609,110.1275541,33);
-        console.log('woi');
+        var tid = setInterval( function () {
+            if ( document.readyState !== 'complete' ) return;
+            clearInterval( tid );       
+            // do your work
+            this.map_cities(-7.701609,110.1275541,33);
+        }, 100 );
 
     }
 
@@ -359,7 +342,9 @@
                 let data = table.row($(this).parents('tr')).data();
                 window.location.href = "{{ url('umkms') }}/"+data.id;
             });
-            $("#modalUmkm").modal();
+
+            $("#modalUmkm").modal("show");
+
         });
     }
 </script>   

@@ -248,6 +248,29 @@
           </div>
         </div>
       </section>
+      
+      <div id="modalUmkm" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title">Data UMKM</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times</button>
+                  </div>
+                  <div class="modal-body">
+                      <div id="text-center">
+                          <h2>Data UMKM</h2>
+                      </div>
+                      <div class="table-responsive">
+                      <table class="table table-striped customdatatable">
+                         
+                      </table>
+                      </div>
+                  </div>
+              </div>
+              
+          </div> 
+      </div>
 
     </div> {{-- end id app --}}
 
@@ -262,11 +285,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="{{ asset('creative/js/creative.min.js') }}"></script>
-    <script src="{{ asset('distribution/vendor/jquery.cookie/jquery.cookie.js') }}"> </script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&callback=initMap"  async defer></script> 
     <script type="text/javascript">
       // Add scrollspy to <body>
