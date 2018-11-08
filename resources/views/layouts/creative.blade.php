@@ -248,19 +248,16 @@
           </div>
         </div>
       </section>
-      
+
       <div id="modalUmkm" class="modal fade" role="dialog">
           <div class="modal-dialog modal-lg">
 
               <div class="modal-content">
                   <div class="modal-header">
-                      <h4 class="modal-title">Data UMKM</h4>
+                      <h4 class="modal-title">Detail UMKM</h4>
                       <button type="button" class="close" data-dismiss="modal">&times</button>
                   </div>
                   <div class="modal-body">
-                      <div id="text-center">
-                          <h2>Data UMKM</h2>
-                      </div>
                       <div class="table-responsive">
                       <table class="table table-striped customdatatable">
                          
