@@ -113,19 +113,19 @@
 							</div>
 							<div class="form-group">
 								<label>web</label>
-								<input type="text" class="form-control" name="umkm[web]" placeholder="type something" required> 
+								<input type="text" class="form-control" name="umkm[web]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
 								<label>facebook</label>
-								<input type="text" class="form-control" name="umkm[facebook]" placeholder="type something" required> 
+								<input type="text" class="form-control" name="umkm[facebook]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
 								<label>Twitter</label>
-								<input type="text" class="form-control" name="umkm[twitter]" placeholder="type something" required> 
+								<input type="text" class="form-control" name="umkm[twitter]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
 								<label>Instagram</label>
-								<input type="text" class="form-control" name="umkm[instagram]" placeholder="type something" required> 
+								<input type="text" class="form-control" name="umkm[instagram]" placeholder="type something"> 
 							</div> 
 						</div>
 					</div>

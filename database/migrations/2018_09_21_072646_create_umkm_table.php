@@ -26,10 +26,10 @@ class CreateUmkmTable extends Migration
             $table->string('description')->nullable();
             $table->string('address')->nullable();
             $table->bigInteger('cp');
-            $table->string('web');
-            $table->string('facebook');
-            $table->string('twitter');
-            $table->string('instagram');
+            $table->string('web')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
             $table->timestamps();

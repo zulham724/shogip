@@ -49,19 +49,19 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#map">Map</a>
+                <a class="nav-link js-scroll-trigger" href="#map">Peta</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                <a class="nav-link js-scroll-trigger" href="#about">Masuk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                <a class="nav-link js-scroll-trigger" href="#services">Layanan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                <a class="nav-link js-scroll-trigger" href="#portfolio">Produk Unggulan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                <a class="nav-link js-scroll-trigger" href="#contact">Kontak</a>
               </li>
             </ul>
           </div>
@@ -78,9 +78,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-              <h2 class="section-heading text-white">We've got what you need!</h2>
+              <h2 class="section-heading text-white">Tentang Kami!</h2>
               <hr class="light my-4">
-              <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+              <p class="text-faded mb-4">kami memberikan layanan informasi mengenai data UMKM yang ada di Jawa Tengah beserta Sistem Informasi Produk-produk unggulan.</p>
               <a class="btn btn-light btn-xl js-scroll-trigger" href="{{ route('login') }}">Masuk</a>
             </div>
           </div>
@@ -91,7 +91,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center">
-              <h2 class="section-heading">At Your Service</h2>
+              <h2 class="section-heading">Layanan</h2>
               <hr class="my-4">
             </div>
           </div>
@@ -100,30 +100,30 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
-                <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
-                <h3 class="mb-3">Sturdy Templates</h3>
-                <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+                <i class="fas fa-4x fa-map text-primary mb-3 sr-icon-1"></i>
+                <h3 class="mb-3">Tampilan Menarik dengan Peta</h3>
+                <p class="text-muted mb-0">Sistem Kami mendukung penuh Pemetaan dari Google Map agar mempermudah pencarian UMKM</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
                 <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
-                <h3 class="mb-3">Ready to Ship</h3>
-                <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+                <h3 class="mb-3">Sistem Informasi</h3>
+                <p class="text-muted mb-0">Anda dapat sekaligus mendapat informasi mengenai Data UMKM beserta Produk-produk unggulan di Jawa Tengah</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
                 <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
-                <h3 class="mb-3">Up to Date</h3>
-                <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+                <h3 class="mb-3">Admin Panel</h3>
+                <p class="text-muted mb-0">Kami menyediakan Panel Admin bagi calon pengusaha jika ingin mendaftarkan UMKMnya pada Sistem kami. Tentunya UMKM tersebut akan tampil di Peta Kami.</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
                 <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
-                <h3 class="mb-3">Made with Love</h3>
-                <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+                <h3 class="mb-3">Layanan Sepenuh Hati</h3>
+                <p class="text-muted mb-0">Layanan Kami akan selalu terbuka lebar bagi Calon-calon Pengusaha.</p>
               </div>
             </div>
           </div>
@@ -134,15 +134,15 @@
         <div class="container-fluid p-0">
           <div class="row no-gutters popup-gallery">
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/1.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/thumbnails/1.jpg') }}" alt="">
+              <a class="portfolio-box" href="http://cdn2.tstatic.net/jateng/foto/bank/images/percantik-ruangan-dengan-tanaman-hias-dan-bunga-palsu_20180509_135022.jpg">
+                <img class="img-fluid" src="http://cdn2.tstatic.net/jateng/foto/bank/images/percantik-ruangan-dengan-tanaman-hias-dan-bunga-palsu_20180509_135022.jpg" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      Category
+                      UMKM Tanduran Cilik
                     </div>
                     <div class="project-name">
-                      Project Name
+                      Tanaman Berduri
                     </div>
                   </div>
                 </div>
@@ -231,20 +231,20 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-              <h2 class="section-heading">Let's Get In Touch!</h2>
+              <h2 class="section-heading">Anda tertarik?</h2>
               <hr class="my-4">
-              <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+              <p class="mb-5">Kami dapat dihubungi melalui Email atau Nomor telepon dibawah ini</p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 ml-auto text-center">
               <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-              <p>123-456-6789</p>
+              <p>+62 89682169754</p>
             </div>
             <div class="col-lg-4 mr-auto text-center">
               <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
               <p>
-                <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+                <a href="mailto:your-email@your-domain.com">info@ardata.co.id</a>
               </p>
             </div>
           </div>
