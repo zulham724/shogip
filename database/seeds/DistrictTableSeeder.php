@@ -21,7 +21,7 @@ class DistrictTableSeeder extends Seeder
             $s = new District();
             $s->id = $d[0];
             $s->city_id = $d[1];
-            $s->name = $d[3];
+            $s->name = $d[2];
             $s->save();
         }	
     }
