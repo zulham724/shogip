@@ -37,6 +37,7 @@
 @endsection
 @section('script')
 <script type="text/javascript">
+
     var style = [
              {
                     "featureType": "administrative.province",

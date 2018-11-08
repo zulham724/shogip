@@ -24,24 +24,7 @@
 
 <section>
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header"><i class="fa fa-map"></i> Peta Sebaran UMKM {{-- <button class="btn btn-info pull-right" onclick="map_states()"> <i class="fa fa-arrow-left"></i></button> --}} </div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        <div id="map"></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="map"></div>
     </div>
     <div id="modalUmkm" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -69,6 +52,7 @@
 </section>
 @endsection
 @section('script')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&callback=initMap"  async defer></script>
 <script type="text/javascript">
     $(()=>{
         if({!! $login !!}){
@@ -205,8 +189,9 @@
 
     function initMap() {
 
-         this.map_cities(-7.701609,110.1275541,33);
-
+        setTimeout(()=>{
+            this.map_cities(-7.701609,110.1275541,33);
+        },500);
 
     }
 
@@ -216,7 +201,7 @@
           center: {lat: -4.8234002, lng: 117.1941047},
           zoom:5,
           styles: style,
-          mapTypeId: 'satellite'
+          mapTypeId: google.maps.MapTypeId.HYBRID
         });
         if(map){
             console.log('map woi');
@@ -289,7 +274,7 @@
           center: center,
           zoom: zoom,
           styles: style,
-          mapTypeId: 'satellite'
+          mapTypeId: google.maps.MapTypeId.HYBRID
         });
 
         //

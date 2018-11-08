@@ -23,6 +23,9 @@
         "datatables.net": "^1.10.19",
         "datatables.net-dt": "^1.10.19",
         "jquery-bar-rating": "^1.2.2",
+        "lg-thumbnail.js": "^1.1.0",
+        "lg-zoom.js": "^1.0.1",
+        "lightgallery.js": "^1.1.1",
         "select2": "^4.0.6-rc.1",
         "simplelightbox": "^1.15.0",
         "sweetalert2": "^7.28.4"

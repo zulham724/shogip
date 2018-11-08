@@ -27,10 +27,8 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('creative/css/creative.css') }}" rel="stylesheet">
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
     @yield('css')
 
   </head>
@@ -129,13 +127,13 @@
           </div>
         </div>
       </section>
-
+      
       <section class="p-0" id="portfolio">
         <div class="container-fluid p-0">
-          <div class="row no-gutters popup-gallery">
+          <div class="row no-gutters popup-gallery" id="lightgallery">
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="http://cdn2.tstatic.net/jateng/foto/bank/images/percantik-ruangan-dengan-tanaman-hias-dan-bunga-palsu_20180509_135022.jpg">
-                <img class="img-fluid" src="http://cdn2.tstatic.net/jateng/foto/bank/images/percantik-ruangan-dengan-tanaman-hias-dan-bunga-palsu_20180509_135022.jpg" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/1.jpg') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/fullsize/1.jpg') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
@@ -270,6 +268,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_PAWlz-pnuwslVgZq7sZ3ESbYkgqO56g&callback=initMap"  async defer></script> 
+    <script type="text/javascript">
+      // Add scrollspy to <body>
+      $('body').scrollspy({target: ".navbar", offset: 50});
+
+      $(()=>{
+        // Add smooth scrolling on all links inside the navbar
+        $("#navbarResponsive a").on('click', function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+
+          } // End if
+
+        });
+      });
+    </script>
     @yield('script')
 
   </body>
