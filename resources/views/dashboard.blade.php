@@ -177,7 +177,11 @@
           center: {lat: -4.8234002, lng: 117.1941047},
           zoom:5,
           styles: style,
-          mapTypeId: 'satellite'
+          mapTypeId: google.maps.MapTypeId.HYBRID,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.LEFT_CENTER
+          }
         });
         if(map){
             console.log('map woi');
@@ -250,7 +254,11 @@
           center: center,
           zoom: zoom,
           styles: style,
-          mapTypeId: 'satellite'
+          mapTypeId: google.maps.MapTypeId.HYBRID,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.LEFT_CENTER
+          }
         });
 
         //
