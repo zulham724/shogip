@@ -12,7 +12,7 @@ class DistrictTableSeeder extends Seeder
      */
     public function run()
     {
-   		$file = fopen(database_path('csv/districts.csv'),"r");
+   		$file = fopen(database_path('csv/district.csv'),"r");
         $data = array();
         while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
             $data[] = $row;
