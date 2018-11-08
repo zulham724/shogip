@@ -17,7 +17,7 @@
     <link href="{{ asset('creative/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="{{ asset('creative/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
@@ -100,28 +100,28 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
-                <i class="fas fa-4x fa-map text-primary mb-3 sr-icon-1"></i>
+                <i class="fa fa-4x fa-map text-primary mb-3 sr-icon-1"></i>
                 <h3 class="mb-3">Tampilan Menarik dengan Peta</h3>
                 <p class="text-muted mb-0">Sistem Kami mendukung penuh Pemetaan dari Google Map agar mempermudah pencarian UMKM</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
-                <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+                <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
                 <h3 class="mb-3">Sistem Informasi</h3>
                 <p class="text-muted mb-0">Anda dapat sekaligus mendapat informasi mengenai Data UMKM beserta Produk-produk unggulan di Jawa Tengah</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
-                <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+                <i class="fa fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
                 <h3 class="mb-3">Admin Panel</h3>
                 <p class="text-muted mb-0">Kami menyediakan Panel Admin bagi calon pengusaha jika ingin mendaftarkan UMKMnya pada Sistem kami. Tentunya UMKM tersebut akan tampil di Peta Kami.</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
               <div class="service-box mt-5 mx-auto">
-                <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
+                <i class="fa fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
                 <h3 class="mb-3">Layanan Sepenuh Hati</h3>
                 <p class="text-muted mb-0">Layanan Kami akan selalu terbuka lebar bagi Calon-calon Pengusaha.</p>
               </div>
