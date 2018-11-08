@@ -42,7 +42,7 @@ class StateController extends Controller
      */
     public function show($id)
     {
-        $state = State::find($id);
+        $state = State::with('cities')->find($id);
 
         return response()->json($state);
     }

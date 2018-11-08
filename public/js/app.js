@@ -14034,6 +14034,8 @@ Vue.component('product-component', __webpack_require__(53));
 Vue.component('achivement-component', __webpack_require__(56));
 Vue.component('training-component', __webpack_require__(59));
 Vue.component('productimage-component', __webpack_require__(62));
+Vue.component('form-province-component', __webpack_require__(75));
+
 var app = new Vue({
   el: '#app'
 });
@@ -74259,6 +74261,313 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(76)
+/* template */
+var __vue_template__ = __webpack_require__(77)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/FormProvinceComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-31a36d6e", Component.options)
+  } else {
+    hotAPI.reload("data-v-31a36d6e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ["edit_umkm"],
+    data: function data() {
+        return {
+            states: [],
+            cities: [],
+            districts: [],
+            umkm: {
+                state_id: "",
+                city_id: "",
+                district_id: ""
+            }
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        console.log('Component mounted.');
+        if (this.edit_umkm) {
+            this.umkm = this.edit_umkm;
+            this.load_cities();
+            this.load_districts();
+        }
+
+        axios.get('/api/states').then(function (res) {
+            _this.states = res.data;
+        });
+    },
+
+    methods: {
+        load_cities: function load_cities() {
+            var _this2 = this;
+
+            axios.get('/api/states/' + this.umkm.state_id).then(function (res) {
+                _this2.cities = res.data.cities;
+            });
+        },
+        load_districts: function load_districts() {
+            var _this3 = this;
+
+            axios.get('/api/cities/' + this.umkm.city_id).then(function (res) {
+                _this3.districts = res.data.districts;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Provinsi")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.umkm.state_id,
+              expression: "umkm.state_id"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "umkm[state_id]" },
+          on: {
+            change: [
+              function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  _vm.umkm,
+                  "state_id",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              },
+              function($event) {
+                _vm.load_cities()
+              }
+            ]
+          }
+        },
+        [
+          _c("option", { attrs: { value: "" } }, [_vm._v("Pilih Provinsi")]),
+          _vm._v(" "),
+          _vm._l(_vm.states, function(state, s) {
+            return _c("option", { domProps: { value: state.id } }, [
+              _vm._v(_vm._s(state.name))
+            ])
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Kota")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.umkm.city_id,
+              expression: "umkm.city_id"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "umkm[city_id]" },
+          on: {
+            change: [
+              function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  _vm.umkm,
+                  "city_id",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              },
+              function($event) {
+                _vm.load_districts()
+              }
+            ]
+          }
+        },
+        [
+          _c("option", { attrs: { value: "" } }, [_vm._v("Pilih Kota")]),
+          _vm._v(" "),
+          _vm._l(_vm.cities, function(city, c) {
+            return _c("option", { domProps: { value: city.id } }, [
+              _vm._v(_vm._s(city.name))
+            ])
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Kecamatan/Daerah")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.umkm.district_id,
+              expression: "umkm.district_id"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { name: "umkm[district_id]" },
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.$set(
+                _vm.umkm,
+                "district_id",
+                $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+              )
+            }
+          }
+        },
+        [
+          _c("option", { attrs: { value: "" } }, [_vm._v("Pilih Kecamatan")]),
+          _vm._v(" "),
+          _vm._l(_vm.districts, function(district, d) {
+            return _c("option", { domProps: { value: district.id } }, [
+              _vm._v(_vm._s(district.name))
+            ])
+          })
+        ],
+        2
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-31a36d6e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

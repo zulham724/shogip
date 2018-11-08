@@ -43,7 +43,7 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        $city = City::find($id);
+        $city = City::with('districts')->find($id);
 
         return response()->json($city);
     }

@@ -33,30 +33,7 @@
 									@endforeach
 								</select>
 							</div>
-							<div class="form-group">
-								<label>Provinsi</label>
-								<select class="form-control select2" name="umkm[state_id]">
-									@foreach ($states as $st => $state)
-									<option value="{{ $state->id }}" {{$state->id==$umkm->state_id ? 'selected':null}}>{{ $state->name }}</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Kota</label>
-								<select class="form-control select2" name="umkm[city_id]">
-									@foreach ($cities as $c => $city)
-									<option value="{{ $city->id }}" {{$city->id==$umkm->city_id ? 'selected':null}}>{{ $city->name }}</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Kecamatank/Daerah</label>
-								<select class="form-control select2" name="umkm[district_id]">
-									@foreach ($districts as $d => $district)
-									<option value="{{ $district->id }}" {{$district->id==$umkm->district_id ? 'selected':null}}>{{ $district->name }}</option>
-									@endforeach
-								</select>
-							</div>
+							<form-province-component v-bind:edit_umkm="{{ $umkm }}"></form-province-component>
 							<div class="form-group">
 								<label>Nama UMKM</label>
 								<input type="text" class="form-control" name="umkm[name]"  value="{{ $umkm->name }}"  required> 

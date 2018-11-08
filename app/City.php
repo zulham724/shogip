@@ -20,4 +20,8 @@ class City extends Model
     	return $this->hasMany('App\Umkm');
     }
 
+    public function districts(){
+    	return $this->hasMany('App\District');
+    }
+
 }

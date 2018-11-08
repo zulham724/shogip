@@ -12,7 +12,7 @@
 @section('content')
 
     <div id="map"></div>
-    
+
 @endsection
 @section('script')
 <script type="text/javascript">
@@ -266,32 +266,24 @@
 
                 var contentString = 
                 "<div id='content'>\
-                     <div class='card'>\
-                        <div class='card-header'>\
-                            <i class='fa fa-pencil'></i> Data UMKM Di "+c.name+"\
-                           \
-                        </div>\
-                        <div class='card-body'>\
-                            <table class='table table-striped'>\
-                                <tr>\
-                                    <td colspan='2'><i class='fa fa-home'></i> "+c.umkm_count+" UMKM Di "+c.name+"</td>\
-                                </tr>\
-                                <tr>\
-                                    <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/shop.jpg')}}'></td>\
-                                    <td>"+c.description+"\
-                                    \
-                                    </td>\
-                                </tr>\
-                                <tr>\
-                                    <td colspan='2'>\
-                                        <span>\
-                                        <button type='button' class='btn btn-info' onclick='load_umkm("+c.id+")'><i class='fa fa-search'></i> Lihat Data UMKM</button>\
-                                        </span>\
-                                    </td>\
-                                </tr>\
-                            </table>\
-                        </div>\
-                    </div>\
+                    <table class='table table-striped'>\
+                        <tr>\
+                            <td colspan='2'><i class='fa fa-home'></i> "+c.umkm_count+" UMKM Di "+c.name+"</td>\
+                        </tr>\
+                        <tr>\
+                            <td><img class='img-thumbnail' width='100' src='{{asset('storage/marker/shop.jpg')}}'></td>\
+                            <td>"+c.description+"\
+                            \
+                            </td>\
+                        </tr>\
+                        <tr>\
+                            <td colspan='2'>\
+                                <span>\
+                                <button type='button' class='btn btn-info' onclick='load_umkm("+c.id+")'><i class='fa fa-search'></i> Lihat Data UMKM</button>\
+                                </span>\
+                            </td>\
+                        </tr>\
+                    </table>\
                 </div>\
                 ";
                  google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){ 

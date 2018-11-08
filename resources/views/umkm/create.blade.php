@@ -41,30 +41,7 @@
 								<label>Varian</label>
 								<textarea type="text" class="form-control" name="umkm[varian]" placeholder="type something" > </textarea>
 							</div>
-							<div class="form-group">
-								<label>Provinsi</label>
-								<select class="form-control select2" name="umkm[state_id]">
-									@foreach ($states as $st => $state)
-									<option value="{{ $state->id }}">{{ $state->name }}</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Kota</label>
-								<select class="form-control select2" name="umkm[city_id]">
-									@foreach ($cities as $c => $city)
-									<option value="{{ $city->id }}">{{ $city->name }}</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Kecamatan/Daerah</label>
-								<select class="form-control select2" name="umkm[district_id]">
-									@foreach ($districts as $ds => $district)
-									<option value="{{ $district->id }}">{{ $district->name }}</option>
-									@endforeach
-								</select>
-							</div>
+							<form-province-component></form-province-component>
 							<div class="form-group">
 								<label>Nama UMKM</label>
 								<input type="text" class="form-control" name="umkm[name]" placeholder="type something" required> 
