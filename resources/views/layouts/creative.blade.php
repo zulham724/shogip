@@ -132,90 +132,90 @@
         <div class="container-fluid p-0">
           <div class="row no-gutters popup-gallery" id="lightgallery">
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/1.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/fullsize/1.jpg') }}" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/Banjarnegara Aneka Keramik.png') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/Banjarnegara Aneka Keramik.png') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      UMKM Tanduran Cilik
+                      UMKM 
                     </div>
                     <div class="project-name">
-                      Tanaman Berduri
+                      Banjarnegara Aneka Keramik
                     </div>
                   </div>
                 </div>
               </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/2.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/thumbnails/2.jpg') }}" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/Blora - Bonggol Parquet Meubel.png') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/Blora - Bonggol Parquet Meubel.png') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      Category
+                      UMKM
                     </div>
                     <div class="project-name">
-                      Project Name
+                      Blora - Bonggol Parquet Meubel
                     </div>
                   </div>
                 </div>
               </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/3.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/thumbnails/3.jpg') }}" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/Brebes Bawang Goreng.png') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/Brebes Bawang Goreng.png') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      Category
+                      UMKM
                     </div>
                     <div class="project-name">
-                      Project Name
+                      Brebes Bawang Goreng
                     </div>
                   </div>
                 </div>
               </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/4.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/thumbnails/4.jpg') }}" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/Jepara Mebel Aksesories.png') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/Jepara Mebel Aksesories.png') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      Category
+                      UMKM
                     </div>
                     <div class="project-name">
-                      Project Name
+                      Jepara Mebel Aksesories
                     </div>
                   </div>
                 </div>
               </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/5.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/thumbnails/5.jpg') }}" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/Batang Kapal Nelayan.png') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/Batang Kapal Nelayan.png') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      Category
+                      UMKM
                     </div>
                     <div class="project-name">
-                      Project Name
+                      Batang Kapal Nelayan
                     </div>
                   </div>
                 </div>
               </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/fullsize/6.jpg') }}">
-                <img class="img-fluid" src="{{ asset('creative/img/portfolio/thumbnails/6.jpg') }}" alt="">
+              <a class="portfolio-box" href="{{ asset('creative/img/portfolio/Banyumas Gula Semut.png') }}">
+                <img class="img-fluid" src="{{ asset('creative/img/portfolio/Banyumas Gula Semut.png') }}" alt="">
                 <div class="portfolio-box-caption">
                   <div class="portfolio-box-caption-content">
                     <div class="project-category text-faded">
-                      Category
+                      UMKM
                     </div>
                     <div class="project-name">
-                      Project Name
+                      Banyumas Gula Semut
                     </div>
                   </div>
                 </div>
