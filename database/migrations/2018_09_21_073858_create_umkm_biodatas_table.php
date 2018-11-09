@@ -23,7 +23,7 @@ class CreateUmkmBiodatasTable extends Migration
             $table->string('year')->nullable();
             $table->integer('total_employes')->nullable();
             $table->bigInteger('monthly_finance')->nullable();
-            $table->integer('asset')->nullable();
+            $table->bigInteger('asset')->nullable();
             $table->integer('product_capacity')->nullable();
             $table->string('in_the_city')->nullable();
             $table->string('regional')->nullable();

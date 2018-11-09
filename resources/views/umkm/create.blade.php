@@ -156,19 +156,19 @@
 							</div>
 							<div class="form-group">
 								<label>Jumlah Karyawan</label>
-								<input type="text" class="form-control" name="biodata[total_employes]" placeholder="type something"> 
+								<input type="number" class="form-control" name="biodata[total_employes]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
 								<label>Omset Bulanan</label>
-								<input type="text" class="form-control" name="biodata[monthly_finance]" placeholder="type something"> 
+								<input type="number" class="form-control" name="biodata[monthly_finance]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
 								<label>Aset</label>
-								<input type="text" class="form-control" name="biodata[asset]" placeholder="type something" > 
+								<input type="number" class="form-control" name="biodata[asset]" placeholder="type something" > 
 							</div>
 							<div class="form-group">
 								<label>Kapasitas Produk/Bulan</label>
-								<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something"> 
+								<input type="number" class="form-control" name="biodata[product_capacity]" placeholder="type something"> 
 							</div>
 							<div class="col-12">
 								<div class="card">
@@ -206,7 +206,7 @@
 
 										<div class="form-group">
 											<label>Moda Sendiri</label>
-											<input type="text" class="form-control" name="biodata[capital]" placeholder="type something"> 
+											<input type="number" class="form-control" name="biodata[capital]" placeholder="type something"> 
 										</div>
 										<div class="form-group">
 											<label>Nama Bank / Koperasi</label>
@@ -214,11 +214,11 @@
 										</div>
 										<div class="form-group">
 											<label>Jumlah Modal</label>
-											<input type="text" class="form-control" name="biodata[ammount_of_capital]" placeholder="type something"> 
+											<input type="number" class="form-control" name="biodata[ammount_of_capital]" placeholder="type something"> 
 										</div>
 										<div class="form-group">
 											<label>Jangka Waktu Kredit (Tahun)</label>
-											<input type="text" class="form-control" name="biodata[credit_term]" placeholder="type something"> 
+											<input type="number" class="form-control" name="biodata[credit_term]" placeholder="type something"> 
 										</div>
 										*Isi sesuai data UMKM anda
 									</div>

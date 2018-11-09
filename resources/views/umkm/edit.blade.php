@@ -150,23 +150,19 @@
 								</div>
 								<div class="form-group">
 								<label>Jumlah Anggota</label>
-								<input type="text" class="form-control" name="biodata[total_employes]" value="{{ $umkm->umkm_biodata->total_employes }}" placeholder="type something" required> 
+								<input type="number" class="form-control" name="biodata[total_employes]" value="{{ $umkm->umkm_biodata->total_employes }}" placeholder="type something" required> 
 								</div>
 								<div class="form-group">
 									<label>Keuangan Bulanan</label>
-									<input type="text" class="form-control" name="biodata[monthly_finance]" value="{{ $umkm->umkm_biodata->monthly_finance }}" placeholder="type something" required> 
+									<input type="number" class="form-control" name="biodata[monthly_finance]" value="{{ $umkm->umkm_biodata->monthly_finance }}" placeholder="type something" required> 
 								</div>
 								<div class="form-group">
 									<label>Aset</label>
-									<input type="text" class="form-control" name="biodata[asset]" placeholder="type something" value="{{ $umkm->umkm_biodata->asset}}"> 
-								</div>
-								<div class="form-group">
-								<label>Is Has Hki</label>
-								<input type="text" class="form-control" name="biodata[is_has_hki]" value="{{ $umkm->umkm_biodata->is_has_hki }}" placeholder="type something" required> 
+									<input type="number" class="form-control" name="biodata[asset]" placeholder="type something" value="{{ $umkm->umkm_biodata->asset}}"> 
 								</div>
 								<div class="form-group">
 									<label>Kapasitas Produk/Bulan</label>
-									<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something" 	value="{{ $umkm->umkm_biodata->product_capacity }}"> 
+									<input type="number" class="form-control" name="biodata[product_capacity]" placeholder="type something" 	value="{{ $umkm->umkm_biodata->product_capacity }}"> 
 								</div>
 									<div class="col-12">
 										<div class="card">
@@ -204,7 +200,7 @@
 
 												<div class="form-group">
 													<label>Moda Sendiri</label>
-													<input type="text" class="form-control" name="biodata[capital]" placeholder="type something" value="{{ $umkm->umkm_biodata->capital }}"> 
+													<input type="number" class="form-control" name="biodata[capital]" placeholder="type something" value="{{ $umkm->umkm_biodata->capital }}"> 
 												</div>
 												<div class="form-group">
 													<label>Nama Bank / Koperasi</label>
@@ -212,11 +208,11 @@
 												</div>
 												<div class="form-group">
 													<label>Jumlah Modal</label>
-													<input type="text" class="form-control" name="biodata[ammount_of_capital]" placeholder="type something" value="{{ $umkm->umkm_biodata->ammount_of_capital }}"> 
+													<input type="number" class="form-control" name="biodata[ammount_of_capital]" placeholder="type something" value="{{ $umkm->umkm_biodata->ammount_of_capital }}"> 
 												</div>
 												<div class="form-group">
 													<label>Jangka Waktu Kredit (Tahun)</label>
-													<input type="text" class="form-control" name="biodata[credit_term]" placeholder="type something" value="{{ $umkm->umkm_biodata->credit_term }}"> 
+													<input type="number" class="form-control" name="biodata[credit_term]" placeholder="type something" value="{{ $umkm->umkm_biodata->credit_term }}"> 
 												</div>
 												*Isi sesuai data UMKM anda
 											</div>
