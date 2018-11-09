@@ -19,7 +19,7 @@ class CreateStatesTable extends Migration
             $table->string('name');
             $table->string('lat');
             $table->string('lng');
-            $table->string('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

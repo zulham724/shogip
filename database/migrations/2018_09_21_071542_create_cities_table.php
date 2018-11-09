@@ -20,7 +20,7 @@ class CreateCitiesTable extends Migration
             $table->string('name');
             $table->float('lat');
             $table->float('lng');
-            $table->string('description');
+            $table->text('description')->nullable();
             $table->timestamps();
 
             $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade')->onUpdate('cascade');

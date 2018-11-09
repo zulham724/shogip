@@ -18,7 +18,7 @@ class CreateDistrictsTable extends Migration
             $table->increments('id');
             $table->integer('city_id')->unsigned();
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
             
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade')->onUpdate('cascade');

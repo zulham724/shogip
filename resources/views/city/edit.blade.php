@@ -35,7 +35,7 @@
 						</div>
 						<div class="form-group">
 							<label>Deskripsi</label>
-							<textarea type="text" class="form-control" name="description" placeholder="type something" value="{{ $cities->description}}" > </textarea>
+							<textarea type="text" class="form-control" name="description" placeholder="type something">{{ $cities->description}}</textarea>
 						</div>
 						<div class="form-group">
 							<label>Latitude</label>
