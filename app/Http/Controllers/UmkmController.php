@@ -144,8 +144,9 @@ class UmkmController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         $umkm = Umkm::find($id);
-        $umkm->fill($request->except(['products','achivements','trainings','biodata']));
+        $umkm->fill($request['umkm']);
         $umkm->update();
 
         $umkm_biodata = UmkmBiodata::where('umkm_id',$umkm->id)->first();
@@ -153,10 +154,12 @@ class UmkmController extends Controller
         $umkm_biodata->update();
         // dd($umkm_biodata);
 
-        $umkm_problem = UmkmProblem::find($umkm->id)->delete();
+        $umkm_problem = UmkmProblem::where('umkm_id',$umkm->id);
+        $umkm_problem->delete();
         foreach ($request['problems'] as $p => $problem) {
-            $umkm_problem = new Problem;
+            $umkm_problem = new UmkmProblem;
             $umkm_problem->fill($problem);
+            $umkm_problem->umkm_id = $umkm->id;
             $umkm_problem->save();
         }
 
@@ -170,7 +173,7 @@ class UmkmController extends Controller
                 $umkm_product->save();
             }
         } 
-
+        // return "aer";
         return redirect()->route('umkms.index');
     }
 

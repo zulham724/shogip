@@ -10,7 +10,7 @@
                         <h5> Masalah {{ edit_umkm_problems ? problemlist.problem_list.name : problemlist.name }}</h5>
                     </div>
                     <div class="card-body">
-                        <input type="hidden" :name="'problems['+pl+'][problem_list_id]'" :value="problemlist.id">
+                        <input type="hidden" :name="'problems['+pl+'][problem_list_id]'" :value="edit_umkm_problems ? problemlist.problem_list.id : problemlist.id">
                         <textarea class="form-control" :name="'problems['+pl+'][description]'" v-model="problemlist.description" placeholder="Tulis Deskripsi"></textarea>
                     </div>
                 </div>

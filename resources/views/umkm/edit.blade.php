@@ -9,7 +9,7 @@
 <section>
 	
 	<div class="container">
-		<form action="{{ route('umkmuser.update',$umkm->id) }}" method="post">
+		<form action="{{ route('umkms.update',$umkm->id) }}" method="post">
 			@method('put')
 			@csrf
 			<div class="row">

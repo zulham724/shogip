@@ -74683,7 +74683,11 @@ var render = function() {
                   type: "hidden",
                   name: "problems[" + pl + "][problem_list_id]"
                 },
-                domProps: { value: problemlist.id }
+                domProps: {
+                  value: _vm.edit_umkm_problems
+                    ? problemlist.problem_list.id
+                    : problemlist.id
+                }
               }),
               _vm._v(" "),
               _c("textarea", {
