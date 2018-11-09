@@ -154,7 +154,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Omset Bulanan</label>
-                            <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->monthly_finance }}" readonly>
+                            <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->monthly_finance,0,".",".") }}" readonly>
                         </div>
                         <div class="form-group">
                             <label>Total Asset</label>
