@@ -173,6 +173,7 @@ class UmkmController extends Controller
                 $db->save();
             }
         } 
+        
         if (isset($request['achivements'])) {
             # code...
             $umkm_achivements = UmkmAchievement::where('umkm_id',$umkm->id)->delete();
@@ -183,6 +184,7 @@ class UmkmController extends Controller
                 $data->save();
             }
         } 
+
         if (isset($request['trainings'])) {
             # code...
             $umkm_trainings = UmkmTraining::where('umkm_id',$umkm->id)->delete();
