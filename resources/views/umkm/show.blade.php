@@ -242,7 +242,7 @@
                         <div class="card-body">
                             @foreach ($product->product_images as $product_image)
                                 {{-- expr --}}
-                                <img src="{{ $product_image->image }}">
+                                <img src="{{ asset('storage/'.$product_image->image) }}" class="img img-fluid">
                             @endforeach
                         </div>
                     </div>
