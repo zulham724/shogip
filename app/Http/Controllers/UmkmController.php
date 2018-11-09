@@ -135,7 +135,7 @@ class UmkmController extends Controller
      */
     public function edit($id)
     {
-        $data['umkm'] = Umkm::with('umkm_biodata','products','umkm_problems.problem_list','umkm_legalities.legality_list')->find($id);
+        $data['umkm'] = Umkm::with('umkm_biodata','products','umkm_problems.problem_list','umkm_legalities.legality_list','user')->find($id);
         $data['umkm_categories'] = UmkmCategori::get();
         $data['states'] = State::get();
         $data['cities'] = City::get();

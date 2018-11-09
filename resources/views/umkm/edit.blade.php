@@ -22,9 +22,14 @@
 						<div class="card-body"> 
 							
 							<div class="form-group">
-								<label>Varian</label>
-								<textarea type="text" class="form-control" name="umkm[varian]" placeholder="type something">{{ $umkm->varian}} </textarea>
+								<label>User <i style="color:red">*</i></label>
+								<select class="form-control select2" name="umkm[user_id]" required>
+									@foreach ($users as $u => $user)
+										<option {{ $user->id == $umkm->user->id ? 'selected' : null }} value="{{ $user->id }}">{{ $user->name }}</option>
+									@endforeach
+								</select>
 							</div>
+
 							<div class="form-group">
 								<label>Kategori UMKM <i style="color:red">*</i></label>
 								<select class="form-control select2" name="umkm[umkm_category_id]" required>
@@ -32,6 +37,11 @@
 									<option value="{{ $umkmcategory->id }}" {{$umkmcategory->id==$umkm->umkm_category_id ? 'selected':null}}> {{ $umkmcategory->name }} </option>
 									@endforeach
 								</select>
+							</div>
+
+							<div class="form-group">
+								<label>Varian</label>
+								<textarea type="text" class="form-control" name="umkm[varian]" placeholder="type something">{{ $umkm->varian}} </textarea>
 							</div>
 							<form-province-component v-bind:edit_umkm="{{ $umkm }}"></form-province-component>
 							<div class="form-group">
