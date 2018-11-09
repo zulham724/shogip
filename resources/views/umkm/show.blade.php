@@ -17,7 +17,7 @@
         {{-- umkm data and biodata user --}}
         <div class="row">
 
-            <div class="col-4">
+            <div class="col-sm">
                 <div class="card">
                     <div class="card-header">
 
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm">
                 <div class="card">
                     <div class="card-header">
 
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
@@ -120,7 +120,7 @@
         </div>
         {{-- umkm biodata --}}
         <div class="row">
-            <div class="col-4">
+            <div class="col-sm">
                 <div class="card">
                     <div class="card-header">
                         <b>UMKM Biodata</b>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group">
@@ -214,7 +214,7 @@
         {{-- umkm problem --}}
         <div class="row">
             @foreach ($umkm->umkm_problems as $umkm_problem)
-                <div class="col-4">
+                <div class="col-sm">
                     <div class="card">
                         <div class="card-header">
                             <h5>Masalah {{ $umkm_problem->problem_list->name }}</h5>
@@ -233,7 +233,7 @@
         {{-- umkm product --}}
         <div class="row">
             @foreach ($umkm->products as $product)
-                <div class="col-4">
+                <div class="col-sm">
                     <div class="card">
                         <div class="card-header">
                             Produk {{ $product->name }} <br>   
