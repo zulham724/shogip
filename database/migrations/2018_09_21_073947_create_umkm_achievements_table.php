@@ -14,6 +14,7 @@ class CreateUmkmAchievementsTable extends Migration
     public function up()
     {
         Schema::create('umkm_achievements', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->increments('id');
             $table->integer('umkm_id')->unsigned();
             $table->string('name');
