@@ -25,7 +25,7 @@ class StatesTableSeeder extends Seeder
   		// $state->save();
   		// }
         //csv
-        $file = fopen(database_path('csv/provinces.csv'),"r");
+        $file = fopen(database_path('csv/province.csv'),"r");
     		$data = array();
     		while (($row = fgetcsv($file, 0, ",")) !== FALSE) {
     		    $data[] = $row;

@@ -13988,7 +13988,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(71);
 
 
 /***/ }),
@@ -14035,6 +14035,7 @@ Vue.component('achivement-component', __webpack_require__(56));
 Vue.component('training-component', __webpack_require__(59));
 Vue.component('productimage-component', __webpack_require__(62));
 Vue.component('form-province-component', __webpack_require__(65));
+Vue.component('problem-component', __webpack_require__(68));
 
 var app = new Vue({
   el: '#app'
@@ -74407,7 +74408,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { name: "umkm[state_id]" },
+          attrs: { name: "umkm[state_id]", required: "" },
           on: {
             change: [
               function($event) {
@@ -74459,7 +74460,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { name: "umkm[city_id]" },
+          attrs: { name: "umkm[city_id]", required: "" },
           on: {
             change: [
               function($event) {
@@ -74511,7 +74512,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { name: "umkm[district_id]" },
+          attrs: { name: "umkm[district_id]", required: "" },
           on: {
             change: function($event) {
               var $$selectedVal = Array.prototype.filter
@@ -74556,6 +74557,187 @@ if (false) {
 
 /***/ }),
 /* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(69)
+/* template */
+var __vue_template__ = __webpack_require__(70)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ProblemComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b02e5eee", Component.options)
+  } else {
+    hotAPI.reload("data-v-b02e5eee", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ["edit_umkm_problems"],
+    data: function data() {
+        return {
+            problemlists: []
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        console.log('Component mounted.');
+        axios.get('/api/problemlists').then(function (res) {
+            _this.edit_umkm_problems ? _this.problemlists = _this.edit_umkm_problems : _this.problemlists = res.data;
+        });
+    }
+});
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.problemlists, function(problemlist, pl) {
+        return _c("div", { staticClass: "col-4" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _c("h5", [
+                _vm._v(
+                  " Masalah " +
+                    _vm._s(
+                      _vm.edit_umkm_problems
+                        ? problemlist.problem_list.name
+                        : problemlist.name
+                    )
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("input", {
+                attrs: {
+                  type: "hidden",
+                  name: "problems[" + pl + "][problem_list_id]"
+                },
+                domProps: { value: problemlist.id }
+              }),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: problemlist.description,
+                    expression: "problemlist.description"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  name: "problems[" + pl + "][description]",
+                  placeholder: "Tulis Deskripsi"
+                },
+                domProps: { value: problemlist.description },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(problemlist, "description", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ])
+        ])
+      })
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "alert alert-info" }, [
+      _c("strong", [_vm._v("Tentukan Masalah")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b02e5eee", module.exports)
+  }
+}
+
+/***/ }),
+/* 71 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

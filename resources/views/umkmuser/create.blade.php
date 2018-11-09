@@ -108,7 +108,7 @@
 							</div>
 							<div class="form-group">
 								<label>Kontak Telepon / WA</label>
-								<input type="text" class="form-control" name="umkm[cp]" placeholder="type something" required> 
+								<input type="number" class="form-control" name="umkm[cp]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
 								<label>web</label>

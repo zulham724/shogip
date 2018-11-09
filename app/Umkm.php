@@ -46,6 +46,10 @@ class Umkm extends Model
     public function products(){
         return $this->hasMany('App\Product');
     }
+
+    public function umkm_problems(){
+        return $this->hasMany('App\UmkmProblem');
+    }
     
 
 

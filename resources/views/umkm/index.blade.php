@@ -38,11 +38,10 @@
                             <td>{{ $umkms->umkm_category->name }}</td>
                             <td>{{ $umkms->city->name }}</td>
                             <td>{{ $umkms->cp }}</td>
-                              <td>
-                                 <center>
-                                    <a href="{{ route('umkms.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Lihat / Edit</a>
+                            <td>
+                                <a href="{{ route('umkms.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
+                                <a type="button" class="btn btn-info" href="{{ route('umkms.show',$umkms->id) }}"><i class="fa fa-search"></i> Lihat</a>
                                 <button type="submit" class="btn btn-danger" onclick="destroy({{$umkms->id}})"><i class="fa fa-trash"></i> Hapus</button>
-                                </center>
                             </td>
                         </tr>
                         @endforeach

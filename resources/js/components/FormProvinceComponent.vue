@@ -2,21 +2,21 @@
     <div>
         <div class="form-group">
             <label>Provinsi</label>
-            <select class="form-control" v-model="umkm.state_id" name="umkm[state_id]" @change="load_cities()">
+            <select class="form-control" v-model="umkm.state_id" name="umkm[state_id]" @change="load_cities()" required>
                 <option value="">Pilih Provinsi</option>
                 <option :value="state.id" v-for="(state,s) in states">{{ state.name }}</option>
             </select>
         </div>
         <div class="form-group">
             <label>Kota</label>
-            <select class="form-control" v-model="umkm.city_id" name="umkm[city_id]" @change="load_districts()">
+            <select class="form-control" v-model="umkm.city_id" name="umkm[city_id]" @change="load_districts()" required>
                 <option value="">Pilih Kota</option>
                 <option :value="city.id" v-for="(city,c) in cities">{{ city.name }}</option>
             </select>
         </div>
         <div class="form-group">
             <label>Kecamatan/Daerah</label>
-            <select class="form-control" v-model="umkm.district_id" name="umkm[district_id]">
+            <select class="form-control" v-model="umkm.district_id" name="umkm[district_id]" required>
                 <option value="">Pilih Kecamatan</option>
                 <option :value="district.id" v-for="(district,d) in districts">{{ district.name }}</option>
             </select>

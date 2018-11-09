@@ -86,7 +86,7 @@
 							</div>
 							<div class="form-group">
 								<label>Kontak Telepon / WA</label>
-								<input type="text" class="form-control" name="umkm[cp]" placeholder="type something" required> 
+								<input type="number" class="form-control" name="umkm[cp]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
 								<label>web</label>
@@ -229,9 +229,8 @@
 					</div>
 				</div>
 			</div>
+			<problem-component></problem-component>
 			<product-component></product-component>
-			<achivement-component></achivement-component>
-			<training-component></training-component>
 			<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Simpan</button> 
 		</form>
 	</div>

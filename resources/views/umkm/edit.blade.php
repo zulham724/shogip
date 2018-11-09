@@ -227,9 +227,8 @@
 						</div>
 					</div>
 			</div>
+			<problem-component v-bind:edit_umkm_problems="{{ $umkm->umkm_problems }}"></problem-component>
 			<product-component v-bind:edit_products="{{ $umkm->products }}"></product-component>
-			<achivement-component v-bind:edit_achivements="{{ $umkm->umkmachievements }}"></achivement-component>
-			<training-component v-bind:edit_trainings="{{ $umkm->umkmatrainings }}"></training-component>
 			<button type="submit" class="btn btn-success center-block btn-block"><i class="fa fa-check"></i> Simpan</button>
 		</form>
 	</div>

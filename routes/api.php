@@ -34,6 +34,7 @@ Route::group(['middleware'=>'api','namespace'=>'API'],function(){
 		'trainings'=>'UmkmTrainingController',
 		'products'=>'ProductController',
 		'productimages'=>'ProductImageController',
+		'problemlists'=>'ProblemListController'
 	]);
 
 	Route::get('umkm/states','UmkmController@states');

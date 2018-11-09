@@ -28,6 +28,7 @@ Vue.component('achivement-component',require('./components/AchivementComponent.v
 Vue.component('training-component',require('./components/TrainingComponent.vue'));
 Vue.component('productimage-component',require('./components/ProductImageComponent.vue'));
 Vue.component('form-province-component',require('./components/FormProvinceComponent.vue'));
+Vue.component('problem-component',require('./components/ProblemComponent.vue'));
 
 const app = new Vue({
     el: '#app'
