@@ -26,7 +26,8 @@ class DatabaseSeeder extends Seeder
             ProductTableSeeder::class,
             ProductImageTableSeeder::class,
             LegalityTableSeeder::class,
-        // $this->call(UsersTableSeeder::class);
-                ]);
+            ProblemListsTableSeeder::class
+            // $this->call(UsersTableSeeder::class);
+            ]);
     }
 }

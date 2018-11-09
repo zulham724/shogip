@@ -20,8 +20,7 @@ class UmkmBiodataTableSeeder extends Seeder
         		"year"=>"2018-05-04",
         		"founder"=>"Bagus",
         		"total_employes"=>"20",
-        		"monthly_finance"=>"20000000",
-        		"is_has_hki"=>"oke",
+        		"monthly_finance"=>"20000000"
         		
         	],
 
@@ -31,8 +30,7 @@ class UmkmBiodataTableSeeder extends Seeder
         		"year"=>"2018-05-04",
         		"founder"=>"Asep",
         		"total_employes"=>"20",
-        		"monthly_finance"=>"20000000",
-        		"is_has_hki"=>"oke",
+        		"monthly_finance"=>"20000000"
         		
         	],
 		];

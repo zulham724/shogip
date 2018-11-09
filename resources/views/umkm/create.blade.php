@@ -114,11 +114,11 @@
 						</div>
 						<div class="card-body">
 							<div class="form-group">
-								<label>Pendiri</label>
+								<label>Pemilik</label>
 								<input type="text" class="form-control" name="biodata[founder]" placeholder="type something" required>
 							</div>
 							<div class="form-group">
-								<label>No Identitas</label>
+								<label>No Identitas (Sesuai KTP)</label>
 								<input type="text" class="form-control" name="biodata[identity_number]" placeholder="type something" required>
 							</div>
 							<div class="form-group">
@@ -155,20 +155,16 @@
 								<input type="text" class="form-control" name="biodata[year]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
-								<label>Jumlah Anggota</label>
+								<label>Jumlah Karyawan</label>
 								<input type="text" class="form-control" name="biodata[total_employes]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
-								<label>Keuangan Bulanan</label>
+								<label>Omset Bulanan</label>
 								<input type="text" class="form-control" name="biodata[monthly_finance]" placeholder="type something"> 
 							</div>
 							<div class="form-group">
 								<label>Aset</label>
 								<input type="text" class="form-control" name="biodata[asset]" placeholder="type something" > 
-							</div>
-							<div class="form-group">
-								<label>Is Has Hki</label>
-								<input type="text" class="form-control" name="biodata[is_has_hki]" placeholder="type something" > 
 							</div>
 							<div class="form-group">
 								<label>Kapasitas Produk/Bulan</label>

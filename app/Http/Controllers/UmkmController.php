@@ -28,7 +28,7 @@ class UmkmController extends Controller
     public function index()
     {
         $data['umkm'] = Umkm::
-        with('umkm_category','state','city','district')
+        with('umkm_category','state','city','district','user')
         ->orderBy('created_at','desc')->get();
         
         return view('umkm.index',$data);

@@ -32,7 +32,6 @@ class CreateUmkmBiodatasTable extends Migration
             $table->string('bank')->nullable();
             $table->integer('ammount_of_capital')->nullable();
             $table->integer('credit_term')->nullable();
-            $table->string('is_has_hki')->nullable();
             $table->timestamps();
 
             $table->foreign('umkm_id')->references('id')->on('umkm')->onDelete('cascade')->onUpdate('cascade');

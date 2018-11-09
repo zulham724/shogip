@@ -22,19 +22,10 @@
                         <tr>
                             <td>No</td>
                             <td>Nama UMKM</td>
+                            <td>Email</td>
                             <td>Kategori UMKM</td>
-                            <td>Provinsi</td>
                             <td>Kota</td>
-                            <td>Distrik/Daerah</td>
-                            <td>Deskripsi</td>
-                            <td>Alamat</td>
                             <td>Kontak Telepon / WA</td>
-                            <td>Web</td>
-                            <td>Facebook</td>
-                            <td>Twiiter</td>
-                            <td>Instagram</td>
-                            <!-- <td>Latitude</td>
-                            <td>Longitude</td> -->
                             <td>Aksi</td>
                         </tr>
                     </thead>
@@ -43,22 +34,13 @@
                         <tr>
                             <td>{{ $um+1 }}</td>
                             <td>{{ $umkms->name }}</td>
+                            <td>{{ $umkms->user->email }}</td>
                             <td>{{ $umkms->umkm_category->name }}</td>
-                            <td>{{ $umkms->state->name }}</td>
                             <td>{{ $umkms->city->name }}</td>
-                            <td>{{ $umkms->district->name }}</td>
-                            <td>{{ $umkms->description }}</td>
-                            <td>{{ $umkms->address }}</td>
                             <td>{{ $umkms->cp }}</td>
-                            <td>{{ $umkms->web }}</td>
-                            <td>{{ $umkms->facebook }}</td>
-                            <td>{{ $umkms->twitter }}</td>
-                            <td>{{ $umkms->instagram }}</td>
-                            <!-- <td>{{ $umkms->latitude }}</td>
-                            <td>{{ $umkms->longitude }}</td> -->
                               <td>
                                  <center>
-                                    <a href="{{ route('umkms.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Edit</a>
+                                    <a href="{{ route('umkms.edit',$umkms->id) }}" type="button" class="btn btn-secondary" ><i class="fa fa-pencil"></i> Lihat / Edit</a>
                                 <button type="submit" class="btn btn-danger" onclick="destroy({{$umkms->id}})"><i class="fa fa-trash"></i> Hapus</button>
                                 </center>
                             </td>

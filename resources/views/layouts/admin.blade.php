@@ -90,7 +90,7 @@
               <ul id="areadropdown" class="collapse list-unstyled">
                 <li><a href="{{ url('states') }}"><i class="fa fa-caret-right"></i>Provinsi</a></li>
                 <li><a href="{{ url('cities') }}"><i class="fa fa-caret-right"></i>Kota</a></li>
-                <li><a href="{{ url('districts') }}"><i class="fa fa-caret-right"></i>Distrik/Daerah</a></li>
+                <li><a href="{{ url('districts') }}"><i class="fa fa-caret-right"></i>Kecamatan/Daerah</a></li>
               </ul>
             </li>
 
@@ -99,16 +99,6 @@
                 <li><a href="{{ url('umkmcategories') }}"><i class="fa fa-caret-right"></i>Kategori UMKM</a></li>
                 <li><a href="{{ url('umkmlegalities') }}"><i class="fa fa-caret-right"></i>Legalitas UMKM</a></li>
                 <li><a href="{{ url('umkms') }}"><i class="fa fa-caret-right"></i>Data UMKM</a></li>
-                <li><a href="{{ url('umkmbiodatas') }}"><i class="fa fa-caret-right"></i>Biodata</a></li>
-                <li><a href="{{ url('achievements') }}"><i class="fa fa-caret-right"></i>Achievement</a></li>
-                <li><a href="{{ url('trainings') }}"><i class="fa fa-caret-right"></i>Training</a></li>
-                <li><a href="#productdropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-windows"></i>Produk</a>
-                  <ul id="productdropdown" class="collapse list-unstyled">
-                    <li><a href="{{ url('products') }}"><i class="fa fa-caret-right"></i>Data Produk</a></li>
-                    <li><a href="{{ url('productimages') }}"><i class="fa fa-caret-right"></i>Gambar Produk</a></li>
-                  </ul>
-                </li>
-                
               </ul>
             </li>
             
