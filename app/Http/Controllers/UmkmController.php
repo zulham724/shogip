@@ -28,7 +28,8 @@ class UmkmController extends Controller
     public function index()
     {
         $data['umkm'] = Umkm::
-        with('umkm_category','state','city','district')->get();
+        with('umkm_category','state','city','district')
+        ->orderBy('created_at','desc')->get();
         
         return view('umkm.index',$data);
     }
@@ -76,7 +77,8 @@ class UmkmController extends Controller
                 $db[$ul]->umkm_id = $umkm->id;
                 $db[$ul]->save();
             }
-        } elseif (isset($request['products'])) {
+        } 
+        if (isset($request['products'])) {
             # code...
             // dd($umkm_biodata);
             foreach ($request['products'] as $p => $product) {
@@ -85,7 +87,8 @@ class UmkmController extends Controller
                 $db->umkm_id = $umkm->id;
                 $db->save();
             }
-        } elseif (isset($request['achivements'])) {
+        } 
+        if (isset($request['achivements'])) {
             # code...
             foreach ($request['achivements'] as $a => $achivement) {
                 $data = new UmkmAchievement;
@@ -93,7 +96,8 @@ class UmkmController extends Controller
                 $data->umkm_id = $umkm->id;
                 $data->save();
             }
-        } elseif ($request['trainings']) {
+        } 
+        if ($request['trainings']) {
             # code...
             foreach ($request['trainings'] as $t => $training) {
                 $achievement = new UmkmTraining;
@@ -168,7 +172,8 @@ class UmkmController extends Controller
                 $db->umkm_id = $umkm->id;
                 $db->save();
             }
-        } elseif (isset($request['achivements'])) {
+        } 
+        if (isset($request['achivements'])) {
             # code...
             $umkm_achivements = UmkmAchievement::where('umkm_id',$umkm->id)->delete();
             foreach ($request['achivements'] as $a => $achivement) {
@@ -177,7 +182,8 @@ class UmkmController extends Controller
                 $data->umkm_id = $umkm->id;
                 $data->save();
             }
-        } elseif (isset($request['trainings'])) {
+        } 
+        if (isset($request['trainings'])) {
             # code...
             $umkm_trainings = UmkmTraining::where('umkm_id',$umkm->id)->delete();
             foreach ($request['trainings'] as $t => $training) {
