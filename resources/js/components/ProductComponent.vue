@@ -19,7 +19,15 @@
                             <label>Deskripsi</label>
                             <textarea type="text" class="form-control" v-model="product.description" :name="'products['+p+'][description]'" placeholder="type something" > </textarea>
                         </div>
-                        <button type="button" @click="remove(p)" class="btn btn-danger pull-right"><i class="fa fa-trash"></i> Hapus</button>   
+                        <!-- <div v-for="(productimage,pi) in product.productimages">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="" required><a href="#" class="badge badge-danger" @click="image_remove(p,pi)"><i class="fa fa-close"></i> Hapus</a>
+                            </div>
+                        </div> -->
+                        <div class="form-group">    
+                            <!-- <button type="button" class="btn btn-info pull-left" @click="image_add(p)"><i class="fa fa-plus"></i> Tambah Gambar</button> -->
+                            <button type="button" @click="remove(p)" class="btn btn-danger pull-right"><i class="fa fa-trash"></i> Hapus</button>   
+                        </div>
                     </div>
                 </div>
             </div> 
@@ -32,7 +40,9 @@ export default {
     props:['edit_products'],
     data(){
         return {
-            products:[{}]
+            products:[{
+                productimages:[{}]
+            }],
         }
     },
     mounted() {
@@ -44,10 +54,20 @@ export default {
     },
     methods:{
         add(){
-            this.products.push({});
+            this.products.push({
+                productimages:[{}]
+            });
         },
         remove(index){
             this.products.splice(index,1);
+        },
+        image_add(index){
+            event.preventDefault();
+            this.products[index].productimages.push({});
+        },
+        image_remove(index,image){
+            event.preventDefault();
+            this.products[index].productimages.splice(image,1);
         }
     }
 }

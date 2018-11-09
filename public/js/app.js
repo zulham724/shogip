@@ -73246,12 +73246,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['edit_products'],
     data: function data() {
         return {
-            products: [{}]
+            products: [{
+                productimages: [{}]
+            }]
         };
     },
     mounted: function mounted() {
@@ -73264,10 +73274,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         add: function add() {
-            this.products.push({});
+            this.products.push({
+                productimages: [{}]
+            });
         },
         remove: function remove(index) {
             this.products.splice(index, 1);
+        },
+        image_add: function image_add(index) {
+            event.preventDefault();
+            this.products[index].productimages.push({});
+        },
+        image_remove: function image_remove(index, image) {
+            event.preventDefault();
+            this.products[index].productimages.splice(image, 1);
         }
     }
 });
@@ -73369,19 +73389,21 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger pull-right",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.remove(p)
+              _c("div", { staticClass: "form-group" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger pull-right",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        _vm.remove(p)
+                      }
                     }
-                  }
-                },
-                [_c("i", { staticClass: "fa fa-trash" }), _vm._v(" Hapus")]
-              )
+                  },
+                  [_c("i", { staticClass: "fa fa-trash" }), _vm._v(" Hapus")]
+                )
+              ])
             ])
           ])
         ])
