@@ -99,6 +99,8 @@
                 <li><a href="{{ url('umkmcategories') }}"><i class="fa fa-caret-right"></i>Kategori UMKM</a></li>
                 <li><a href="{{ url('umkmlegalities') }}"><i class="fa fa-caret-right"></i>Legalitas UMKM</a></li>
                 <li><a href="{{ url('umkms') }}"><i class="fa fa-caret-right"></i>Data UMKM</a></li>
+                <li><a href="{{ url('products') }}"><i class="fa fa-caret-right"></i>Data Produk</a></li>
+                <li><a href="{{ url('productimages') }}"><i class="fa fa-caret-right"></i>Data Gambar Produk</a></li>
               </ul>
             </li>
             

@@ -71,11 +71,14 @@ class UmkmController extends Controller
         $umkm_biodata->umkm_id = $umkm->id;
         $umkm_biodata->save();
 
-        foreach ($request['problems'] as $p => $problem) {
-            $umkm_problem = new UmkmProblem;
-            $umkm_problem->fill($problem);
-            $umkm_problem->umkm_id = $umkm->id;
-            $umkm_problem->save();
+        if (isset($request['problems'])) {
+            # code...
+            foreach ($request['problems'] as $p => $problem) {
+                $umkm_problem = new UmkmProblem;
+                $umkm_problem->fill($problem);
+                $umkm_problem->umkm_id = $umkm->id;
+                $umkm_problem->save();
+            }
         }
 
         if (isset($request['umkm_legalities'])) {
@@ -163,11 +166,13 @@ class UmkmController extends Controller
 
         $umkm_problem = UmkmProblem::where('umkm_id',$umkm->id);
         $umkm_problem->delete();
-        foreach ($request['problems'] as $p => $problem) {
-            $umkm_problem = new UmkmProblem;
-            $umkm_problem->fill($problem);
-            $umkm_problem->umkm_id = $umkm->id;
-            $umkm_problem->save();
+        if(isset($request['problems'])){
+            foreach ($request['problems'] as $p => $problem) {
+                $umkm_problem = new UmkmProblem;
+                $umkm_problem->fill($problem);
+                $umkm_problem->umkm_id = $umkm->id;
+                $umkm_problem->save();
+            }
         }
 
         if (isset($request['products'])) {
