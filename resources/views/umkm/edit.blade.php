@@ -23,11 +23,11 @@
 							
 							<div class="form-group">
 								<label>Varian</label>
-								<textarea type="text" class="form-control" name="umkm[varian]" placeholder="type something" >{{ $umkm->varian}} </textarea>
+								<textarea type="text" class="form-control" name="umkm[varian]" placeholder="type something">{{ $umkm->varian}} </textarea>
 							</div>
 							<div class="form-group">
-								<label>Kategori UMKM</label>
-								<select class="form-control select2" name="umkm[umkm_category_id]">
+								<label>Kategori UMKM <i style="color:red">*</i></label>
+								<select class="form-control select2" name="umkm[umkm_category_id]" required>
 									@foreach ($umkm_categories as $uc => $umkmcategory)
 									<option value="{{ $umkmcategory->id }}" {{$umkmcategory->id==$umkm->umkm_category_id ? 'selected':null}}> {{ $umkmcategory->name }} </option>
 									@endforeach
@@ -35,11 +35,11 @@
 							</div>
 							<form-province-component v-bind:edit_umkm="{{ $umkm }}"></form-province-component>
 							<div class="form-group">
-								<label>Nama UMKM</label>
+								<label>Nama UMKM <i style="color:red">*</i></label>
 								<input type="text" class="form-control" name="umkm[name]"  value="{{ $umkm->name }}"  required> 
 							</div>
 							<div class="form-group">
-								<label>Bentuk Usaha</label><br>
+								<label>Bentuk Usaha <i style="color:red">*</i></label><br>
 
 								<div class="row">
 									<div class="col-4">
@@ -63,9 +63,16 @@
 								<label>Legalitas</label><br>
 								<div class="row">
 									@foreach ($legality_lists as $legality_list)
-									<div class="col-4">
-										<input type="checkbox" id="type" name="umkm_legalities[][legality_list_id]" value="{{ $legality_list->id }}"> {{ $legality_list->name }}
-									</div>
+										@foreach ($umkm->umkm_legalities as $umkm_legality)
+											@if ($legality_list->name == $umkm_legality->legality_list->name)
+												<div class="col-4">
+													<input type="checkbox" id="type" name="umkm_legalities[][legality_list_id]" checked value="{{ $legality_list->id }}"> {{ $legality_list->name }}
+												</div>
+											@endif	
+										@endforeach
+												<div class="col-4">
+													<input type="checkbox" id="type" name="umkm_legalities[][legality_list_id]" value="{{ $legality_list->id }}"> {{ $legality_list->name }}
+												</div>
 									@endforeach
 								</div>
 							</div>
@@ -74,28 +81,28 @@
 								<textarea type="text" class="form-control" name="umkm[description]" placeholder="type something">{{ $umkm->description}}</textarea>
 							</div> 
 							<div class="form-group">
-								<label>Alamat</label>
-								<textarea type="text" class="form-control" name="umkm[address]" placeholder="type something" >{{ $umkm->address}} </textarea>
+								<label>Alamat <i style="color:red">*</i></label>
+								<textarea type="text" class="form-control" name="umkm[address]" placeholder="type something" required>{{ $umkm->address}} </textarea>
 							</div>
 							<div class="form-group">
-								<label>Kontak Telepon / WA</label>
-								<input type="text" class="form-control" name="umkm[cp]"  value="{{ $umkm->cp }}"  required> 
+								<label>Kontak Telepon / WA <i style="color:red">*</i></label>
+								<input type="number" class="form-control" name="umkm[cp]"  value="{{ $umkm->cp }}"  required> 
 							</div> 
 							<div class="form-group">
 								<label>Web</label>
-								<input type="text" class="form-control" name="umkm[web]"  value="{{ $umkm->web }}"  required> 
+								<input type="text" class="form-control" name="umkm[web]"  value="{{ $umkm->web }}"> 
 							</div> 
 							<div class="form-group">
 								<label>Facebook</label>
-								<input type="text" class="form-control" name="umkm[facebook]"  value="{{ $umkm->facebook }}"  required> 
+								<input type="text" class="form-control" name="umkm[facebook]"  value="{{ $umkm->facebook }}"> 
 							</div> 
 							<div class="form-group">
 								<label>Twitter</label>
-								<input type="text" class="form-control" name="umkm[twitter]"  value="{{ $umkm->twitter }}"  required> 
+								<input type="text" class="form-control" name="umkm[twitter]"  value="{{ $umkm->twitter }}"> 
 							</div> 
 							<div class="form-group">
 								<label>Instagram</label>
-								<input type="text" class="form-control" name="umkm[instagram]"  value="{{ $umkm->instagram }}"  required> 
+								<input type="text" class="form-control" name="umkm[instagram]"  value="{{ $umkm->instagram }}"> 
 							</div> 
 						</div>
 					</div>
@@ -108,15 +115,15 @@
 						</div>
 						<div class="card-body">
 							<div class="form-group">
-								<label>Pendiri</label>
+								<label>Pendiri <i style="color:red">*</i></label>
 								<input type="text" class="form-control" name="biodata[founder]" value="{{ $umkm->umkm_biodata->founder }}" placeholder="type something" required>
 								</div>
 								<div class="form-group">
-									<label>No Identitas</label>
-									<input type="text" class="form-control" name="biodata[identity_number]" placeholder="type something" value="{{ $umkm->umkm_biodata->identity_number }}"required>
+									<label>No Identitas <i style="color:red">*</i></label>
+									<input type="text" class="form-control" name="biodata[identity_number]" placeholder="type something" value="{{ $umkm->umkm_biodata->identity_number }}" required>
 								</div>
 								<div class="form-group">
-									<label>Pendidikan</label><br>
+									<label>Pendidikan <i style="color:red">*</i></label><br>
 									<div class="row">
 										<div class="col-4">
 											<input type="radio" id="type" name="biodata[education]" value="SD" {{  $umkm->umkm_biodata->education == 'SD' ? 'checked' : '' }} > SD/Sederajat
@@ -145,24 +152,24 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label>Tahun Berdiri </label>
+									<label>Tahun Berdiri <i style="color:red">*</i></label>
 									<input type="text" class="form-control" name="biodata[year]" value="{{ $umkm->umkm_biodata->year }}" placeholder="type something" required> 
 								</div>
 								<div class="form-group">
-								<label>Jumlah Anggota</label>
+								<label>Jumlah Karyawan <i style="color:red">*</i></label>
 								<input type="number" class="form-control" name="biodata[total_employes]" value="{{ $umkm->umkm_biodata->total_employes }}" placeholder="type something" required> 
 								</div>
 								<div class="form-group">
-									<label>Keuangan Bulanan</label>
+									<label>Omset Bulanan /Rupiah <i style="color:red">*</i></label>
 									<input type="number" class="form-control" name="biodata[monthly_finance]" value="{{ $umkm->umkm_biodata->monthly_finance }}" placeholder="type something" required> 
 								</div>
 								<div class="form-group">
-									<label>Aset</label>
-									<input type="number" class="form-control" name="biodata[asset]" placeholder="type something" value="{{ $umkm->umkm_biodata->asset}}"> 
+									<label>Aset /Rupiah <i style="color:red">*</i></label>
+									<input type="number" class="form-control" name="biodata[asset]" placeholder="type something" value="{{ $umkm->umkm_biodata->asset}}" required> 
 								</div>
 								<div class="form-group">
-									<label>Kapasitas Produk/Bulan</label>
-									<input type="number" class="form-control" name="biodata[product_capacity]" placeholder="type something" 	value="{{ $umkm->umkm_biodata->product_capacity }}"> 
+									<label>Kapasitas Produk /Bulan</label>
+									<input type="number" class="form-control" name="biodata[product_capacity]" placeholder="type something" value="{{ $umkm->umkm_biodata->product_capacity }}"> 
 								</div>
 									<div class="col-12">
 										<div class="card">
@@ -185,7 +192,7 @@
 												</div>
 												<div class="form-group">
 													<label>International</label>
-													<input type="text" class="form-control" name="biodata[international]" placeholder="type something" value="{{ $umkm->umkm_biodata->internatonal }}"> 
+													<input type="text" class="form-control" name="biodata[international]" placeholder="type something" value="{{ $umkm->umkm_biodata->international }}"> 
 												</div>
 												*Isi sesuai data UMKM anda
 											</div>
@@ -199,8 +206,8 @@
 											<div class="card-body">
 
 												<div class="form-group">
-													<label>Moda Sendiri</label>
-													<input type="number" class="form-control" name="biodata[capital]" placeholder="type something" value="{{ $umkm->umkm_biodata->capital }}"> 
+													<label>Modal Sendiri</label>
+													<input type="number" class="form-control" name="biodata[capital]" placeholder="type something" required value="{{ $umkm->umkm_biodata->capital }}"> 
 												</div>
 												<div class="form-group">
 													<label>Nama Bank / Koperasi</label>

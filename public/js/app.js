@@ -74394,7 +74394,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Provinsi")]),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "select",
@@ -74446,7 +74446,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Kota")]),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "select",
@@ -74498,7 +74498,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Kecamatan/Daerah")]),
+      _vm._m(2),
       _vm._v(" "),
       _c(
         "select",
@@ -74545,7 +74545,35 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _vm._v("Provinsi "),
+      _c("i", { staticStyle: { color: "red" } }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _vm._v("Kota "),
+      _c("i", { staticStyle: { color: "red" } }, [_vm._v("*")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [
+      _vm._v("Kecamatan/Daerah "),
+      _c("i", { staticStyle: { color: "red" } }, [_vm._v("*")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

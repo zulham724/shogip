@@ -50,6 +50,10 @@ class Umkm extends Model
     public function umkm_problems(){
         return $this->hasMany('App\UmkmProblem');
     }
+
+    public function umkm_legalities(){
+        return $this->hasMany('App\UmkmLegality');
+    }
     
 
 

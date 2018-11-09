@@ -22,18 +22,18 @@
 						<div class="card-body"> 
 
 							<div class="form-group">
-								<label>User</label>
-								<select class="form-control select2" name="umkm[user_id]">
+								<label>User <i style="color:red">*</i></label>
+								<select class="form-control select2" name="umkm[user_id]" required>
 									@foreach ($users as $u => $user)
-									<option value="{{ $user->id }}">{{ $user->name }}</option>
+										<option value="{{ $user->id }}">{{ $user->name }}</option>
 									@endforeach
 								</select>
 							</div>
 							<div class="form-group">
-								<label>Kategori</label>
-								<select class="form-control select2" name="umkm[umkm_category_id]">
+								<label>Kategori <i style="color:red">*</i></label>
+								<select class="form-control select2" name="umkm[umkm_category_id]" required>
 									@foreach ($umkm_categories as $uc => $umkmcategory)
-									<option value="{{ $umkmcategory->id }}">{{ $umkmcategory->name }}</option>
+										<option value="{{ $umkmcategory->id }}">{{ $umkmcategory->name }}</option>
 									@endforeach
 								</select>
 							</div>
@@ -43,14 +43,14 @@
 							</div>
 							<form-province-component></form-province-component>
 							<div class="form-group">
-								<label>Nama UMKM</label>
+								<label>Nama UMKM <i style="color:red">*</i></label>
 								<input type="text" class="form-control" name="umkm[name]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
-								<label>Bentuk Usaha</label><br>
+								<label>Bentuk Usaha <i style="color:red">*</i></label><br>
 								<div class="row">
 									<div class="col-4">
-										<input type="radio" id="type" name="umkm[business_form]" value="cv"> CV
+										<input type="radio" id="type" name="umkm[business_form]" checked value="cv"> CV
 									</div>
 									<div class="col-4">
 										<input type="radio" id="type" name="umkm[business_form]" value="pt"> PT
@@ -81,11 +81,11 @@
 								<textarea type="text" class="form-control" name="umkm[description]" placeholder="type something" > </textarea>
 							</div>
 							<div class="form-group">
-								<label>Alamat</label>
-								<textarea type="text" class="form-control" name="umkm[address]" placeholder="type something" > </textarea>
+								<label>Alamat <i style="color:red">*</i></label>
+								<textarea type="text" class="form-control" name="umkm[address]" required placeholder="type something" > </textarea>
 							</div>
 							<div class="form-group">
-								<label>Kontak Telepon / WA</label>
+								<label>Kontak Telepon / WA <i style="color:red">*</i></label>
 								<input type="number" class="form-control" name="umkm[cp]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
@@ -114,15 +114,15 @@
 						</div>
 						<div class="card-body">
 							<div class="form-group">
-								<label>Pemilik</label>
+								<label>Pemilik <i style="color:red">*</i></label>
 								<input type="text" class="form-control" name="biodata[founder]" placeholder="type something" required>
 							</div>
 							<div class="form-group">
-								<label>No Identitas (Sesuai KTP)</label>
+								<label>No Identitas (Sesuai KTP) <i style="color:red">*</i></label>
 								<input type="text" class="form-control" name="biodata[identity_number]" placeholder="type something" required>
 							</div>
 							<div class="form-group">
-								<label>Pendidikan</label><br>
+								<label>Pendidikan <i style="color:red">*</i></label><br>
 								<div class="row">
 									<div class="col-4">
 										<input type="radio" id="type" name="biodata[education]" value="SD"> SD/Sederajat
@@ -137,7 +137,7 @@
 										<input type="radio" id="type" name="biodata[education]" value="D1-D3"> D1 - D3
 									</div>
 									<div class="col-4">
-										<input type="radio" id="type" name="biodata[education]" value="S1"> S1
+										<input type="radio" id="type" name="biodata[education]" checked value="S1"> S1
 									</div>
 									<div class="col-4">
 										<input type="radio" id="type" name="biodata[education]" value="S2"> S2
@@ -151,20 +151,20 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Tahun Berdiri </label>
+								<label>Tahun Berdiri <i style="color:red">*</i></label>
 								<input type="text" class="form-control" name="biodata[year]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
-								<label>Jumlah Karyawan</label>
-								<input type="number" class="form-control" name="biodata[total_employes]" placeholder="type something"> 
+								<label>Jumlah Karyawan <i style="color:red">*</i></label>
+								<input type="number" class="form-control" name="biodata[total_employes]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
-								<label>Omset Bulanan</label>
-								<input type="number" class="form-control" name="biodata[monthly_finance]" placeholder="type something"> 
+								<label>Omset Bulanan /Rupiah <i style="color:red">*</i></label>
+								<input type="number" class="form-control" name="biodata[monthly_finance]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
-								<label>Aset</label>
-								<input type="number" class="form-control" name="biodata[asset]" placeholder="type something" > 
+								<label>Aset /Rupiah <i style="color:red">*</i></label>
+								<input type="number" class="form-control" name="biodata[asset]" placeholder="type something" required> 
 							</div>
 							<div class="form-group">
 								<label>Kapasitas Produk/Bulan</label>
@@ -205,7 +205,7 @@
 									<div class="card-body">
 
 										<div class="form-group">
-											<label>Moda Sendiri</label>
+											<label>Modal Sendiri</label>
 											<input type="number" class="form-control" name="biodata[capital]" placeholder="type something"> 
 										</div>
 										<div class="form-group">
