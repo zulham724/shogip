@@ -4,11 +4,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import $ from 'jquery';
 require('./bootstrap');
 
 window.Vue = require('vue');
 
-import $ from 'jquery';
 import 'datatables.net';
 import 'select2';
 import 'jquery-bar-rating';

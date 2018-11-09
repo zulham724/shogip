@@ -26,10 +26,10 @@
   <link rel="shortcut icon" href="img/favicon.ico">
 
   <style type="text/css">
-  .select2 span { display:block }
+    .select2 span { display:block }
   </style>
 
-  <script src="{{ asset('js/app.js') }}" defer></script>
+  {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 @yield('css')
 </head>
 <body>
@@ -130,7 +130,7 @@
     <!-- JavaScript files-->
     <script src="{{ asset('distribution/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('distribution/vendor/popper.js/umd/popper.min.js') }}"></script>
-    {{-- <script src="{{ asset('distribution/vendor/bootstrap/js/bootstrap.min.js') }}"></script> --}}
+    <script src="{{ asset('distribution/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('distribution/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
