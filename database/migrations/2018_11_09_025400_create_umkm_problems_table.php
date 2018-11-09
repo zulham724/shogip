@@ -18,7 +18,7 @@ class CreateUmkmProblemsTable extends Migration
             $table->increments('id');
             $table->integer('problem_list_id')->unsigned();
             $table->integer('umkm_id')->unsigned();
-            $table->text('description')->nullable();
+            $table->text('description')->default('-');
             $table->timestamps();
 
             $table->foreign('problem_list_id')->references('id')->on('problem_lists')->onDelete('cascade')->onUpdate('cascade');
