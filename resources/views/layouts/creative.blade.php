@@ -31,6 +31,14 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('css')
 
+    <style type="text/css">
+      /* Make the image fully responsive */
+      .carousel-inner img {
+          width: 100%;
+          height: 100%;
+      }
+    </style>
+
   </head>
 
   <body id="page-top">
@@ -66,10 +74,36 @@
         </div>
       </nav>
 
-      <header class="masthead text-center text-black" id="map">
-        {{-- <div class="container-fluid my-auto"> --}}
-          @yield('content')
-        {{-- </div> --}}
+      <header id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="Los Angeles">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.w3schools.com/bootstrap4/chicago.jpg" alt="Chicago">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+
       </header>
 
       <section class="bg-primary" id="about">
@@ -247,6 +281,13 @@
             </div>
           </div>
         </div>
+      </section>
+
+      {{-- map --}}
+      <section class="masthead text-center text-black" id="map">
+        {{-- <div class="container-fluid my-auto"> --}}
+          @yield('content')
+        {{-- </div> --}}
       </section>
 
       <div id="modalUmkm" class="modal fade" role="dialog">

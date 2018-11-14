@@ -150,7 +150,7 @@
             if ( document.readyState !== 'complete' ) return;
             clearInterval( tid );       
             // do your work
-            this.map_cities(-7.701609,110.1275541,33);
+            this.map_cities(-7.218586,110.441687,33);
         }, 100 );
 
     }
@@ -161,11 +161,7 @@
           center: {lat: -4.8234002, lng: 117.1941047},
           zoom:5,
           styles: style,
-          mapTypeId: google.maps.MapTypeId.HYBRID,
-          mapTypeControlOptions: {
-              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-              position: google.maps.ControlPosition.LEFT_CENTER
-          }
+          mapTypeId: google.maps.MapTypeId.HYBRID
         });
         if(map){
             console.log('map woi');
@@ -238,11 +234,7 @@
           center: center,
           zoom: zoom,
           styles: style,
-          mapTypeId: google.maps.MapTypeId.HYBRID,
-          mapTypeControlOptions: {
-              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-              position: google.maps.ControlPosition.LEFT_CENTER
-          }
+          mapTypeId: google.maps.MapTypeId.HYBRID
         });
 
         //

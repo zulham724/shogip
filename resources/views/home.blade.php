@@ -190,7 +190,7 @@
     function initMap() {
 
         setTimeout(()=>{
-            this.map_cities(-7.701609,110.1275541,33);
+            this.map_cities(-7.218586,110.441687,33);
         },500);
 
     }
