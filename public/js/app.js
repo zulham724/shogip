@@ -73254,13 +73254,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['edit_products'],
     data: function data() {
         return {
             products: [{
-                productimages: [{}]
+                product_images: [{}]
             }]
         };
     },
@@ -73275,7 +73278,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         add: function add() {
             this.products.push({
-                productimages: [{}]
+                product_images: [{}]
             });
         },
         remove: function remove(index) {
@@ -73283,11 +73286,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         image_add: function image_add(index) {
             event.preventDefault();
-            this.products[index].productimages.push({});
+            this.products[index].product_images.push({});
         },
         image_remove: function image_remove(index, image) {
             event.preventDefault();
-            this.products[index].productimages.splice(image, 1);
+            this.products[index].product_images.splice(image, 1);
         }
     }
 });
@@ -73392,9 +73395,18 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._l(product.productimages, function(productimage, pi) {
-                  return _c("div", { key: productimage }, [
+                _vm._l(product.product_images, function(product_image, pi) {
+                  return _c("div", { key: product_image }, [
                     _c("div", { staticClass: "form-group" }, [
+                      product_image.image
+                        ? _c("div", [
+                            _c("img", {
+                              staticClass: "img img-fluid",
+                              attrs: { src: "/storage/" + product_image.image }
+                            })
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
                       _c("input", {
                         staticClass: "form-control",
                         attrs: {
@@ -73402,7 +73414,7 @@ var render = function() {
                           name:
                             "products[" +
                             p +
-                            "][productimages][" +
+                            "][product_images][" +
                             pi +
                             "][image]",
                           required: ""
@@ -73415,7 +73427,7 @@ var render = function() {
                           attrs: { href: "#" },
                           on: {
                             click: function($event) {
-                              _vm.image_remove(p, productimage)
+                              _vm.image_remove(p, product_image)
                             }
                           }
                         },

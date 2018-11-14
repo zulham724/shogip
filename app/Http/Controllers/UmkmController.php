@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Umkm;
 use App\User;
 use App\UmkmCategori;
@@ -101,9 +102,9 @@ class UmkmController extends Controller
                 $umkm_product[$p]->description = $product['description'];
                 $umkm_product[$p]->save();
 
-                if (isset($product['productimages'])) {
+                if (isset($product['product_images'])) {
                     # code...
-                    foreach ($product['productimages'] as $pi => $productimage) {
+                    foreach ($product['product_images'] as $pi => $productimage) {
                         $path = $productimage['image']->store('productimages');
                         $product_image = new ProductImage;
                         $product_image->product_id = $umkm_product[$p]->id;
@@ -148,7 +149,7 @@ class UmkmController extends Controller
      */
     public function edit($id)
     {
-        $data['umkm'] = Umkm::with('umkm_biodata','products','umkm_problems.problem_list','umkm_legalities.legality_list','user')->find($id);
+        $data['umkm'] = Umkm::with('umkm_biodata','products.product_images','umkm_problems.problem_list','umkm_legalities.legality_list','user')->find($id);
         $data["users"] = User::get();
         $data['umkm_categories'] = UmkmCategori::get();
         $data['states'] = State::get();
@@ -191,12 +192,34 @@ class UmkmController extends Controller
 
         if (isset($request['products'])) {
             # code...
+            $umkm_products = Product::with('product_images')->where('umkm_id',$umkm->id)->get();
+            foreach ($umkm_products as $up => $umkm_product) {
+                # code...
+                foreach ($umkm_product['product_images'] as $key => $product_image) {
+                    # code...
+                    $db = ProductImage::find($product_image->id);
+                    $file = Storage::delete($db->image);
+                }
+            }
+
             $umkm_products = Product::where('umkm_id',$umkm->id)->delete();
             foreach ($request['products'] as $p => $product) {
-                $umkm_product = new Product;
-                $umkm_product->fill($product);    
-                $umkm_product->umkm_id = $umkm->id;
-                $umkm_product->save();
+                $umkm_product[$p] = new Product;
+                $umkm_product[$p]->umkm_id = $umkm->id;
+                $umkm_product[$p]->name = $product['name'];
+                $umkm_product[$p]->description = $product['description'];
+                $umkm_product[$p]->save();
+
+                if (isset($product['product_images'])) {
+                    # code...
+                    foreach ($product['product_images'] as $pi => $productimage) {
+                        $path = $productimage['image']->store('productimages');
+                        $product_image = new ProductImage;
+                        $product_image->product_id = $umkm_product[$p]->id;
+                        $product_image->image = $path;
+                        $product_image->save();
+                    }
+                }
             }
         } 
         // return "aer";

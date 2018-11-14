@@ -19,9 +19,12 @@
                             <label>Deskripsi</label>
                             <textarea type="text" class="form-control" v-model="product.description" :name="'products['+p+'][description]'" placeholder="type something" > </textarea>
                         </div>
-                        <div v-for="(productimage,pi) in product.productimages" :key="productimage">
+                        <div v-for="(product_image,pi) in product.product_images" :key="product_image">
                             <div class="form-group">
-                                <input type="file" class="form-control" :name="'products['+p+'][productimages]['+pi+'][image]'" required><a href="#" class="badge badge-danger" @click="image_remove(p,productimage)"><i class="fa fa-close"></i> Hapus</a>
+                                <div v-if="product_image.image">
+                                    <img :src="'/storage/'+product_image.image" class="img img-fluid">
+                                </div>
+                                <input type="file" class="form-control" :name="'products['+p+'][product_images]['+pi+'][image]'" required><a href="#" class="badge badge-danger" @click="image_remove(p,product_image)"><i class="fa fa-close"></i> Hapus</a>
                             </div>
                         </div>
                         <div class="form-group">    
@@ -41,7 +44,7 @@ export default {
     data(){
         return {
             products:[{
-                productimages:[{}]
+                product_images:[{}]
             }],
         }
     },
@@ -55,7 +58,7 @@ export default {
     methods:{
         add(){
             this.products.push({
-                productimages:[{}]
+                product_images:[{}]
             });
         },
         remove(index){
@@ -63,11 +66,11 @@ export default {
         },
         image_add(index){
             event.preventDefault();
-            this.products[index].productimages.push({});
+            this.products[index].product_images.push({});
         },
         image_remove(index,image){
             event.preventDefault();
-            this.products[index].productimages.splice(image,1);
+            this.products[index].product_images.splice(image,1);
         }
     }
 }
