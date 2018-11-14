@@ -9,7 +9,7 @@
 <section>
 	
 	<div class="container">
-		<form action="{{ route('umkms.store') }}" method="post">
+		<form action="{{ route('umkms.store') }}" method="post" enctype="multipart/form-data">
 			@csrf
 			@method('post')
 			<div class="row">

@@ -15,6 +15,7 @@ use App\UmkmBiodata;
 use App\UmkmAchievement;
 use App\UmkmTraining;
 use App\Product;
+use App\ProductImage;
 use App\LegalityList;
 use App\UmkmLegality;
 use App\UmkmProblem;
@@ -94,10 +95,22 @@ class UmkmController extends Controller
             # code...
             // dd($umkm_biodata);
             foreach ($request['products'] as $p => $product) {
-                $umkm_product = new Product;
-                $umkm_product->fill($product);
-                $umkm_product->umkm_id = $umkm->id;
-                $umkm_product->save();
+                $umkm_product[$p] = new Product;
+                $umkm_product[$p]->umkm_id = $umkm->id;
+                $umkm_product[$p]->name = $product['name'];
+                $umkm_product[$p]->description = $product['description'];
+                $umkm_product[$p]->save();
+
+                if (isset($product['productimages'])) {
+                    # code...
+                    foreach ($product['productimages'] as $pi => $productimage) {
+                        $path = $productimage['image']->store('productimages');
+                        $product_image = new ProductImage;
+                        $product_image->product_id = $umkm_product[$p]->id;
+                        $product_image->image = $path;
+                        $product_image->save();
+                    }
+                }
             }
         } 
 
