@@ -73327,84 +73327,142 @@ var render = function() {
           _c("div", { staticClass: "card" }, [
             _vm._m(0, true),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Nama Produk")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: product.name,
-                      expression: "product.name"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "products[" + p + "][name]",
-                    placeholder: "type something",
-                    required: ""
-                  },
-                  domProps: { value: product.name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
+            _c(
+              "div",
+              { staticClass: "card-body" },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Nama Produk")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: product.name,
+                        expression: "product.name"
                       }
-                      _vm.$set(product, "name", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Deskripsi")]),
-                _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: product.description,
-                      expression: "product.description"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    name: "products[" + p + "][description]",
-                    placeholder: "type something"
-                  },
-                  domProps: { value: product.description },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(product, "description", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-danger pull-right",
-                    attrs: { type: "button" },
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "products[" + p + "][name]",
+                      placeholder: "type something",
+                      required: ""
+                    },
+                    domProps: { value: product.name },
                     on: {
-                      click: function($event) {
-                        _vm.remove(p)
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(product, "name", $event.target.value)
                       }
                     }
-                  },
-                  [_c("i", { staticClass: "fa fa-trash" }), _vm._v(" Hapus")]
-                )
-              ])
-            ])
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Deskripsi")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: product.description,
+                        expression: "product.description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "products[" + p + "][description]",
+                      placeholder: "type something"
+                    },
+                    domProps: { value: product.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(product, "description", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._l(product.productimages, function(productimage, pi) {
+                  return _c("div", { key: productimage }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "file",
+                          name:
+                            "products[" +
+                            p +
+                            "][productimages][" +
+                            pi +
+                            "][image]",
+                          required: ""
+                        }
+                      }),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "badge badge-danger",
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              _vm.image_remove(p, productimage)
+                            }
+                          }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-close" }),
+                          _vm._v(" Hapus")
+                        ]
+                      )
+                    ])
+                  ])
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-info pull-left",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          _vm.image_add(p)
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "fa fa-plus" }),
+                      _vm._v(" Tambah Gambar")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger pull-right",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          _vm.remove(p)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-trash" }), _vm._v(" Hapus")]
+                  )
+                ])
+              ],
+              2
+            )
           ])
         ])
       })

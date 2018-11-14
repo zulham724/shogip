@@ -80,19 +80,15 @@
         <ul class="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" class="active"></li>
           <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
         </ul>
 
         <!-- The slideshow -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="Los Angeles">
+            <img src="{{ asset('creative/img/slider1.jpeg') }}" alt="Showcase Digital UMKM Jawa Tengah">
           </div>
           <div class="carousel-item">
-            <img src="https://www.w3schools.com/bootstrap4/chicago.jpg" alt="Chicago">
-          </div>
-          <div class="carousel-item">
-            <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York">
+            <img src="{{ asset('creative/img/slider2.jpeg') }}" alt="UMKM Jawa Tengah">
           </div>
         </div>
 
