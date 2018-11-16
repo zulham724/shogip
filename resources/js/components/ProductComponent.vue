@@ -11,6 +11,7 @@
                         <h5> Produk</h5>
                     </div>
                     <div class="card-body">
+                        <input type="hidden" :name="'products['+p+'][id]'" v-model="product.id">
                         <div class="form-group">
                             <label>Nama Produk</label>
                             <input type="text" class="form-control" :name="'products['+p+'][name]'" v-model="product.name" placeholder="type something" required> 
@@ -20,16 +21,22 @@
                             <textarea type="text" class="form-control" v-model="product.description" :name="'products['+p+'][description]'" placeholder="type something" > </textarea>
                         </div>
                         <div v-for="(product_image,pi) in product.product_images" :key="product_image">
+                            <input type="hidden" :name="'products['+p+'][product_images]['+pi+'][id]'" v-model="product_image.id">
                             <div class="form-group">
                                 <div v-if="product_image.image">
                                     <img :src="'/storage/'+product_image.image" class="img img-fluid">
                                 </div>
-                                <input type="file" class="form-control" :name="'products['+p+'][product_images]['+pi+'][image]'" required><a href="#" class="badge badge-danger" @click="image_remove(p,product_image)"><i class="fa fa-close"></i> Hapus</a>
+                                <div v-if="!product_image.image">
+
+                                    <input type="file" class="form-control" :name="'products['+p+'][product_images]['+pi+'][image]'" required>
+
+                                </div>
+                                <a href="#" class="badge badge-danger" @click="image_remove(p,pi,product_image)"><i class="fa fa-close"></i> Hapus</a>
                             </div>
                         </div>
                         <div class="form-group">    
                             <button type="button" class="btn btn-info pull-left" @click="image_add(p)"><i class="fa fa-plus"></i> Tambah Gambar</button>
-                            <button type="button" @click="remove(p)" class="btn btn-danger pull-right"><i class="fa fa-trash"></i> Hapus</button>   
+                            <button type="button" @click="remove(p,product)" class="btn btn-danger pull-right"><i class="fa fa-trash"></i> Hapus</button>   
                         </div>
                     </div>
                 </div>
@@ -44,7 +51,9 @@ export default {
     data(){
         return {
             products:[{
-                product_images:[{}]
+                product_images:[{
+                    id:0
+                }]
             }],
         }
     },
@@ -58,19 +67,61 @@ export default {
     methods:{
         add(){
             this.products.push({
-                product_images:[{}]
+                product_images:[{
+                    id:0
+                }]
             });
         },
-        remove(index){
-            this.products.splice(index,1);
+        remove(index,product){
+            if(product.id){
+                
+                swal({
+                  type:"info",
+                  title: "Anda yakin?",
+                  confirmButtonText: "<i class='fa fa-thumbs-up'></i> Ya, Hapus",
+                  showCancelButton:true,
+                  cancelButtonColor: '#d33',
+                  cancelButtonText: "<i class='fa fa-close'></i> Tidak"
+                }).then(res=>{
+                  if(res.value){
+                    axios.post("/api/products/"+product.id,{_method:"delete"}).then(res=>{
+                        swal("Oke","Berhasil dihapus","success");
+                        this.products.splice(index,1);
+                    });
+                  }
+                });
+
+            } else {
+
+                this.products.splice(index,1);
+            }
         },
         image_add(index){
             event.preventDefault();
             this.products[index].product_images.push({});
         },
-        image_remove(index,image){
+        image_remove(index,pi,image){
             event.preventDefault();
-            this.products[index].product_images.splice(image,1);
+            if(image.id){
+                swal({
+                  type:"info",
+                  title: "Anda yakin?",
+                  confirmButtonText: "<i class='fa fa-thumbs-up'></i> Ya, Hapus",
+                  showCancelButton:true,
+                  cancelButtonColor: '#d33',
+                  cancelButtonText: "<i class='fa fa-close'></i> Tidak"
+                }).then(res=>{
+                  if(res.value){
+                    axios.post("/api/productimages/"+image.id,{_method:"delete"}).then(res=>{
+                        swal("Oke","Berhasil dihapus","success");
+                        this.products[index].product_images.splice(pi,1);
+                    });
+                  }
+                });
+            } else {
+                this.products[index].product_images.splice(pi,1);
+            }
+
         }
     }
 }

@@ -179,7 +179,7 @@
 								</div>
 								<div class="form-group">
 									<label>Kapasitas Produk /Bulan</label>
-									<input type="number" class="form-control" name="biodata[product_capacity]" placeholder="type something" value="{{ $umkm->umkm_biodata->product_capacity }}"> 
+									<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something" value="{{ $umkm->umkm_biodata->product_capacity }}"> 
 								</div>
 									<div class="col-12">
 										<div class="card">

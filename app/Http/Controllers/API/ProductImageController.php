@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
 use App\ProductImage;
 
@@ -84,7 +85,9 @@ class ProductImageController extends Controller
      */
     public function destroy($id)
     {
-        $productimage = ProductImage::find($id)->delete();
+        $productimage = ProductImage::find($id);
+        $file = Storage::delete($productimage->image);
+        $productimage->delete();
         return response()->json($productimage);
     }
 }

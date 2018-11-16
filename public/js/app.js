@@ -73257,13 +73257,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['edit_products'],
     data: function data() {
         return {
             products: [{
-                product_images: [{}]
+                product_images: [{
+                    id: 0
+                }]
             }]
         };
     },
@@ -73278,19 +73287,63 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         add: function add() {
             this.products.push({
-                product_images: [{}]
+                product_images: [{
+                    id: 0
+                }]
             });
         },
-        remove: function remove(index) {
-            this.products.splice(index, 1);
+        remove: function remove(index, product) {
+            var _this = this;
+
+            if (product.id) {
+
+                swal({
+                    type: "info",
+                    title: "Anda yakin?",
+                    confirmButtonText: "<i class='fa fa-thumbs-up'></i> Ya, Hapus",
+                    showCancelButton: true,
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: "<i class='fa fa-close'></i> Tidak"
+                }).then(function (res) {
+                    if (res.value) {
+                        axios.post("/api/products/" + product.id, { _method: "delete" }).then(function (res) {
+                            swal("Oke", "Berhasil dihapus", "success");
+                            _this.products.splice(index, 1);
+                        });
+                    }
+                });
+            } else {
+
+                this.products.splice(index, 1);
+            }
         },
         image_add: function image_add(index) {
             event.preventDefault();
             this.products[index].product_images.push({});
         },
-        image_remove: function image_remove(index, image) {
+        image_remove: function image_remove(index, pi, image) {
+            var _this2 = this;
+
             event.preventDefault();
-            this.products[index].product_images.splice(image, 1);
+            if (image.id) {
+                swal({
+                    type: "info",
+                    title: "Anda yakin?",
+                    confirmButtonText: "<i class='fa fa-thumbs-up'></i> Ya, Hapus",
+                    showCancelButton: true,
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: "<i class='fa fa-close'></i> Tidak"
+                }).then(function (res) {
+                    if (res.value) {
+                        axios.post("/api/productimages/" + image.id, { _method: "delete" }).then(function (res) {
+                            swal("Oke", "Berhasil dihapus", "success");
+                            _this2.products[index].product_images.splice(pi, 1);
+                        });
+                    }
+                });
+            } else {
+                this.products[index].product_images.splice(pi, 1);
+            }
         }
     }
 });
@@ -73334,6 +73387,27 @@ var render = function() {
               "div",
               { staticClass: "card-body" },
               [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: product.id,
+                      expression: "product.id"
+                    }
+                  ],
+                  attrs: { type: "hidden", name: "products[" + p + "][id]" },
+                  domProps: { value: product.id },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(product, "id", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("label", [_vm._v("Nama Produk")]),
                   _vm._v(" "),
@@ -73397,6 +73471,31 @@ var render = function() {
                 _vm._v(" "),
                 _vm._l(product.product_images, function(product_image, pi) {
                   return _c("div", { key: product_image }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: product_image.id,
+                          expression: "product_image.id"
+                        }
+                      ],
+                      attrs: {
+                        type: "hidden",
+                        name:
+                          "products[" + p + "][product_images][" + pi + "][id]"
+                      },
+                      domProps: { value: product_image.id },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(product_image, "id", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       product_image.image
                         ? _c("div", [
@@ -73407,19 +73506,24 @@ var render = function() {
                           ])
                         : _vm._e(),
                       _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "file",
-                          name:
-                            "products[" +
-                            p +
-                            "][product_images][" +
-                            pi +
-                            "][image]",
-                          required: ""
-                        }
-                      }),
+                      !product_image.image
+                        ? _c("div", [
+                            _c("input", {
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "file",
+                                name:
+                                  "products[" +
+                                  p +
+                                  "][product_images][" +
+                                  pi +
+                                  "][image]",
+                                required: ""
+                              }
+                            })
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
                       _c(
                         "a",
                         {
@@ -73427,7 +73531,7 @@ var render = function() {
                           attrs: { href: "#" },
                           on: {
                             click: function($event) {
-                              _vm.image_remove(p, product_image)
+                              _vm.image_remove(p, pi, product_image)
                             }
                           }
                         },
@@ -73465,7 +73569,7 @@ var render = function() {
                       attrs: { type: "button" },
                       on: {
                         click: function($event) {
-                          _vm.remove(p)
+                          _vm.remove(p, product)
                         }
                       }
                     },

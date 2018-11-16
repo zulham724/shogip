@@ -192,19 +192,8 @@ class UmkmController extends Controller
 
         if (isset($request['products'])) {
             # code...
-            $umkm_products = Product::with('product_images')->where('umkm_id',$umkm->id)->get();
-            foreach ($umkm_products as $up => $umkm_product) {
-                # code...
-                foreach ($umkm_product['product_images'] as $key => $product_image) {
-                    # code...
-                    $db = ProductImage::find($product_image->id);
-                    $file = Storage::delete($db->image);
-                }
-            }
-
-            $umkm_products = Product::where('umkm_id',$umkm->id)->delete();
             foreach ($request['products'] as $p => $product) {
-                $umkm_product[$p] = new Product;
+                $umkm_product[$p] = Product::firstOrNew(['id'=>$product['id'] ?? 0]);
                 $umkm_product[$p]->umkm_id = $umkm->id;
                 $umkm_product[$p]->name = $product['name'];
                 $umkm_product[$p]->description = $product['description'];
@@ -213,10 +202,12 @@ class UmkmController extends Controller
                 if (isset($product['product_images'])) {
                     # code...
                     foreach ($product['product_images'] as $pi => $productimage) {
-                        $path = $productimage['image']->store('productimages');
-                        $product_image = new ProductImage;
+                        $product_image = ProductImage::firstOrNew(['id'=>$productimage['id'] ?? 0]);
                         $product_image->product_id = $umkm_product[$p]->id;
-                        $product_image->image = $path;
+                        if(!$product_image->id){
+                            $path = $productimage['image']->store('productimages');
+                            $product_image->image = $path;
+                        }
                         $product_image->save();
                     }
                 }

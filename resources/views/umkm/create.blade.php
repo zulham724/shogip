@@ -168,7 +168,7 @@
 							</div>
 							<div class="form-group">
 								<label>Kapasitas Produk/Bulan</label>
-								<input type="number" class="form-control" name="biodata[product_capacity]" placeholder="type something"> 
+								<input type="text" class="form-control" name="biodata[product_capacity]" placeholder="type something"> 
 							</div>
 							<div class="col-12">
 								<div class="card">
