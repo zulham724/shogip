@@ -217,7 +217,7 @@
 
 												<div class="form-group">
 													<label>Modal Sendiri</label>
-													<input type="number" class="form-control" name="biodata[capital]" placeholder="type something" required value="{{ $umkm->umkm_biodata->capital }}"> 
+													<input type="number" class="form-control" name="biodata[capital]" placeholder="type something" value="{{ $umkm->umkm_biodata->capital }}"> 
 												</div>
 												<div class="form-group">
 													<label>Nama Bank / Koperasi</label>
