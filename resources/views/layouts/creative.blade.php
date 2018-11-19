@@ -255,6 +255,13 @@
         </div>
       </section>
 
+      {{-- map --}}
+      <section class="masthead text-center text-black" id="map">
+        {{-- <div class="container-fluid my-auto"> --}}
+          @yield('content')
+        {{-- </div> --}}
+      </section>
+      
       <section id="contact">
         <div class="container">
           <div class="row">
@@ -277,13 +284,6 @@
             </div>
           </div>
         </div>
-      </section>
-
-      {{-- map --}}
-      <section class="masthead text-center text-black" id="map">
-        {{-- <div class="container-fluid my-auto"> --}}
-          @yield('content')
-        {{-- </div> --}}
       </section>
 
       <div id="modalUmkm" class="modal fade" role="dialog">
