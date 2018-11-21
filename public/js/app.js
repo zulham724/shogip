@@ -73379,7 +73379,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.products, function(product, p) {
-        return _c("div", { staticClass: "col-4" }, [
+        return _c("div", { staticClass: "col-sm-4" }, [
           _c("div", { staticClass: "card" }, [
             _vm._m(0, true),
             _vm._v(" "),
@@ -73747,7 +73747,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.achivements, function(achivement, a) {
-        return _c("div", { staticClass: "col-4" }, [
+        return _c("div", { staticClass: "col-sm-4" }, [
           _c("div", { staticClass: "card" }, [
             _vm._m(0, true),
             _vm._v(" "),
@@ -74026,7 +74026,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.trainings, function(training, t) {
-        return _c("div", { staticClass: "col-4" }, [
+        return _c("div", { staticClass: "col-sm-4" }, [
           _c("div", { staticClass: "card" }, [
             _vm._m(0, true),
             _vm._v(" "),
@@ -74331,7 +74331,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.productimages, function(productimage, r) {
-        return _c("div", { staticClass: "col-4" }, [
+        return _c("div", { staticClass: "col-sm-4" }, [
           _c("div", { staticClass: "card" }, [
             _vm._m(0, true),
             _vm._v(" "),
@@ -74886,7 +74886,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.problemlists, function(problemlist, pl) {
-        return _c("div", { staticClass: "col-4" }, [
+        return _c("div", { staticClass: "col-sm-4" }, [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h5", [

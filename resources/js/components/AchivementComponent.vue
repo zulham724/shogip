@@ -5,7 +5,7 @@
             <button type="button" class="btn btn-primary pull-right" @click="add()"><i class="fa fa-plus"></i> Tambah</button>
         </div>
         <div class="row">
-            <div class="col-4" v-for="(achivement,a) in achivements">
+            <div class="col-sm-4" v-for="(achivement,a) in achivements">
                 <div class="card">
                     <div class="card-header">
                         <h5> Achievement</h5>

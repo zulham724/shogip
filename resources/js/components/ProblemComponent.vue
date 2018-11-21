@@ -4,7 +4,7 @@
             <strong>Tentukan Masalah</strong>
         </div>
         <div class="row">
-            <div class="col-4" v-for="(problemlist,pl) in problemlists">
+            <div class="col-sm-4" v-for="(problemlist,pl) in problemlists">
                 <div class="card">
                     <div class="card-header">
                         <h5> Masalah {{ edit_umkm_problems ? problemlist.problem_list.name : problemlist.name }}</h5>

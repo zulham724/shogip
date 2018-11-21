@@ -13,7 +13,7 @@
 			@csrf
 			@method('post')
 			<div class="row">
-				<div class="col-6">
+				<div class="col">
 					<div class="card">
 						<div class="card-header">
 							<a href="{{ url('umkms') }}" type="button" class="btn btn-secondary"><i class="fa fa-arrow-left"> </i> Kembali</a>
@@ -107,7 +107,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col">
 					<div class="card">
 						<div class="card-header">
 							Biodata UMKM
