@@ -73379,7 +73379,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.products, function(product, p) {
-        return _c("div", { staticClass: "col-sm-4" }, [
+        return _c("div", { staticClass: "col-lg-4" }, [
           _c("div", { staticClass: "card" }, [
             _vm._m(0, true),
             _vm._v(" "),
