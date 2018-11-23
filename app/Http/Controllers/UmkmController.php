@@ -64,6 +64,11 @@ class UmkmController extends Controller
     public function store(Request $request)
     {
         // dd($request);
+        $validate = $request->validate([
+            "umkm"=>"required",
+            "biodata"=>"required"
+        ]);
+
         $umkm = new Umkm;
         $umkm->fill($request['umkm']);
         $umkm->save();
@@ -170,6 +175,12 @@ class UmkmController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request);
+
+        $validate = $request->validate([
+            "umkm"=>"required",
+            "biodata"=>"required"
+        ]);
+        
         $umkm = Umkm::find($id);
         $umkm->fill($request['umkm']);
         $umkm->update();

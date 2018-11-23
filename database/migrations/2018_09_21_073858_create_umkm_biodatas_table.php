@@ -17,7 +17,7 @@ class CreateUmkmBiodatasTable extends Migration
             $table->engine = "InnoDB";
             $table->increments('id');
             $table->integer('umkm_id')->unsigned();
-            $table->string('founder');
+            $table->string('founder')->default('-');
             $table->string('identity_number')->nullable();
             $table->string('education')->nullable();
             $table->string('year')->nullable();
