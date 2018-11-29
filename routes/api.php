@@ -17,9 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('clients','API\OauthClientController');
+Route::apiResource('oauthclients','API\OauthClientController');
 
-Route::group(['middleware'=>'api','namespace'=>'API'],function(){
+Route::group(['namespace'=>'API'],function(){
 
 	Route::apiResources([
 		'users'=>'UserController',
