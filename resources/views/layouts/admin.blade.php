@@ -29,7 +29,7 @@
     .select2 span { display:block }
   </style>
 
-  <script src="{{ asset('js/app.js') }}" defer></script>
+  
 @yield('css')
 </head>
 <body>
@@ -137,11 +137,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.12/sweetalert2.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.14.0/printThis.min.js"></script>
 
     <script type="text/javascript">
+      var table; 
       $(document).ready(function(){
 
-        $('.datatable').DataTable({
+        table = $('.datatable').DataTable({
 
         });
 
@@ -170,6 +172,7 @@
       }
 
     </script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('script')
   </body>
   </html>

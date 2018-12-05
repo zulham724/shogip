@@ -13,6 +13,9 @@ import 'datatables.net';
 import 'select2';
 import 'jquery-bar-rating';
 window.swal = require('sweetalert2');
+var printThis = require('print-this');
+import print from 'print-js';
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

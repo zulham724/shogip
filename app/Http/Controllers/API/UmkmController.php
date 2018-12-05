@@ -95,4 +95,13 @@ class UmkmController extends Controller
         return response()->json($umkms);
     }
 
+    public function document(){
+        // return "yey";
+        $data['umkm'] = Umkm::
+        with('umkm_category','state','city','district','user')
+        ->orderBy('created_at','desc')->get();
+        
+        return response()->view('umkm.index',$data);
+    }
+
 }

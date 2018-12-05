@@ -37,6 +37,7 @@ Route::group(['namespace'=>'API'],function(){
 		'problemlists'=>'ProblemListController'
 	]);
 
+	Route::get('umkm/document','UmkmController@document');
 	Route::get('umkm/states','UmkmController@states');
 	Route::get('umkm/cities/{id}','UmkmController@cities');
 	Route::get('umkms/getByCity/{id}','UmkmController@getByCity');

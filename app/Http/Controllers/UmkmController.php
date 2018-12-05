@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade as PDF;
 use App\Umkm;
 use App\User;
 use App\UmkmCategori;
@@ -33,7 +34,7 @@ class UmkmController extends Controller
         $data['umkm'] = Umkm::
         with('umkm_category','state','city','district','user')
         ->orderBy('created_at','desc')->get();
-        
+        $data["cities"] = City::get();   
         return view('umkm.index',$data);
     }
 
@@ -245,5 +246,17 @@ class UmkmController extends Controller
          $data['umkm'] = Umkm::with('umkm_category','state','city','district')
          ->where('city_id',$id)->get();
         return view('umkm.peta',$data);
+    }
+
+    public function document(Request $request){
+        // return "yey";
+        $data['umkm'] = Umkm::
+        with('umkm_category','state','city','district','user')
+        ->orderBy('created_at','desc')
+        ->where('city_id',$request['city_id'])
+        ->get();
+        $pdf = PDF::loadView('pdf.umkms', $data);
+        // return view('pdf.umkms',$data);
+        return $pdf->download('data_umkm.pdf');
     }
 }

@@ -1,4 +1,22 @@
 @extends('layouts.admin')
+
+@section('css')
+<style type="text/css">
+    @media print{
+        button{
+            visibility: hidden;
+        }
+        .hide {
+            visibility: hidden;
+        }
+        a {
+            visibility: hidden;
+        }
+
+    }
+</style>
+@endsection
+
 @section('content')
 <div class="page-header">
   <div class="container-fluid">
@@ -13,11 +31,25 @@
         <div class="card-header">
             <i class="fa fa-flag"></i> List UMKM
             <a href="{{ route('umkms.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah UMKM</a>
+            <button class="btn btn-primary pull-right" onclick="print()"><i class="fa fa-print"></i> Cetak</button>
+            <form class="form-inline" method="post" action="{{ url('umkm/document') }}">
+                @csrf
+                <div class="form-group">
+                    {{-- <label>Sortir Kota</label> --}}
+                    <select class="form-control" name="city_id">
+                        @foreach ($cities as $city)
+                            {{-- expr --}}
+                            <option value="{{ $city->id }}">{{ $city->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Cetak</button>
+            </form>
             
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-striped datatable">
+                <table class="table table-striped table-bordered datatable" id="print">
                     <thead>
                         <tr>
                             <td>No</td>
@@ -92,5 +124,12 @@
             }
         });
     }
+
+    function print(){
+        axios.get('umkm/document').then(res=>{
+
+        });
+    }
+
 </script>
 @endsection

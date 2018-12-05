@@ -55,6 +55,8 @@ Route::group(['middleware'=>'auth'],function(){
 			'umkmlegalities'=>'LegalityListController',
 		]);
 
+		Route::post('umkm/document','UmkmController@document');
+
 	});
 
 	Route::group(['middleware'=>'role:2'],function(){

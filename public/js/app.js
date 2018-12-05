@@ -13988,7 +13988,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(71);
+module.exports = __webpack_require__(72);
 
 
 /***/ }),
@@ -14005,6 +14005,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_select2__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery_bar_rating__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery_bar_rating___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery_bar_rating__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_print_js__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_print_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_print_js__);
 
 /**x
  * First we will load all of this project's JavaScript dependencies which
@@ -14020,6 +14022,8 @@ window.Vue = __webpack_require__(37);
 
 
 window.swal = __webpack_require__(43);
+var printThis = __webpack_require__(77);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -14027,15 +14031,15 @@ window.swal = __webpack_require__(43);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(44));
-Vue.component('map-component', __webpack_require__(47));
-Vue.component('pin-component', __webpack_require__(50));
-Vue.component('product-component', __webpack_require__(53));
-Vue.component('achivement-component', __webpack_require__(56));
-Vue.component('training-component', __webpack_require__(59));
-Vue.component('productimage-component', __webpack_require__(62));
-Vue.component('form-province-component', __webpack_require__(65));
-Vue.component('problem-component', __webpack_require__(68));
+Vue.component('example-component', __webpack_require__(45));
+Vue.component('map-component', __webpack_require__(48));
+Vue.component('pin-component', __webpack_require__(51));
+Vue.component('product-component', __webpack_require__(54));
+Vue.component('achivement-component', __webpack_require__(57));
+Vue.component('training-component', __webpack_require__(60));
+Vue.component('productimage-component', __webpack_require__(63));
+Vue.component('form-province-component', __webpack_require__(66));
+Vue.component('problem-component', __webpack_require__(69));
 
 var app = new Vue({
   el: '#app'
@@ -72829,12 +72833,1136 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.Sweetalert2.ve
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["printJS"] = factory();
+	else
+		root["printJS"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+__webpack_require__(/*! ./sass/index.scss */ "./src/sass/index.scss");
+
+var _init = __webpack_require__(/*! ./js/init */ "./src/js/init.js");
+
+var _init2 = _interopRequireDefault(_init);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var printJS = _init2.default.init;
+
+if (typeof window !== 'undefined') {
+  window.printJS = printJS;
+}
+
+exports.default = printJS;
+
+/***/ }),
+
+/***/ "./src/js/browser.js":
+/*!***************************!*\
+  !*** ./src/js/browser.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var Browser = {
+  // Firefox 1.0+
+  isFirefox: function isFirefox() {
+    return typeof InstallTrigger !== 'undefined';
+  },
+  // Internet Explorer 6-11
+  isIE: function isIE() {
+    return navigator.userAgent.indexOf('MSIE') !== -1 || !!document.documentMode;
+  },
+  // Edge 20+
+  isEdge: function isEdge() {
+    return !Browser.isIE() && !!window.StyleMedia;
+  },
+  // Chrome 1+
+  isChrome: function isChrome() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window;
+
+    return !!context.chrome;
+  },
+  // At least Safari 3+: "[object HTMLElementConstructor]"
+  isSafari: function isSafari() {
+    return Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || navigator.userAgent.toLowerCase().indexOf('safari') !== -1;
+  }
+};
+
+exports.default = Browser;
+
+/***/ }),
+
+/***/ "./src/js/functions.js":
+/*!*****************************!*\
+  !*** ./src/js/functions.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.addWrapper = addWrapper;
+exports.capitalizePrint = capitalizePrint;
+exports.collectStyles = collectStyles;
+exports.loopNodesCollectStyles = loopNodesCollectStyles;
+exports.addHeader = addHeader;
+function addWrapper(htmlData, params) {
+  var bodyStyle = 'font-family:' + params.font + ' !important; font-size: ' + params.font_size + ' !important; width:100%;';
+  return '<div style="' + bodyStyle + '">' + htmlData + '</div>';
+}
+
+function capitalizePrint(obj) {
+  return obj.charAt(0).toUpperCase() + obj.slice(1);
+}
+
+function collectStyles(element, params) {
+  var win = document.defaultView || window;
+
+  // String variable to hold styling for each element
+  var elementStyle = '';
+
+  // Loop over computed styles
+  var styles = win.getComputedStyle(element, '');
+
+  Object.keys(styles).map(function (key) {
+    // Check if style should be processed
+    if (params.targetStyles.indexOf('*') !== -1 || params.targetStyle.indexOf(styles[key]) !== -1 || targetStylesMatch(params.targetStyles, styles[key])) {
+      if (styles.getPropertyValue(styles[key])) elementStyle += styles[key] + ':' + styles.getPropertyValue(styles[key]) + ';';
+    }
+  });
+
+  // Print friendly defaults
+  elementStyle += 'max-width: ' + params.maxWidth + 'px !important;' + params.font_size + ' !important;';
+
+  return elementStyle;
+}
+
+function targetStylesMatch(styles, value) {
+  for (var i = 0; i < styles.length; i++) {
+    if ((typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object' && value.indexOf(styles[i]) !== -1) return true;
+  }
+  return false;
+}
+
+function loopNodesCollectStyles(elements, params) {
+  for (var n = 0; n < elements.length; n++) {
+    var currentElement = elements[n];
+
+    // Check if we are skiping this element
+    if (params.ignoreElements.indexOf(currentElement.getAttribute('id')) !== -1) {
+      currentElement.parentNode.removeChild(currentElement);
+      continue;
+    }
+
+    // Form Printing - check if is element Input
+    var tag = currentElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') {
+      // Save style to variable
+      var textStyle = collectStyles(currentElement, params);
+
+      // Remove INPUT element and insert a text node
+      var parent = currentElement.parentNode;
+
+      // Get text value
+      var textNode = tag === 'SELECT' ? document.createTextNode(currentElement.options[currentElement.selectedIndex].text) : document.createTextNode(currentElement.value);
+
+      // Create text element
+      var textElement = document.createElement('div');
+      textElement.appendChild(textNode);
+
+      // Add style to text
+      textElement.setAttribute('style', textStyle);
+
+      // Add text
+      parent.appendChild(textElement);
+
+      // Remove input
+      parent.removeChild(currentElement);
+    } else {
+      // Get all styling for print element
+      currentElement.setAttribute('style', collectStyles(currentElement, params));
+    }
+
+    // Check if more elements in tree
+    var children = currentElement.children;
+
+    if (children && children.length) {
+      loopNodesCollectStyles(children, params);
+    }
+  }
+}
+
+function addHeader(printElement, header, headerStyle) {
+  // Create header element
+  var headerElement = document.createElement('h1');
+
+  // Create header text node
+  var headerNode = document.createTextNode(header);
+
+  // Build and style
+  headerElement.appendChild(headerNode);
+  headerElement.setAttribute('style', headerStyle);
+
+  printElement.insertBefore(headerElement, printElement.childNodes[0]);
+}
+
+/***/ }),
+
+/***/ "./src/js/html.js":
+/*!************************!*\
+  !*** ./src/js/html.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _functions = __webpack_require__(/*! ./functions */ "./src/js/functions.js");
+
+var _print = __webpack_require__(/*! ./print */ "./src/js/print.js");
+
+var _print2 = _interopRequireDefault(_print);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  print: function print(params, printFrame) {
+    // Get HTML printable element
+    var printElement = document.getElementById(params.printable);
+
+    // Check if element exists
+    if (!printElement) {
+      window.console.error('Invalid HTML element id: ' + params.printable);
+
+      return false;
+    }
+
+    // Make a copy of the printElement to prevent DOM changes
+    var printableElement = document.createElement('div');
+    printableElement.appendChild(printElement.cloneNode(true));
+
+    // Add cloned element to DOM, to have DOM element methods available. It will also be easier to colect styles
+    printableElement.setAttribute('style', 'height:0; overflow:hidden;');
+    printableElement.setAttribute('id', 'printJS-html');
+    printElement.parentNode.appendChild(printableElement);
+
+    // Update printableElement variable with newly created DOM element
+    printableElement = document.getElementById('printJS-html');
+
+    // Process html styles
+    if (params.scanStyles === true) {
+      // Optional - include margin and padding
+      if (params.honorMarginPadding) params.targetStyles.push('margin', 'padding');
+
+      // Optional - include color
+      if (params.honorColor) params.targetStyles.push('color');
+
+      // Get main element styling
+      printableElement.setAttribute('style', (0, _functions.collectStyles)(printableElement, params) + 'margin:0 !important;');
+
+      // Get all children elements
+      var elements = printableElement.children;
+
+      // Get styles for all children elements
+      (0, _functions.loopNodesCollectStyles)(elements, params);
+    }
+
+    // Add header
+    if (params.header) {
+      (0, _functions.addHeader)(printableElement, params.header, params.headerStyle);
+    }
+
+    // Remove DOM printableElement
+    printableElement.parentNode.removeChild(printableElement);
+
+    // Store html data
+    params.htmlData = (0, _functions.addWrapper)(printableElement.innerHTML, params);
+
+    // Print html element contents
+    _print2.default.send(params, printFrame);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/js/image.js":
+/*!*************************!*\
+  !*** ./src/js/image.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _functions = __webpack_require__(/*! ./functions */ "./src/js/functions.js");
+
+var _print = __webpack_require__(/*! ./print */ "./src/js/print.js");
+
+var _print2 = _interopRequireDefault(_print);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  print: function print(params, printFrame) {
+    // Check if we are printing one image or multiple images
+    if (params.printable.constructor !== Array) {
+      // Create array with one image
+      params.printable = [params.printable];
+    }
+
+    // Create printable element (container)
+    var printableElement = document.createElement('div');
+    printableElement.setAttribute('style', 'width:100%');
+
+    // Load images and append
+    loadImagesAndAppendToPrintableElement(printableElement, params).then(function () {
+      // Check if we are adding a header
+      if (params.header) (0, _functions.addHeader)(printableElement, params.header, params.headerStyle);
+
+      // Store html data
+      params.htmlData = printableElement.outerHTML;
+
+      // Print image
+      _print2.default.send(params, printFrame);
+    });
+  }
+};
+
+
+function loadImagesAndAppendToPrintableElement(printableElement, params) {
+  var promises = [];
+
+  params.printable.forEach(function (image, index) {
+    // Create the image element
+    var img = document.createElement('img');
+
+    // Set image src with image file url
+    img.src = image;
+
+    // Load image
+    promises.push(loadImageAndAppendToPrintableElement(printableElement, params, img, index));
+  });
+
+  return Promise.all(promises);
+}
+
+function loadImageAndAppendToPrintableElement(printableElement, params, img, index) {
+  return new Promise(function (resolve) {
+    img.onload = function () {
+      // Create image wrapper
+      var imageWrapper = document.createElement('div');
+      imageWrapper.setAttribute('style', params.imageStyle);
+
+      img.setAttribute('style', 'width:100%;');
+      img.setAttribute('id', 'printableImage' + index);
+
+      // Append image to wrapper element
+      imageWrapper.appendChild(img);
+
+      // Append wrapper element to printable element
+      printableElement.appendChild(imageWrapper);
+
+      resolve();
+    };
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/init.js":
+/*!************************!*\
+  !*** ./src/js/init.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _browser = __webpack_require__(/*! ./browser */ "./src/js/browser.js");
+
+var _browser2 = _interopRequireDefault(_browser);
+
+var _modal = __webpack_require__(/*! ./modal */ "./src/js/modal.js");
+
+var _modal2 = _interopRequireDefault(_modal);
+
+var _pdf = __webpack_require__(/*! ./pdf */ "./src/js/pdf.js");
+
+var _pdf2 = _interopRequireDefault(_pdf);
+
+var _html = __webpack_require__(/*! ./html */ "./src/js/html.js");
+
+var _html2 = _interopRequireDefault(_html);
+
+var _image = __webpack_require__(/*! ./image */ "./src/js/image.js");
+
+var _image2 = _interopRequireDefault(_image);
+
+var _json = __webpack_require__(/*! ./json */ "./src/js/json.js");
+
+var _json2 = _interopRequireDefault(_json);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var printTypes = ['pdf', 'html', 'image', 'json'];
+
+exports.default = {
+  init: function init() {
+    var params = {
+      printable: null,
+      fallbackPrintable: null,
+      type: 'pdf',
+      header: null,
+      headerStyle: 'font-weight: 300;',
+      maxWidth: 800,
+      font: 'TimesNewRoman',
+      font_size: '12pt',
+      honorMarginPadding: true,
+      honorColor: false,
+      properties: null,
+      gridHeaderStyle: 'font-weight: bold; padding: 5px; border: 1px solid #dddddd;',
+      gridStyle: 'border: 1px solid lightgray; margin-bottom: -1px;',
+      showModal: false,
+      onError: function onError(error) {
+        throw error;
+      },
+      onLoadingStart: null,
+      onLoadingEnd: null,
+      onPrintDialogClose: null,
+      onPdfOpen: null,
+      modalMessage: 'Retrieving Document...',
+      frameId: 'printJS',
+      htmlData: '',
+      documentTitle: 'Document',
+      targetStyle: ['clear', 'display', 'width', 'min-width', 'height', 'min-height', 'max-height'],
+      targetStyles: ['border', 'box', 'break', 'text-decoration'],
+      ignoreElements: [],
+      imageStyle: 'width:100%;',
+      repeatTableHeader: true,
+      css: null,
+      style: null,
+      scanStyles: true
+
+      // Check if a printable document or object was supplied
+    };var args = arguments[0];
+    if (args === undefined) throw new Error('printJS expects at least 1 attribute.');
+
+    // Process parameters
+    switch (typeof args === 'undefined' ? 'undefined' : _typeof(args)) {
+      case 'string':
+        params.printable = encodeURI(args);
+        params.fallbackPrintable = params.printable;
+        params.type = arguments[1] || params.type;
+        break;
+      case 'object':
+        params.printable = args.printable;
+        params.fallbackPrintable = typeof args.fallbackPrintable !== 'undefined' ? args.fallbackPrintable : params.printable;
+        params.type = typeof args.type !== 'undefined' ? args.type : params.type;
+        params.frameId = typeof args.frameId !== 'undefined' ? args.frameId : params.frameId;
+        params.header = typeof args.header !== 'undefined' ? args.header : params.header;
+        params.headerStyle = typeof args.headerStyle !== 'undefined' ? args.headerStyle : params.headerStyle;
+        params.maxWidth = typeof args.maxWidth !== 'undefined' ? args.maxWidth : params.maxWidth;
+        params.font = typeof args.font !== 'undefined' ? args.font : params.font;
+        params.font_size = typeof args.font_size !== 'undefined' ? args.font_size : params.font_size;
+        params.honorMarginPadding = typeof args.honorMarginPadding !== 'undefined' ? args.honorMarginPadding : params.honorMarginPadding;
+        params.properties = typeof args.properties !== 'undefined' ? args.properties : params.properties;
+        params.gridHeaderStyle = typeof args.gridHeaderStyle !== 'undefined' ? args.gridHeaderStyle : params.gridHeaderStyle;
+        params.gridStyle = typeof args.gridStyle !== 'undefined' ? args.gridStyle : params.gridStyle;
+        params.showModal = typeof args.showModal !== 'undefined' ? args.showModal : params.showModal;
+        params.onError = typeof args.onError !== 'undefined' ? args.onError : params.onError;
+        params.onLoadingStart = typeof args.onLoadingStart !== 'undefined' ? args.onLoadingStart : params.onLoadingStart;
+        params.onLoadingEnd = typeof args.onLoadingEnd !== 'undefined' ? args.onLoadingEnd : params.onLoadingEnd;
+        params.onPrintDialogClose = typeof args.onPrintDialogClose !== 'undefined' ? args.onPrintDialogClose : params.onPrintDialogClose;
+        params.onPdfOpen = typeof args.onPdfOpen !== 'undefined' ? args.onPdfOpen : params.onPdfOpen;
+        params.modalMessage = typeof args.modalMessage !== 'undefined' ? args.modalMessage : params.modalMessage;
+        params.documentTitle = typeof args.documentTitle !== 'undefined' ? args.documentTitle : params.documentTitle;
+        params.targetStyle = typeof args.targetStyle !== 'undefined' ? args.targetStyle : params.targetStyle;
+        params.targetStyles = typeof args.targetStyles !== 'undefined' ? args.targetStyles : params.targetStyles;
+        params.ignoreElements = typeof args.ignoreElements !== 'undefined' ? args.ignoreElements : params.ignoreElements;
+        params.imageStyle = typeof args.imageStyle !== 'undefined' ? args.imageStyle : params.imageStyle;
+        params.repeatTableHeader = typeof args.repeatTableHeader !== 'undefined' ? args.repeatTableHeader : params.repeatTableHeader;
+        params.css = typeof args.css !== 'undefined' ? args.css : params.css;
+        params.style = typeof args.style !== 'undefined' ? args.style : params.style;
+        params.scanStyles = typeof args.scanStyles !== 'undefined' ? args.scanStyles : params.scanStyles;
+        break;
+      default:
+        throw new Error('Unexpected argument type! Expected "string" or "object", got ' + (typeof args === 'undefined' ? 'undefined' : _typeof(args)));
+    }
+
+    // Validate printable
+    if (!params.printable) throw new Error('Missing printable information.');
+
+    // Validate type
+    if (!params.type || typeof params.type !== 'string' || printTypes.indexOf(params.type.toLowerCase()) === -1) {
+      throw new Error('Invalid print type. Available types are: pdf, html, image and json.');
+    }
+
+    // Check if we are showing a feedback message to the user (useful for large files)
+    if (params.showModal) _modal2.default.show(params);
+
+    // Check for a print start hook function
+    if (params.onLoadingStart) params.onLoadingStart();
+
+    // To prevent duplication and issues, remove any used printFrame from the DOM
+    var usedFrame = document.getElementById(params.frameId);
+
+    if (usedFrame) usedFrame.parentNode.removeChild(usedFrame);
+
+    // Create a new iframe or embed element (IE prints blank pdf's if we use iframe)
+    var printFrame = void 0;
+
+    // Create iframe element
+    printFrame = document.createElement('iframe');
+
+    // Hide iframe
+    printFrame.setAttribute('style', 'visibility: hidden; height: 0; width: 0; position: absolute;');
+
+    // Set iframe element id
+    printFrame.setAttribute('id', params.frameId);
+
+    // For non pdf printing, pass an html document string to srcdoc (force onload callback)
+    if (params.type !== 'pdf') {
+      printFrame.srcdoc = '<html><head><title>' + params.documentTitle + '</title>';
+
+      // Attach css files
+      if (params.css !== null) {
+        // Add support for single file
+        if (!Array.isArray(params.css)) params.css = [params.css];
+
+        // Create link tags for each css file
+        params.css.forEach(function (file) {
+          printFrame.srcdoc += '<link rel="stylesheet" href="' + file + '">';
+        });
+      }
+
+      printFrame.srcdoc += '</head><body></body></html>';
+    }
+
+    // Check printable type
+    switch (params.type) {
+      case 'pdf':
+        // Check browser support for pdf and if not supported we will just open the pdf file instead
+        if (_browser2.default.isFirefox() || _browser2.default.isEdge() || _browser2.default.isIE()) {
+          try {
+            console.info('PrintJS currently doesn\'t support PDF printing in Firefox, Internet Explorer and Edge.');
+            var win = window.open(params.fallbackPrintable, '_blank');
+            win.focus();
+            if (params.onPdfOpen) params.onPdfOpen();
+          } catch (e) {
+            params.onError(e);
+          } finally {
+            // Make sure there is no loading modal opened
+            if (params.showModal) _modal2.default.close();
+            if (params.onLoadingEnd) params.onLoadingEnd();
+          }
+        } else {
+          _pdf2.default.print(params, printFrame);
+        }
+        break;
+      case 'image':
+        _image2.default.print(params, printFrame);
+        break;
+      case 'html':
+        _html2.default.print(params, printFrame);
+        break;
+      case 'json':
+        _json2.default.print(params, printFrame);
+        break;
+    }
+  }
+};
+
+/***/ }),
+
+/***/ "./src/js/json.js":
+/*!************************!*\
+  !*** ./src/js/json.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _functions = __webpack_require__(/*! ./functions */ "./src/js/functions.js");
+
+var _print = __webpack_require__(/*! ./print */ "./src/js/print.js");
+
+var _print2 = _interopRequireDefault(_print);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  print: function print(params, printFrame) {
+    // Check if we received proper data
+    if (_typeof(params.printable) !== 'object') {
+      throw new Error('Invalid javascript data object (JSON).');
+    }
+
+    // Validate repeatTableHeader
+    if (typeof params.repeatTableHeader !== 'boolean') {
+      throw new Error('Invalid value for repeatTableHeader attribute (JSON).');
+    }
+
+    // Validate properties
+    if (!params.properties || !Array.isArray(params.properties)) {
+      throw new Error('Invalid properties array for your JSON data.');
+    }
+
+    // We will format the property objects to keep the JSON api compatible with older releases
+    params.properties = params.properties.map(function (property) {
+      return {
+        field: (typeof property === 'undefined' ? 'undefined' : _typeof(property)) === 'object' ? property.field : property,
+        displayName: (typeof property === 'undefined' ? 'undefined' : _typeof(property)) === 'object' ? property.displayName : property,
+        columnSize: (typeof property === 'undefined' ? 'undefined' : _typeof(property)) === 'object' && property.columnSize ? property.columnSize + ';' : 100 / params.properties.length + '%;'
+      };
+    });
+
+    // Variable to hold the html string
+    var htmlData = '';
+
+    // Check if there is a header on top of the table
+    if (params.header) htmlData += '<h1 style="' + params.headerStyle + '">' + params.header + '</h1>';
+
+    // Build the printable html data
+    htmlData += jsonToHTML(params);
+
+    // Store the data
+    params.htmlData = (0, _functions.addWrapper)(htmlData, params);
+
+    // Print the json data
+    _print2.default.send(params, printFrame);
+  }
+};
+
+
+function jsonToHTML(params) {
+  // Get the row and column data
+  var data = params.printable;
+  var properties = params.properties;
+
+  // Create a html table
+  var htmlData = '<table style="border-collapse: collapse; width: 100%;">';
+
+  // Check if the header should be repeated
+  if (params.repeatTableHeader) {
+    htmlData += '<thead>';
+  }
+
+  // Add the table header row
+  htmlData += '<tr>';
+
+  // Add the table header columns
+  for (var a = 0; a < properties.length; a++) {
+    htmlData += '<th style="width:' + properties[a].columnSize + ';' + params.gridHeaderStyle + '">' + (0, _functions.capitalizePrint)(properties[a].displayName) + '</th>';
+  }
+
+  // Add the closing tag for the table header row
+  htmlData += '</tr>';
+
+  // If the table header is marked as repeated, add the closing tag
+  if (params.repeatTableHeader) {
+    htmlData += '</thead>';
+  }
+
+  // Create the table body
+  htmlData += '<tbody>';
+
+  // Add the table data rows
+  for (var i = 0; i < data.length; i++) {
+    // Add the row starting tag
+    htmlData += '<tr>';
+
+    // Print selected properties only
+    for (var n = 0; n < properties.length; n++) {
+      var stringData = data[i];
+
+      // Support nested objects
+      var property = properties[n].field.split('.');
+      if (property.length > 1) {
+        for (var p = 0; p < property.length; p++) {
+          stringData = stringData[property[p]];
+        }
+      } else {
+        stringData = stringData[properties[n].field];
+      }
+
+      // Add the row contents and styles
+      htmlData += '<td style="width:' + properties[n].columnSize + params.gridStyle + '">' + stringData + '</td>';
+    }
+
+    // Add the row closing tag
+    htmlData += '</tr>';
+  }
+
+  // Add the table and body closing tags
+  htmlData += '</tbody></table>';
+
+  return htmlData;
+}
+
+/***/ }),
+
+/***/ "./src/js/modal.js":
+/*!*************************!*\
+  !*** ./src/js/modal.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var Modal = {
+  show: function show(params) {
+    // Build modal
+    var modalStyle = 'font-family:sans-serif; ' + 'display:table; ' + 'text-align:center; ' + 'font-weight:300; ' + 'font-size:30px; ' + 'left:0; top:0;' + 'position:fixed; ' + 'z-index: 9990;' + 'color: #0460B5; ' + 'width: 100%; ' + 'height: 100%; ' + 'background-color:rgba(255,255,255,.9);' + 'transition: opacity .3s ease;';
+
+    // Create wrapper
+    var printModal = document.createElement('div');
+    printModal.setAttribute('style', modalStyle);
+    printModal.setAttribute('id', 'printJS-Modal');
+
+    // Create content div
+    var contentDiv = document.createElement('div');
+    contentDiv.setAttribute('style', 'display:table-cell; vertical-align:middle; padding-bottom:100px;');
+
+    // Add close button (requires print.css)
+    var closeButton = document.createElement('div');
+    closeButton.setAttribute('class', 'printClose');
+    closeButton.setAttribute('id', 'printClose');
+    contentDiv.appendChild(closeButton);
+
+    // Add spinner (requires print.css)
+    var spinner = document.createElement('span');
+    spinner.setAttribute('class', 'printSpinner');
+    contentDiv.appendChild(spinner);
+
+    // Add message
+    var messageNode = document.createTextNode(params.modalMessage);
+    contentDiv.appendChild(messageNode);
+
+    // Add contentDiv to printModal
+    printModal.appendChild(contentDiv);
+
+    // Append print modal element to document body
+    document.getElementsByTagName('body')[0].appendChild(printModal);
+
+    // Add event listener to close button
+    document.getElementById('printClose').addEventListener('click', function () {
+      Modal.close();
+    });
+  },
+  close: function close() {
+    var printFrame = document.getElementById('printJS-Modal');
+
+    printFrame.parentNode.removeChild(printFrame);
+  }
+};
+
+exports.default = Modal;
+
+/***/ }),
+
+/***/ "./src/js/pdf.js":
+/*!***********************!*\
+  !*** ./src/js/pdf.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _print = __webpack_require__(/*! ./print */ "./src/js/print.js");
+
+var _print2 = _interopRequireDefault(_print);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  print: function print(params, printFrame) {
+    // Format pdf url
+    params.printable = /^(blob|http)/i.test(params.printable) ? params.printable : window.location.origin + (params.printable.charAt(0) !== '/' ? '/' + params.printable : params.printable);
+
+    // If showing a loading modal or using a hook function, we will preload the pdf file
+    if (params.showModal || params.onLoadingStart) {
+      // Get the file through a http request
+      var req = new window.XMLHttpRequest();
+      req.responseType = 'arraybuffer';
+
+      req.addEventListener('load', function () {
+        // Pass response data to a blob and create a local object url
+        var localPdf = new window.Blob([req.response], { type: 'application/pdf' });
+        localPdf = window.URL.createObjectURL(localPdf);
+
+        // Pass the url to the printable parameter (replacing the original pdf file url)
+        // This will prevent a second request to the file (server) once the iframe loads
+        params.printable = localPdf;
+
+        send(params, printFrame);
+      });
+
+      req.open('GET', params.printable, true);
+      req.send();
+    } else {
+      send(params, printFrame);
+    }
+  }
+};
+
+
+function send(params, printFrame) {
+  // Set iframe src with pdf document url
+  printFrame.setAttribute('src', params.printable);
+  _print2.default.send(params, printFrame);
+}
+
+/***/ }),
+
+/***/ "./src/js/print.js":
+/*!*************************!*\
+  !*** ./src/js/print.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _browser = __webpack_require__(/*! ./browser */ "./src/js/browser.js");
+
+var _browser2 = _interopRequireDefault(_browser);
+
+var _modal = __webpack_require__(/*! ./modal */ "./src/js/modal.js");
+
+var _modal2 = _interopRequireDefault(_modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Print = {
+  send: function send(params, printFrame) {
+    // Append iframe element to document body
+    document.getElementsByTagName('body')[0].appendChild(printFrame);
+
+    // Get iframe element
+    var iframeElement = document.getElementById(params.frameId);
+
+    // Wait for iframe to load all content
+    if (params.type === 'pdf' && (_browser2.default.isIE() || _browser2.default.isEdge())) {
+      iframeElement.setAttribute('onload', finishPrint(iframeElement, params));
+    } else {
+      printFrame.onload = function () {
+        if (params.type === 'pdf') {
+          finishPrint(iframeElement, params);
+        } else {
+          // Get iframe element document
+          var printDocument = iframeElement.contentWindow || iframeElement.contentDocument;
+          if (printDocument.document) printDocument = printDocument.document;
+
+          // Inject printable html into iframe body
+          printDocument.body.innerHTML = params.htmlData;
+
+          // Add custom style
+          if (params.type !== 'pdf' && params.style !== null) {
+            // Create style element
+            var style = document.createElement('style');
+            style.innerHTML = params.style;
+
+            // Append style element to iframe's head
+            printDocument.head.appendChild(style);
+          }
+
+          // If printing image, wait for it to load inside the iframe
+          if (params.type === 'image') {
+            loadIframeImages(printDocument, params).then(function () {
+              finishPrint(iframeElement, params);
+            });
+          } else {
+            finishPrint(iframeElement, params);
+          }
+        }
+      };
+    }
+  }
+};
+
+function performPrint(iframeElement, params) {
+  iframeElement.focus();
+
+  // If Edge or IE, try catch with execCommand
+  if (_browser2.default.isEdge() || _browser2.default.isIE()) {
+    try {
+      iframeElement.contentWindow.document.execCommand('print', false, null);
+    } catch (e) {
+      iframeElement.contentWindow.print();
+    }
+  } else {
+    // Other browsers
+    iframeElement.contentWindow.print();
+  }
+}
+
+function cleanUp(params) {
+  // If we are showing a feedback message to user, remove it
+  if (params.showModal) _modal2.default.close();
+
+  // Check for a finished loading hook function
+  if (params.onLoadingEnd) params.onLoadingEnd();
+
+  // If preloading pdf files, clean blob url
+  if (params.showModal || params.onLoadingStart) window.URL.revokeObjectURL(params.printable);
+
+  // If a onPrintDialogClose callback is given, execute it
+  if (params.onPrintDialogClose) {
+    var event = 'mouseover';
+
+    if (_browser2.default.isChrome() || _browser2.default.isFirefox()) {
+      // Firefox will require an extra click in the document
+      // to fire the focus event. Should we console.warn that?
+      event = 'focus';
+    }
+    var handler = function handler() {
+      // Make sure the event only happens once.
+      window.removeEventListener(event, handler);
+
+      params.onPrintDialogClose();
+    };
+
+    window.addEventListener(event, handler);
+  }
+}
+
+function finishPrint(iframeElement, params) {
+  try {
+    performPrint(iframeElement, params);
+  } catch (error) {
+    params.onError(error);
+  } finally {
+    cleanUp(params);
+  }
+}
+
+function loadIframeImages(printDocument, params) {
+  var promises = [];
+
+  params.printable.forEach(function (image, index) {
+    return promises.push(loadIframeImage(printDocument, index));
+  });
+
+  return Promise.all(promises);
+}
+
+function loadIframeImage(printDocument, index) {
+  return new Promise(function (resolve) {
+    var pollImage = function pollImage() {
+      var image = printDocument ? printDocument.getElementById('printableImage' + index) : null;
+
+      if (!image || typeof image.naturalWidth === 'undefined' || image.naturalWidth === 0) {
+        setTimeout(pollImage, 500);
+      } else {
+        resolve();
+      }
+    };
+    pollImage();
+  });
+}
+
+exports.default = Print;
+
+/***/ }),
+
+/***/ "./src/sass/index.scss":
+/*!*****************************!*\
+  !*** ./src/sass/index.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!****************************!*\
+  !*** multi ./src/index.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
+
+
+/***/ })
+
+/******/ })["default"];
+});
+//# sourceMappingURL=print.map
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(45)
+var __vue_script__ = __webpack_require__(46)
 /* template */
-var __vue_template__ = __webpack_require__(46)
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -72873,7 +74001,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72902,7 +74030,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -72945,15 +74073,15 @@ if (false) {
 }
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -72992,7 +74120,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73011,7 +74139,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -73040,15 +74168,15 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(51)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(52)
+var __vue_template__ = __webpack_require__(53)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -73087,7 +74215,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73112,7 +74240,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -73165,15 +74293,15 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(54)
+var __vue_script__ = __webpack_require__(55)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(56)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -73212,7 +74340,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73349,7 +74477,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -73605,15 +74733,15 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(57)
+var __vue_script__ = __webpack_require__(58)
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(59)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -73652,7 +74780,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73717,7 +74845,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -73884,15 +75012,15 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(61)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(62)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -73931,7 +75059,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73996,7 +75124,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -74163,15 +75291,15 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(63)
+var __vue_script__ = __webpack_require__(64)
 /* template */
-var __vue_template__ = __webpack_require__(64)
+var __vue_template__ = __webpack_require__(65)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -74210,7 +75338,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74301,7 +75429,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -74454,15 +75582,15 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(67)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(68)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -74501,7 +75629,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74581,7 +75709,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -74780,15 +75908,15 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(69)
+var __vue_script__ = __webpack_require__(70)
 /* template */
-var __vue_template__ = __webpack_require__(70)
+var __vue_template__ = __webpack_require__(71)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -74827,7 +75955,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74872,7 +76000,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -74965,10 +76093,355 @@ if (false) {
 }
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */
+/***/ (function(module, exports) {
+
+/*
+ * printThis v1.14.1
+ * @desc Printing plug-in for jQuery
+ * @author Jason Day
+ *
+ * Resources (based on):
+ * - jPrintArea: http://plugins.jquery.com/project/jPrintArea
+ * - jqPrint: https://github.com/permanenttourist/jquery.jqprint
+ * - Ben Nadal: http://www.bennadel.com/blog/1591-Ask-Ben-Print-Part-Of-A-Web-Page-With-jQuery.htm
+ *
+ * Licensed under the MIT licence:
+ *              http://www.opensource.org/licenses/mit-license.php
+ *
+ * (c) Jason Day 2015-2018
+ *
+ * Usage:
+ *
+ *  $("#mySelector").printThis({
+ *      debug: false,                   // show the iframe for debugging
+ *      importCSS: true,                // import parent page css
+ *      importStyle: false,             // import style tags
+ *      printContainer: true,           // grab outer container as well as the contents of the selector
+ *      loadCSS: "path/to/my.css",      // path to additional css file - use an array [] for multiple
+ *      pageTitle: "",                  // add title to print page
+ *      removeInline: false,            // remove all inline styles from print elements
+ *      removeInlineSelector: "body *", // custom selectors to filter inline styles. removeInline must be true
+ *      printDelay: 333,                // variable print delay
+ *      header: null,                   // prefix to html
+ *      footer: null,                   // postfix to html
+ *      base: false,                    // preserve the BASE tag, or accept a string for the URL
+ *      formValues: true,               // preserve input/form values
+ *      canvas: false,                  // copy canvas elements
+ *      doctypeString: '...',           // enter a different doctype for older markup
+ *      removeScripts: false,           // remove script tags from print content
+ *      copyTagClasses: false           // copy classes from the html & body tag
+ *      beforePrintEvent: null,         // callback function for printEvent in iframe
+ *      beforePrint: null,              // function called before iframe is filled
+ *      afterPrint: null                // function called before iframe is removed
+ *  });
+ *
+ * Notes:
+ *  - the loadCSS will load additional CSS (with or without @media print) into the iframe, adjusting layout
+ */
+;
+(function($) {
+
+    function appendContent($el, content) {
+        if (!content) return;
+
+        // Simple test for a jQuery element
+        $el.append(content.jquery ? content.clone() : content);
+    }
+
+    function appendBody($body, $element, opt) {
+        // Clone for safety and convenience
+        // Calls clone(withDataAndEvents = true) to copy form values.
+        var $content = $element.clone(opt.formValues);
+
+        if (opt.formValues) {
+            // Copy original select and textarea values to their cloned counterpart
+            // Makes up for inability to clone select and textarea values with clone(true)
+            copyValues($element, $content, 'select, textarea');
+        }
+
+        if (opt.removeScripts) {
+            $content.find('script').remove();
+        }
+
+        if (opt.printContainer) {
+            // grab $.selector as container
+            $content.appendTo($body);
+        } else {
+            // otherwise just print interior elements of container
+            $content.each(function() {
+                $(this).children().appendTo($body)
+            });
+        }
+    }
+
+    // Copies values from origin to clone for passed in elementSelector
+    function copyValues(origin, clone, elementSelector) {
+        var $originalElements = origin.find(elementSelector);
+
+        clone.find(elementSelector).each(function(index, item) {
+            $(item).val($originalElements.eq(index).val());
+        });
+    }
+
+    var opt;
+    $.fn.printThis = function(options) {
+        opt = $.extend({}, $.fn.printThis.defaults, options);
+        var $element = this instanceof jQuery ? this : $(this);
+
+        var strFrameName = "printThis-" + (new Date()).getTime();
+
+        if (window.location.hostname !== document.domain && navigator.userAgent.match(/msie/i)) {
+            // Ugly IE hacks due to IE not inheriting document.domain from parent
+            // checks if document.domain is set by comparing the host name against document.domain
+            var iframeSrc = "javascript:document.write(\"<head><script>document.domain=\\\"" + document.domain + "\\\";</s" + "cript></head><body></body>\")";
+            var printI = document.createElement('iframe');
+            printI.name = "printIframe";
+            printI.id = strFrameName;
+            printI.className = "MSIE";
+            document.body.appendChild(printI);
+            printI.src = iframeSrc;
+
+        } else {
+            // other browsers inherit document.domain, and IE works if document.domain is not explicitly set
+            var $frame = $("<iframe id='" + strFrameName + "' name='printIframe' />");
+            $frame.appendTo("body");
+        }
+
+        var $iframe = $("#" + strFrameName);
+
+        // show frame if in debug mode
+        if (!opt.debug) $iframe.css({
+            position: "absolute",
+            width: "0px",
+            height: "0px",
+            left: "-600px",
+            top: "-600px"
+        });
+
+        // before print callback
+        if (typeof opt.beforePrint === "function") {
+            opt.beforePrint();
+        }
+
+        // $iframe.ready() and $iframe.load were inconsistent between browsers
+        setTimeout(function() {
+
+            // Add doctype to fix the style difference between printing and render
+            function setDocType($iframe, doctype){
+                var win, doc;
+                win = $iframe.get(0);
+                win = win.contentWindow || win.contentDocument || win;
+                doc = win.document || win.contentDocument || win;
+                doc.open();
+                doc.write(doctype);
+                doc.close();
+            }
+
+            if (opt.doctypeString){
+                setDocType($iframe, opt.doctypeString);
+            }
+
+            var $doc = $iframe.contents(),
+                $head = $doc.find("head"),
+                $body = $doc.find("body"),
+                $base = $('base'),
+                baseURL;
+
+            // add base tag to ensure elements use the parent domain
+            if (opt.base === true && $base.length > 0) {
+                // take the base tag from the original page
+                baseURL = $base.attr('href');
+            } else if (typeof opt.base === 'string') {
+                // An exact base string is provided
+                baseURL = opt.base;
+            } else {
+                // Use the page URL as the base
+                baseURL = document.location.protocol + '//' + document.location.host;
+            }
+
+            $head.append('<base href="' + baseURL + '">');
+
+            // import page stylesheets
+            if (opt.importCSS) $("link[rel=stylesheet]").each(function() {
+                var href = $(this).attr("href");
+                if (href) {
+                    var media = $(this).attr("media") || "all";
+                    $head.append("<link type='text/css' rel='stylesheet' href='" + href + "' media='" + media + "'>");
+                }
+            });
+
+            // import style tags
+            if (opt.importStyle) $("style").each(function() {
+                $head.append(this.outerHTML);
+            });
+
+            // add title of the page
+            if (opt.pageTitle) $head.append("<title>" + opt.pageTitle + "</title>");
+
+            // import additional stylesheet(s)
+            if (opt.loadCSS) {
+                if ($.isArray(opt.loadCSS)) {
+                    jQuery.each(opt.loadCSS, function(index, value) {
+                        $head.append("<link type='text/css' rel='stylesheet' href='" + this + "'>");
+                    });
+                } else {
+                    $head.append("<link type='text/css' rel='stylesheet' href='" + opt.loadCSS + "'>");
+                }
+            }
+
+            var pageHtml = $('html')[0];
+
+            // CSS VAR in html tag when dynamic apply e.g.  document.documentElement.style.setProperty("--foo", bar);
+            $doc.find('html').prop('style', pageHtml.style.cssText);
+
+            // copy 'root' tag classes
+            var tag = opt.copyTagClasses;
+            if (tag) {
+                tag = tag === true ? 'bh' : tag;
+                if (tag.indexOf('b') !== -1) {
+                    $body.addClass($('body')[0].className);
+                }
+                if (tag.indexOf('h') !== -1) {
+                    $doc.find('html').addClass(pageHtml.className);
+                }
+            }
+
+            // print header
+            appendContent($body, opt.header);
+
+            if (opt.canvas) {
+                // add canvas data-ids for easy access after cloning.
+                var canvasId = 0;
+                // .addBack('canvas') adds the top-level element if it is a canvas.
+                $element.find('canvas').addBack('canvas').each(function(){
+                    $(this).attr('data-printthis', canvasId++);
+                });
+            }
+
+            appendBody($body, $element, opt);
+
+            if (opt.canvas) {
+                // Re-draw new canvases by referencing the originals
+                $body.find('canvas').each(function(){
+                    var cid = $(this).data('printthis'),
+                        $src = $('[data-printthis="' + cid + '"]');
+
+                    this.getContext('2d').drawImage($src[0], 0, 0);
+
+                    // Remove the markup from the original
+                    if ($.isFunction($.fn.removeAttr)) {
+                        $src.removeAttr('data-printthis');
+                    } else {
+                        $.each($src, function(i, el) {
+                            el.removeAttribute('data-printthis')
+                        });
+                    }
+                });
+            }
+
+            // remove inline styles
+            if (opt.removeInline) {
+                // Ensure there is a selector, even if it's been mistakenly removed
+                var selector = opt.removeInlineSelector || '*';
+                // $.removeAttr available jQuery 1.7+
+                if ($.isFunction($.removeAttr)) {
+                    $body.find(selector).removeAttr("style");
+                } else {
+                    $body.find(selector).attr("style", "");
+                }
+            }
+
+            // print "footer"
+            appendContent($body, opt.footer);
+
+            // attach event handler function to beforePrint event
+            function attachOnBeforePrintEvent($iframe, beforePrintHandler) {
+                var win = $iframe.get(0);
+                win = win.contentWindow || win.contentDocument || win;
+
+                if (typeof beforePrintHandler === "function") {
+                    if ('matchMedia' in win) {
+                        win.matchMedia('print').addListener(function(mql) {
+                            if(mql.matches)  beforePrintHandler();
+                        });
+                    } else {
+                        win.onbeforeprint = beforePrintHandler;
+                    }
+                }
+            }
+            attachOnBeforePrintEvent($iframe, opt.beforePrint);
+
+            setTimeout(function() {
+                if ($iframe.hasClass("MSIE")) {
+                    // check if the iframe was created with the ugly hack
+                    // and perform another ugly hack out of neccessity
+                    window.frames["printIframe"].focus();
+                    $head.append("<script>  window.print(); </s" + "cript>");
+                } else {
+                    // proper method
+                    if (document.queryCommandSupported("print")) {
+                        $iframe[0].contentWindow.document.execCommand("print", false, null);
+                    } else {
+                        $iframe[0].contentWindow.focus();
+                        $iframe[0].contentWindow.print();
+                    }
+                }
+
+                // remove iframe after print
+                if (!opt.debug) {
+                    setTimeout(function() {
+                        $iframe.remove();
+
+                    }, 1000);
+                }
+
+                // after print callback
+                if (typeof opt.afterPrint === "function") {
+                    opt.afterPrint();
+                }
+
+            }, opt.printDelay);
+
+        }, 333);
+
+    };
+
+    // defaults
+    $.fn.printThis.defaults = {
+        debug: false,               // show the iframe for debugging
+        importCSS: true,            // import parent page css
+        importStyle: false,         // import style tags
+        printContainer: true,       // print outer container/$.selector
+        loadCSS: "",                // path to additional css file - use an array [] for multiple
+        pageTitle: "",              // add title to print page
+        removeInline: false,        // remove inline styles from print elements
+        removeInlineSelector: "*",  // custom selectors to filter inline styles. removeInline must be true
+        printDelay: 333,            // variable print delay
+        header: null,               // prefix to html
+        footer: null,               // postfix to html
+        base: false,                // preserve the BASE tag or accept a string for the URL
+        formValues: true,           // preserve input/form values
+        canvas: false,              // copy canvas content
+        doctypeString: '<!DOCTYPE html>', // enter a different doctype for older markup
+        removeScripts: false,       // remove script tags from print content
+        copyTagClasses: false,      // copy classes from the html & body tag
+        beforePrintEvent: null,     // callback function for printEvent in iframe
+        beforePrint: null,          // function called before iframe is filled
+        afterPrint: null            // function called before iframe is removed
+    };
+})(jQuery);
+
 
 /***/ })
 /******/ ]);
