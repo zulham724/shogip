@@ -14,6 +14,8 @@
 <body>
 {{-- <section class="container"> --}}
 <center>
+	<h3>Data Umkm {{ $city->name }}</h3>
+	<hr>
 	<table style="table-layout: fixed" class="table table-bordered">
 		<thead>
             <tr>

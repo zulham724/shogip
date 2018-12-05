@@ -250,6 +250,7 @@ class UmkmController extends Controller
 
     public function document(Request $request){
         // return "yey";
+        $data["city"] = City::find($request["city_id"]);
         $data['umkm'] = Umkm::
         with('umkm_category','state','city','district','user')
         ->orderBy('created_at','desc')
