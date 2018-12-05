@@ -23,18 +23,16 @@
                 <td>Nama UMKM</td>
                 <td>Email</td>
                 <td>Kategori UMKM</td>
-                <td>Kota</td>
                 <td>Kontak Telepon / WA</td>
             </tr>
         </thead>
         <tbody>
            @foreach ($umkm as $um => $umkms)
             <tr>
-                <td>{{ $um+1 }}</td>
-                <td>{{ $umkms->name }}</td>
-                <td>{{ $umkms->user->email }}</td>
+                <td width="5%">{{ $um+1 }}</td>
+                <td width="35%">{{ $umkms->name }}</td>
+                <td width="25%">{{ $umkms->user->email }}</td>
                 <td>{{ $umkms->umkm_category->name }}</td>
-                <td>{{ $umkms->city->name }}</td>
                 <td>{{ $umkms->cp }}</td>
             </tr>
             @endforeach
