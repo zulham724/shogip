@@ -4,10 +4,17 @@
 	<title></title>
 	<!-- Bootstrap  CSS-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style type="text/css">
+		tbody:before, tbody:after { display: none; }
+		td{
+			word-break:break-all; word-wrap:break-word;
+		}
+	</style>
 </head>
 <body>
-<section class="container">
-	<table class="table table-bordered">
+{{-- <section class="container"> --}}
+<center>
+	<table style="table-layout: fixed" class="table table-bordered">
 		<thead>
             <tr>
                 <td>No</td>
@@ -31,6 +38,7 @@
             @endforeach
         </tbody>
 	</table>
-</section>
+</center>
+{{-- </section> --}}
 </body>
 </html>
