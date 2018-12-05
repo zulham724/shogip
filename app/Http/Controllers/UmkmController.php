@@ -257,6 +257,7 @@ class UmkmController extends Controller
         ->where('city_id',$request['city_id'])
         ->get();
         $pdf = PDF::loadView('pdf.umkms', $data);
+        $pdf->setPaper('A4', 'landscape');
         // return view('pdf.umkms',$data);
         return $pdf->download('data_umkm.pdf');
     }
