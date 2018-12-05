@@ -31,7 +31,7 @@
         <div class="card-header">
             <i class="fa fa-flag"></i> List UMKM
             <a href="{{ route('umkms.create') }}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Tambah UMKM</a>
-            <button class="btn btn-primary pull-right" onclick="print()"><i class="fa fa-print"></i> Cetak</button>
+            {{-- <button class="btn btn-primary pull-right" onclick="print()"><i class="fa fa-print"></i> Cetak</button> --}}
             <form class="form-inline" method="post" action="{{ url('umkm/document') }}">
                 @csrf
                 <div class="form-group">
