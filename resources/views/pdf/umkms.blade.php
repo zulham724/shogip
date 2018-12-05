@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-<center>
+<section class="container">
 	<table class="table table-bordered">
 		<thead>
             <tr>
@@ -31,6 +31,6 @@
             @endforeach
         </tbody>
 	</table>
-</center>
+</section>
 </body>
 </html>
