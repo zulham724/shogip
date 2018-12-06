@@ -144,7 +144,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Pendiri</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->founder }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->founder ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Nomor Identitas KTP</label>
