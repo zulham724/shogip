@@ -81,19 +81,19 @@
                             </div> 
                             <div class="form-group">
                                 <label>Varian</label>
-                                <input type="text" class="form-control" readonly value="{{ $umkm->varian }}">
+                                <input type="text" class="form-control" readonly value="{{ $umkm->varian ?? 'kosong' }}">
                             </div>
                             <div class="form-group">
                                 <label>Bentuk Usaha</label>
-                                <input type="text" class="form-control" readonly value="{{ $umkm->business_form }}">
+                                <input type="text" class="form-control" readonly value="{{ $umkm->business_form ?? 'kosong' }}">
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea class="form-control" readonly>{{ $umkm->description }}</textarea>
+                                <textarea class="form-control" readonly>{{ $umkm->description ?? 'kosong' }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Nomor Telepon</label>
-                                <input type="text" class="form-control" value="{{ $umkm->cp }}" readonly="true" name="cp" placeholder="type something" required> 
+                                <input type="text" class="form-control" value="{{ $umkm->cp ?? 0 }}" readonly="true" name="cp" placeholder="type something" required> 
                             </div>
 
                         </div>
