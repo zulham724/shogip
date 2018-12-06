@@ -170,11 +170,11 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Omset Bulanan</label>
-                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->monthly_finance,0,".",".") }}" readonly>
+                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->monthly_finance ?? 0,0,".",".") }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Total Asset</label>
-                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->asset,0,".",".") }}" readonly>
+                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->asset ?? 0,0,".",".") }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Kapasitas Produk Bulanan</label>
@@ -204,7 +204,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Modal Sendiri</label>
-                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->capital,0,".",".") }}" readonly>
+                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->capital ?? 0,0,".",".") }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Nama Bank/ Koperasi</label>
@@ -212,7 +212,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Jumlah Modal</label>
-                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->ammount_of_capital,0,".",".") }}" readonly>
+                                <input type="text" class="form-control" value="Rp. {{ number_format($umkm->umkm_biodata->ammount_of_capital ?? 0,0,".",".") }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Jangka Waktu Kredit (Tahun)</label>
