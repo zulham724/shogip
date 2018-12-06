@@ -34,7 +34,8 @@ class UmkmController extends Controller
         $data['umkm'] = Umkm::
         with('umkm_category','state','city','district','user')
         ->orderBy('created_at','desc')->get();
-        $data["cities"] = City::get();   
+        $data["cities"] = City::get(); 
+        $data["umkm_categories"] = UmkmCategori::get();  
         return view('umkm.index',$data);
     }
 
@@ -250,12 +251,24 @@ class UmkmController extends Controller
 
     public function document(Request $request){
         // return "yey";
-        $data["city"] = City::find($request["city_id"]);
+        $data["city_name"] = $request["city_name"];
         $data['umkm'] = Umkm::
-        with('umkm_category','state','city','district','user')
+        with('state','district','user')
+        ->with(['city'=>function($query)use($request){
+            $query->where('name','like',"%".$request['city_name']."%");
+        }])
+        ->whereHas('city',function($query)use($request){
+            $query->where('name','like',"%".$request['city_name']."%");
+        })
+        ->with(['umkm_category'=>function($query)use($request){
+            $query->where('name','like',"%".$request['category_name']."%");
+        }])
+        ->whereHas('umkm_category',function($query)use($request){
+            $query->where('name','like',"%".$request['category_name']."%");
+        })
         ->orderBy('created_at','desc')
-        ->where('city_id',$request['city_id'])
         ->get();
+        // dd($request,$data);
         $pdf = PDF::loadView('pdf.umkms', $data);
         $pdf->setPaper('A4', 'landscape');
         // return view('pdf.umkms',$data);

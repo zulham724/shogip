@@ -36,10 +36,20 @@
                 @csrf
                 <div class="form-group">
                     {{-- <label>Sortir Kota</label> --}}
-                    <select class="form-control" name="city_id">
+                    <select class="form-control" name="city_name">
+                        <option value="">Semua UMKM</option>
                         @foreach ($cities as $city)
                             {{-- expr --}}
-                            <option value="{{ $city->id }}">{{ $city->name }}</option>
+                            <option value="{{ $city->name }}">{{ $city->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="category_name">
+                        <option value="">Semua Kategori</option>
+                        @foreach ($umkm_categories as $umkm_category)
+                            {{-- expr --}}
+                            <option value="{{ $umkm_category->name }}">{{ $umkm_category->name }}</option>
                         @endforeach
                     </select>
                 </div>
