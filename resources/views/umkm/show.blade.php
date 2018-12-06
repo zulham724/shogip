@@ -104,27 +104,27 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Kota</label>
-                                <input type="text" class="form-control" value="{{ $umkm->city->name }}" readonly="true" name="city" placeholder="type something" required> 
+                                <input type="text" class="form-control" value="{{ $umkm->city->name ?? 'kosong' }}" readonly="true" name="city" placeholder="type something" required> 
                             </div> 
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" class="form-control" value="{{ $umkm->address }}" readonly="true" name="address" placeholder="type something" required> 
+                                <input type="text" class="form-control" value="{{ $umkm->address ?? 'kosong' }}" readonly="true" name="address" placeholder="type something" required> 
                             </div> 
                             <div class="form-group">
                                 <label>Web</label>
-                                <input type="text" class="form-control" value="{{ $umkm->web }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->web ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Twitter</label>
-                                <input type="text" class="form-control" value="{{ $umkm->twitter }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->twitter ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Facebook</label>
-                                <input type="text" class="form-control" value="{{ $umkm->facebook }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->facebook ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Instagram</label>
-                                <input type="text" class="form-control" value="{{ $umkm->instagram }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->instagram ?? 'kosong' }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -148,19 +148,19 @@
                             </div>
                             <div class="form-group">
                                 <label>Nomor Identitas KTP</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->identity_number }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->identity_number ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Pendidikan</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->education }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->education ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Tahun Berdiri</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->year }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->year ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Jumlah Karyawan</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->total_employes }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->total_employes ?? 'kosong' }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -178,15 +178,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Kapasitas Produk Bulanan</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->product_capacity }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->product_capacity ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Wilayah Pemasaran Dalam Kota</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->in_the_city }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->in_the_city ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Regional</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->regional }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->regional ?? 'kosong' }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -196,11 +196,11 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nasional</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->national }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->national  ?? 'kosong'}}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Internasional</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->international }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->international ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Modal Sendiri</label>
@@ -208,7 +208,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Nama Bank/ Koperasi</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->bank }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->bank ?? 'kosong' }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Jumlah Modal</label>
@@ -216,7 +216,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Jangka Waktu Kredit (Tahun)</label>
-                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->credit_term }}" readonly>
+                                <input type="text" class="form-control" value="{{ $umkm->umkm_biodata->credit_term ?? 'kosong' }}" readonly>
                             </div>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                                 <h5>Masalah {{ $umkm_problem->problem_list->name }}</h5>
                             </div>
                             <div class="card-body">
-                                <small>{{ $umkm_problem->description }}</small>
+                                <small>{{ $umkm_problem->description ?? 'Tidak ada masalah' }}</small>
                             </div>
                         </div>
                     </div>
